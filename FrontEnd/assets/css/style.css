@@ -43,6 +43,11 @@
     border: 2px solid #DBE2EF;
 }
 
+#liveToast{
+    background: #3F72AF;
+    color: white;
+}
+
 /*Home*/
 
 #home{
@@ -70,7 +75,9 @@
 
 #mainTitle{
     color: #222831;
-    font-size: 85px;
+    font-size: 75px;
+    font-family: sans-serif;
+    font-weight: 600;
 }
 
 #mainText{
