@@ -2,6 +2,11 @@
     background-color: #222831;
 }
 
+#toggler{
+    color: white;
+    background: white;
+}
+
 .navbar-brand,.nav-link{
     color: white;
 }
