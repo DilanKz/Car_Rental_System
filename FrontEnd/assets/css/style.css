@@ -1,0 +1,48 @@
+.navbar{
+    background-color: #222831;
+}
+
+.navbar-brand,.nav-link{
+    color: white;
+}
+
+.navbar-brand:hover,.nav-link:hover{
+    color: #CBE4DE;
+}
+
+#navItem{
+    color: white;
+}
+
+#navBar{
+    color: white;
+    background-color: #222831;
+}
+
+#navbarSupportedContent{
+    flex-grow: 0;
+}
+
+#btnLogin{
+    background: #DBE2EF;
+    color: #222831;
+}
+
+#btnLogin:hover{
+    color: #DBE2EF;
+    background: #222831;
+    border: 2px solid #DBE2EF;
+}
+
+/*Home*/
+
+#home{
+    position: relative;
+}
+
+#bgImg{
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
