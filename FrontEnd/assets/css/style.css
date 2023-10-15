@@ -12,7 +12,11 @@
 }
 
 .navbar-brand:hover,.nav-link:hover{
-    color: #CBE4DE;
+    color: white;
+}
+
+.navbar-brand:visited,.nav-link:visited{
+    color: white;
 }
 
 #navItem{
@@ -42,7 +46,9 @@
 /*Home*/
 
 #home{
+    background: #DBE2EF;
     position: relative;
+    height: 100vh;
 }
 
 #bgImg{
@@ -50,4 +56,44 @@
     position: absolute;
     right: 0;
     top: 0;
+}
+
+#homeDt{
+    height: 20vw;
+    position: absolute;
+    width: max-content;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#mainTitle{
+    color: #222831;
+    font-size: 85px;
+}
+
+#mainText{
+    color: #3F72AF;
+    font-size: 28px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.buttons{
+    background: #DBE2EF;
+    color: #222831;
+    border: 2px solid #222831;
+}
+
+#signIn{
+    background: #222831;
+    color: #DBE2EF;
+    border: 2px solid #222831;
+}
+
+.buttons:hover{
+    color: #DBE2EF;
+    background: #222831;
+    border: 2px solid #DBE2EF;
 }
