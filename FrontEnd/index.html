@@ -140,7 +140,7 @@
     <section class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12">
-                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                <div class="card" style="border-radius: 15px;">
                     <div class="card-body p-0">
                         <form class="row g-0">
                             <div class="col-lg-6">
@@ -273,7 +273,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
 
-                        <p style="color: #5c636a" class="rent-card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit, iste</p>
+                        <p style="color: #5c636a" class="rent-card-text">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Fugit impedit, iste</p>
 
                         <ul class="list-group-flush mb-5">
 
@@ -291,7 +292,8 @@
 
                         <button type="button"
                                 class="position-absolute  bottom-0 end-0 btn btn-rent btn-sm me-2 mb-2">
-                            Rent this car</button>
+                            Rent this car
+                        </button>
 
                     </div>
                 </div>
@@ -299,10 +301,111 @@
         </section>
         <section carID="none" class="col-3 card m-3" style="max-width: 540px; width: 250px">
             <div class="row g-0">
-                <img src="" alt="addCar.jpg">
+                <h4><i class="fa-solid fa-plus position-absolute top-50 start-50 translate-middle "
+                       style="font-size: 150px"></i></h4>
+                <h6 class="h6 position-absolute bottom-0 start-50 translate-middle-x"
+                    style="font-family: sans-serif;width: max-content">Add a car</h6>
             </div>
         </section>
 
+    </section>
+
+</main>
+
+<main class="container-fluid vh-100" id="addCarsFrame" style="background-color: rgba(219,226,239,0.3);">
+
+    <section class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <form class="col-12">
+                <div class="card" style="border-radius: 15px; background-color: #DBE2EF">
+
+                    <div class="row">
+                        <div class="col-5 mt-3 ms-5 me-5">
+
+                            <div class="row">
+                                <div class="mt-3 me-4 col-5">
+                                    <div class="mb-4 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="width: 250px;"/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carFront" class="btn btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnCarFront">Choose
+                                                file</label>
+                                            <input type="file" class="form-control d-none" id="btnCarFront"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 ms-5 col-5">
+                                    <div class="mb-4 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="width: 250px;"/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carBack" class="btn btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnIDBack">Choose
+                                                file</label>
+                                            <input type="file" class=" form-control d-none" id="btnCarBack"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 pb-2">
+                                <div class="form-outline form-white">
+                                    <input type="text" id="txtRegNo"
+                                           class="form-control form-control-lg"/>
+                                    <label class="form-label" for="txtRegNo">Register Number</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-5 mt-3 ms-5 me-1">
+
+                            <div class="row">
+                                <div class="mt-3 me-5 col-5">
+                                    <div class="mb-4 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="width: 250px;"/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carSide" class="btn btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnCarFront">Choose
+                                                file</label>
+                                            <input type="file" class="form-control d-none" id="btnCarSide"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 ms-4 col-5">
+                                    <div class="mb-4 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="width: 250px;"/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carIn" class="btn btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnIDBack">Choose
+                                                file</label>
+                                            <input type="file" class=" form-control d-none" id="btnCarIn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 pb-2">
+                                <div class="form-outline form-white">
+                                    <input type="text" id="txtBrand"
+                                           class="form-control form-control-lg"/>
+                                    <label class="form-label" for="txtBrand">Brand Name</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
     </section>
 
 </main>
