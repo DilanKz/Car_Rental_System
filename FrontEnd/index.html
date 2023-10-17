@@ -5,6 +5,7 @@
     <title>Easy Car Rentals</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -23,33 +24,36 @@
 
         <div class=" collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li id="homeIt" class="me-1 nav-item">
-                    <a id="navItem" class="nav-link" aria-current="page" href="#home">Home</a>
+                <li id="homeIt" class="me-3 nav-item">
+                    <a id="navItem" class="nav-link" aria-current="page" href="#home"><i
+                            class="me-1 fa-solid fa-house"></i> Home</a>
                 </li>
-                <li id="summeryIt" class="me-1 nav-item">
-                    <a class="nav-link" href="#">Summery</a>
+                <li id="summeryIt" class="me-3 nav-item">
+                    <a class="nav-link" href="#"><i class="me-1 fa-solid fa-chart-line"></i> Summery</a>
                 </li>
-                <li id="carsIt" class="me-1 nav-item">
-                    <a class="nav-link" href="#">Cars</a>
+                <li id="carsIt" class="me-3 nav-item">
+                    <a class="nav-link" href="#"><i class="me-1 fa-solid fa-car-side"></i> Cars</a>
                 </li>
-                <li id="reqIt" class="me-1 nav-item">
-                    <a class="nav-link" href="#">Requests</a>
+                <li id="reqIt" class="me-3 nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-list-check me-1"></i> Requests</a>
                 </li>
-                <li id="accIt" class="me-1 nav-item">
-                    <a class="nav-link" href="#">Account-HUB</a>
+                <li id="accIt" class="me-3 nav-item">
+                    <a class="nav-link" href="#"><i class="me-1 fa-solid fa-user-group"></i> Account-HUB</a>
                 </li>
-                <li id="rentIt" class="me-4 nav-item">
-                    <a class="nav-link" href="#">Place a rent</a>
+                <li id="rentIt" class="me-5 nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-file-contract me-1"></i> Place a rent</a>
                 </li>
-                <li id="loginIt" class="me-4 nav-item">
+                <li id="loginIt" class="me-5 nav-item">
                     <!--                    <button id="btnLogin" type="button" class="mt-2 btn btn-sm">Small button</button>-->
                     <button id="btnLogin" type="button" class="mt-2 btn"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: .75rem;">
                         Sign In
                     </button>
                 </li>
                 <li id="profileIt" class="me-1 nav-item">
-                    <a class="nav-link" href="#">I</a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -58,7 +62,7 @@
 </nav>
 
 <div class="toast-container position-fixed top-0 end-0 p-3">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div id="loginToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
                 Please sign in to Place a rent
@@ -79,6 +83,238 @@
         <button type="button" class="btn buttons btn-lg mt-4">Contact US</button>
     </section>
 </main>
+
+
+<main id="logInFrame" class="container-fluid vh-100" style="background-color: #222831;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div id="loginForm" class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="assets/images/gw.jpg" alt="login form" class="img-fluid"
+                                 style="border-radius: 1rem 0 0 1rem;"/>
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form>
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <h2>EASY CAR</h2>
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
+                                        account</h5>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="txtUserName" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="txtUserName">Username</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="txtUserPass" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="txtUserPass">Password</label>
+                                    </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button id="btnLogInM" class="btn btn-dark btn-lg btn-block" type="button">
+                                            Login
+                                        </button>
+                                    </div>
+
+                                    <a class="small text-muted" href="#">Forgot password?</a>
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#"
+                                                                                                              style="color: #393f81;">Register
+                                        here</a></p>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<main id="registerFrame" class="container-fluid vh-100" style="background-color: #222831;">
+
+    <!--<section class="container py-4 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div id="registerForm" class="card col col-xl-10" style="border-radius: 1rem">
+
+                <div class="row">
+                    <h3 class="h3 ms-3 mt-3">Register Form</h3>
+                    <h4 class="h3 ms-3 mt-4">Create your account</h4>
+                </div>
+                <form class="row">
+
+                        <div class="col-6">
+
+                            <div class="input-container">
+                                <input type="text" id="txtName" required="">
+                                <label for="txtName" class="label">Name</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-container">
+                                <input type="text" id="txtAddress" required="">
+                                <label for="txtAddress" class="label">Address</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-container">
+                                <input type="text" id="txtContact" required="">
+                                <label for="txtContact" class="label">Contact</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-container">
+                                <input type="file" class="form-control" id="txtDriver" />
+                            </div>
+
+                            <div class="input-container">
+                                <input class="form-control form-control-sm" id="txtID" type="file" />
+                            </div>
+
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="input-container">
+                                <input type="email" id="txtEmail" required="">
+                                <label for="txtEmail" class="label">Email</label>
+                                <div class="underline"></div>
+                            </div>
+
+                        </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>-->
+    <section class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <form class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5" style="color: #222831;">General Information</h3>
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Examplev2"
+                                                   class="form-control form-control-lg"/>
+                                            <label class="form-label" for="form3Examplev2">Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Examplev4"
+                                                   class="form-control form-control-lg"/>
+                                            <label class="form-label" for="form3Examplev4">Address</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Examplev5" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="form3Examplev5">Contact</label>
+                                    </div>
+                                    <div class="row position-relative">
+                                        <div class="mt-3 col-4">
+                                            <label class="form-label position-absolute bottom-0" for="form3Examplev5">NIC</label>
+                                        </div>
+                                        <div class="mt-3 col-4">
+                                            <div class="mb-4 d-flex justify-content-center">
+                                                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                     alt="example placeholder" style="width: 150px;"/>
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <div id="idFront" class="btn btn-rounded">
+                                                    <label class="form-label text-white m-1" for="btnIDFront">Choose
+                                                        file</label>
+                                                    <input type="file" class="form-control d-none" id="btnIDFront"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 col-4">
+                                            <div class="mb-4 d-flex justify-content-center">
+                                                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                     alt="example placeholder" style="width: 150px;"/>
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <div id="idBack" class="btn btn-rounded">
+                                                    <label class="form-label text-white m-1" for="btnIDBack">Choose
+                                                        file</label>
+                                                    <input type="file" class=" form-control d-none" id="btnIDBack"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 bg-darkBlue text-white">
+
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5">Account Information</h3>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline form-white">
+                                            <input type="text" id="form3Examplea2"
+                                                   class="form-control form-control-lg"/>
+                                            <label class="form-label" for="form3Examplea2">Email</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline form-white">
+                                            <input type="text" id="form3Examplea3"
+                                                   class="form-control form-control-lg"/>
+                                            <label class="form-label" for="form3Examplea3">Validation Code</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea4"
+                                                       class="form-control form-control-lg"/>
+                                                <label class="form-label" for="form3Examplea4">Password</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea5"
+                                                       class="form-control form-control-lg"/>
+                                                <label class="form-label" for="form3Examplea5">Confirm Password</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-light btn-lg"
+                                            data-mdb-ripple-color="dark">Register
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <script src="assets/js/script.js"></script>
+<script src="controllers/navigationController.js"></script>
 </body>
 </html>
