@@ -2,6 +2,7 @@ const home = $('#home');
 const logInFrame = $('#logInFrame');
 const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
+const addCarsFrame = $('#addCarsFrame');
 const nav = $('#nav');
 
 
