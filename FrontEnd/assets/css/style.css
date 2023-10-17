@@ -188,3 +188,7 @@ body::-webkit-scrollbar{
     font-family: sans-serif;
     font-size: 11px;
 }
+
+#carBack,#carFront,#carSide,#carIn {
+    background-color: #222831;
+}
