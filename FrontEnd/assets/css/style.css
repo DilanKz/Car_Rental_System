@@ -1,3 +1,10 @@
+body{
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
 .navbar{
     background-color: #222831;
 }
@@ -23,6 +30,12 @@
     color: white;
 }
 
+.nav-link{
+    margin-top: 2px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
 #navBar{
     color: white;
     background-color: #222831;
@@ -43,7 +56,7 @@
     border: 2px solid #DBE2EF;
 }
 
-#liveToast{
+#loginToast{
     background: #3F72AF;
     color: white;
 }
@@ -103,4 +116,65 @@
     color: #DBE2EF;
     background: #222831;
     border: 2px solid #DBE2EF;
+}
+
+/*Login and Register*/
+
+#btnLogInM{
+    background-color: #222831;
+    color: white;
+}
+
+#registerForm>div>h4{
+    font-weight: 300;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #a1c4fd;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+}
+
+.bg-darkBlue {
+    background-color: #222831;
+}
+
+#idBack,#idFront{
+    background-color: #222831;
+}
+
+@media (min-width: 992px) {
+    .card-registration-2 .bg-darkBlue {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+@media (max-width: 991px) {
+    .card-registration-2 .bg-darkBlue {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 }
