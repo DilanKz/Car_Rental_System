@@ -84,7 +84,6 @@
     </section>
 </main>
 
-
 <main id="logInFrame" class="container-fluid vh-100" style="background-color: #222831;">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -169,7 +168,8 @@
                                     </div>
                                     <div class="row position-relative">
                                         <div class="mt-3 col-4">
-                                            <label class="form-label position-absolute bottom-0" for="btnIDFront">NIC</label>
+                                            <label class="form-label position-absolute bottom-0"
+                                                   for="btnIDFront">NIC</label>
                                         </div>
                                         <div class="mt-3 col-4">
                                             <div class="mb-4 d-flex justify-content-center">
@@ -255,6 +255,51 @@
             </div>
         </div>
     </section>
+</main>
+
+<main class="container-fluid vh-100" id="manageCarsFrame" style="background-color: #222831;">
+
+    <h2 class="h2" style="color: white">cars</h2>
+
+    <section class="p-3 d-flex col flex-wrap flex-grow-1 justify-content-around">
+
+        <section carID="none" class="col-3 card m-3" style="max-width: 540px; width: 460px">
+            <div class="row g-0">
+                <div class="col-md-4 ">
+                    <img src="assets/images/gw.jpg"
+                         alt="Trendy Pants and Shoes" class="img-fluid rounded-start"/>
+                </div>
+                <div class="col-md-8 position-relative">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+                        <p class="rent-card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit, iste</p>
+
+                        <ul class="list-group-flush mb-5">
+
+                            <li class="list-group-item">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                                <small class="ms-2 card-text"> Meka normal text ekak </small>
+                            </li>
+
+                            <li class="list-group-item">
+                                <i class="fa-solid fa-road"></i>
+                                <small class="ms-2 card-text"> Meka normal text ekak </small>
+                            </li>
+
+                        </ul>
+
+                        <button type="button"
+                                class="position-absolute  bottom-0 end-0 btn btn-rent btn-sm me-2 mb-2">
+                            Rent this car</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
 </main>
 
 <script src="assets/js/script.js"></script>
