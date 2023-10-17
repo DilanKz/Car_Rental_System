@@ -1,3 +1,8 @@
+root{
+    --primary-color: #222831;
+    --secondary-color: #DBE2EF;
+}
+
 body{
     overflow-y: scroll;
 }
@@ -177,4 +182,19 @@ body::-webkit-scrollbar{
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
+}
+
+/*Cars*/
+.btn-rent{
+    background-color: #222831;
+    color: #DBE2EF;
+}
+
+.btn-rent:hover{
+    border: #222831 2px solid;
+}
+
+.rent-card-text{
+    font-family: sans-serif;
+    font-size: 11px;
 }
