@@ -13,7 +13,15 @@ const registerBtn = $('#btnRegister');
 
 logInFrame.css('display','none')
 registerFrame.css('display','none')
-//manageCarsFrame.css('display','none');
+manageCarsFrame.css('display','none');
+addCarsFrame.css('display','none');
+
+function hideAll() {
+    logInFrame.css('display','none')
+    registerFrame.css('display','none')
+    manageCarsFrame.css('display','none');
+    addCarsFrame.css('display','none');
+}
 
 function showLogin() {
     nav.css('display','none')
@@ -50,3 +58,16 @@ $('#homeIt').click(function () {
     registerFrame.css('display','none');
 });
 
+$('#addNewCar').click(function () {
+
+    addCarsFrame.css('display','block');
+});
+
+
+$('#btnAddCarClose').click(function () {
+    addCarsFrame.css('display','none');
+});
+
+$('#btnAddCarSave').click(function () {
+    addCarsFrame.css('display','none');
+});
