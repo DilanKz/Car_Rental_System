@@ -192,3 +192,7 @@ body::-webkit-scrollbar{
 #carBack,#carFront,#carSide,#carIn {
     background-color: #222831;
 }
+
+#addNewCar{
+    cursor: pointer;
+}
