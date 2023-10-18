@@ -10,6 +10,11 @@ body{
 body::-webkit-scrollbar{
     display: none;
 }
+
+#nav{
+    z-index: 10;
+}
+
 .navbar{
     background-color: #222831;
 }
@@ -191,6 +196,10 @@ body::-webkit-scrollbar{
 
 #carBack,#carFront,#carSide,#carIn {
     background-color: #222831;
+}
+
+#addCarsFrame{
+    z-index: 100;
 }
 
 #addNewCar{
