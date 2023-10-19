@@ -257,71 +257,74 @@
     </section>
 </main>
 
-<main class="ps-0 pe-0 container-fluid vh-100" id="manageCarsFrame" style="background-color: #DBE2EF;">
+<main class="ps-0 pe-0 container-fluid" id="manageCarsFrame" style="background-color: #DBE2EF;">
 
     <section class="position-relative">
 
         <h2 class="h2 pt-3">cars</h2>
 
-        <section class="p-3 d-flex col flex-wrap flex-grow-1 justify-content-around">
+        <section class="p-3 d-flex col flex-wrap justify-content-around">
 
-            <section carID="none" class="col-3 card m-3" style="max-width: 540px; width: 460px">
-                <div class="row g-0">
-                    <div class="col-md-4 ">
-                        <img src="assets/images/gw.jpg"
-                             alt="Trendy Pants and Shoes" class="img-fluid rounded-start"/>
-                    </div>
-                    <div class="col-md-8 position-relative">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-
-                            <p style="color: #5c636a" class="rent-card-text">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Fugit impedit, iste</p>
-
-                            <ul class="list-group-flush mb-5">
-
-                                <li class="list-group-item">
-                                    <i style="color: green" class="fa-solid fa-money-check-dollar"></i>
-                                    <small style="color: green" class="ms-2 card-text"> Meka normal text ekak </small>
-                                </li>
-
-                                <li class="list-group-item">
-                                    <i style="color: #0a53be" class="fa-solid fa-road"></i>
-                                    <small style="color: #0a53be" class="ms-2 card-text"> Meka normal text ekak </small>
-                                </li>
-
-                            </ul>
-
-                            <button type="button"
-                                    class="position-absolute  bottom-0 end-0 btn btn-rent btn-sm me-2 mb-2">
-                                Rent this car
-                            </button>
-
-                        </div>
-                    </div>
+            <div class="col-3 m-3 card rent-card">
+                <div class="rent-card-img">
+                    <img src="assets/images/gw.jpg" alt="">
                 </div>
-            </section>
-            <section id="addNewCar" class=" col-3 card m-3" style="max-width: 250px; width: 250px">
-                <div class="row g-0">
-                    <h4><i class="fa-solid fa-plus position-absolute top-50 start-50 translate-middle "
-                           style="font-size: 150px"></i></h4>
-                    <h6 class="h6 position-absolute bottom-0 start-50 translate-middle-x"
-                        style="font-family: sans-serif;width: max-content">Add a car</h6>
+                <div class="rent-card-info">
+
+                    <p class="rent-text-title">Card title</p>
+                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
+                    <button carid="" class="rent-card-button">Read More</button>
                 </div>
-            </section>
+            </div>
 
         </section>
 
-        <main class="position-absolute top-0 container-fluid vh-100" id="addCarsFrame" style="background-color: rgba(0,0,0,0.3);">
+        <section class="p-3 d-flex col flex-wrap justify-content-around">
+
+            <div class="col-3 m-3 card rent-card">
+                <div class="rent-card-img">
+                    <img src="assets/images/gw.jpg" alt="">
+                </div>
+                <div class="rent-card-info">
+
+                    <p class="rent-text-title">Card title</p>
+                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
+                    <button carid="" class="rent-card-button">Read More</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="p-3 d-flex col flex-wrap justify-content-around">
+
+            <div class="col-3 m-3 card rent-card">
+                <div class="rent-card-img">
+                    <img src="assets/images/gw.jpg" alt="">
+                </div>
+                <div class="rent-card-info">
+
+                    <p class="rent-text-title">Card title</p>
+                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
+                    <button carid="" class="rent-card-button">Read More</button>
+                </div>
+            </div>
+
+        </section>
+
+        <main class="position-absolute top-0 container-fluid vh-100" id="addCarsFrame"
+              style="background-color: rgba(0,0,0,0.3);">
 
             <section class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <form class="col-12">
-                        <div class="card" style="border-radius: 15px; background-color: #DBE2EF">
+                        <div class="card overflow-hidden" style="border-radius: 15px; background-color: #DBE2EF">
 
                             <div class="row">
+                                <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+                                    <h2 class="h2 text-light">Add Car</h2>
+                                </div>
 
-                                <div class="col-4 mt-5 ms-5 mb-3 pb-2">
+                                <div class="col-4 mt-3 ms-5 mb-2 pb-2">
                                     <div class="form-outline form-white">
                                         <input type="text" id="txtRegNo"
                                                class="form-control form-control-sm"/>
@@ -329,11 +332,11 @@
                                     </div>
                                 </div>
 
-                                <div class="row mt-1 mb-3">
+                                <div class="row mt-1 mb-1">
                                     <div class="col-3">
-                                        <div class="mb-4 d-flex justify-content-center">
+                                        <div class="mb-2 d-flex justify-content-center">
                                             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="width: 200px;"/>
+                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <div id="carFront" class="btn btn-sm btn-rounded">
@@ -344,9 +347,9 @@
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <div class="mb-4 d-flex justify-content-center">
+                                        <div class="mb-2 d-flex justify-content-center">
                                             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="width: 200px;"/>
+                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <div id="carBack" class="btn btn-sm btn-rounded">
@@ -357,9 +360,9 @@
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <div class="mb-4 d-flex justify-content-center">
+                                        <div class="mb-2 d-flex justify-content-center">
                                             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="width: 200px;"/>
+                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <div id="carSide" class="btn btn-sm btn-rounded">
@@ -370,9 +373,9 @@
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <div class="mb-4 d-flex justify-content-center">
+                                        <div class="mb-2 d-flex justify-content-center">
                                             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="width: 200px;"/>
+                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                         </div>
                                         <div class="d-flex justify-content-center">
                                             <div id="carIn" class="btn btn-sm btn-rounded">
@@ -384,7 +387,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row mt-3">
+                                <div class="row mt-2">
 
                                     <div class="col-4 me-3 ms-5 pb-2">
                                         <div class="form-outline form-white">
@@ -423,7 +426,7 @@
 
                                 <div class="row ">
 
-                                    <div class="ms-5 col-2 mb-3 pb-2">
+                                    <div class="ms-5 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtColour"
                                                    class="form-control form-control-sm"/>
@@ -431,7 +434,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="ms-1 col-1 mb-3 pb-2 me-1">
+                                    <div class="ms-1 col-1 mb-2 pb-2 me-1">
                                         <div class="form-outline form-white">
                                             <input type="number" id="txtPCount"
                                                    class="form-control form-control-sm"/>
@@ -458,7 +461,9 @@
 
                                     <div class="col-3">
                                         <select id="txtTransmissionType" class="form-select" data-live-search="true">
-                                            <option selected data-tokens="ketchup mustard">Select car transmission type</option>
+                                            <option selected data-tokens="ketchup mustard">Select car transmission
+                                                type
+                                            </option>
                                             <option data-tokens="ketchup mustard">Automatic</option>
                                             <option data-tokens="mustard">Manual</option>
                                         </select>
@@ -468,7 +473,7 @@
 
                                 <div class="row">
 
-                                    <div class="ms-5 col-2 mb-3 pb-2">
+                                    <div class="ms-5 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtDailyRate"
                                                    class="form-control form-control-sm"/>
@@ -476,7 +481,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="ms-3 col-2 mb-3 pb-2">
+                                    <div class="ms-3 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtMonthlyRate"
                                                    class="form-control form-control-sm"/>
@@ -484,7 +489,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="ms-3 col-2 mb-3 pb-2">
+                                    <div class="ms-3 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtDailyLimit"
                                                    class="form-control form-control-sm"/>
@@ -492,7 +497,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="ms-3 col-2 mb-3 pb-2">
+                                    <div class="ms-3 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtMonthlyLimit"
                                                    class="form-control form-control-sm"/>
@@ -500,7 +505,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="ms-3 col-2 mb-3 pb-2">
+                                    <div class="ms-3 col-2 mb-2 pb-2">
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtExtraKmPrice"
                                                    class="form-control form-control-sm"/>
@@ -512,9 +517,12 @@
 
                                 <div class="row d-flex mb-3">
 
-                                    <button id="btnAddCarClose" type="button" class="ms-5 col-1 btn btn-outline-secondary btn-sm">Close</button>
+                                    <button id="btnAddCarClose" type="button"
+                                            class="ms-5 col-1 btn btn-outline-secondary btn-sm">Close
+                                    </button>
                                     <div class="col-9"></div>
-                                    <button id="btnAddCarSave" type="button" class="col-1 btn btn-success btn-sm">Save</button>
+                                    <button id="btnAddCarSave" type="button" class="col-1 btn btn-success btn-sm">Save
+                                    </button>
 
                                 </div>
 
@@ -530,6 +538,10 @@
     </section>
 
 </main>
+<!--
+<main class="container-fluid vh-100" id="summeryFrame">
+
+</main>-->
 
 <script src="assets/js/script.js"></script>
 <script src="controllers/navigationController.js"></script>
