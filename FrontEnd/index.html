@@ -25,21 +25,21 @@
         <div class=" collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li id="homeIt" class="me-3 nav-item">
-                    <a id="navItem" class="nav-link" aria-current="page" href="#home"><i
-                            class="me-1 fa-solid fa-house"></i> Home</a>
+                    <a id="navItem" class="nav-link" aria-current="page" href="#home">
+                        <i class="me-1 fa-solid fa-house"></i> Home</a>
                 </li>
-                <li id="summeryIt" class="me-3 nav-item">
+                <!--<li id="summeryIt" class="me-3 nav-item">
                     <a class="nav-link" href="#"><i class="me-1 fa-solid fa-chart-line"></i> Summery</a>
-                </li>
+                </li>-->
                 <li id="carsIt" class="me-3 nav-item">
                     <a class="nav-link" href="#"><i class="me-1 fa-solid fa-car-side"></i> Cars</a>
                 </li>
-                <li id="reqIt" class="me-3 nav-item">
+                <!--<li id="reqIt" class="me-3 nav-item">
                     <a class="nav-link" href="#"><i class="fa-solid fa-list-check me-1"></i> Requests</a>
-                </li>
-                <li id="accIt" class="me-3 nav-item">
+                </li>-->
+                <!--<li id="accIt" class="me-3 nav-item">
                     <a class="nav-link" href="#"><i class="me-1 fa-solid fa-user-group"></i> Account-HUB</a>
-                </li>
+                </li>-->
                 <li id="rentIt" class="me-5 nav-item">
                     <a class="nav-link" href="#"><i class="fa-solid fa-file-contract me-1"></i> Place a rent</a>
                 </li>
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<main class="container-fluid" id="home">
+<main class="position-relative container-fluid" id="home">
 
     <img id="bgImg" src="assets/images/gt.png" alt="gt.png">
 
@@ -84,11 +84,12 @@
     </section>
 </main>
 
-<main id="logInFrame" class="container-fluid vh-100" style="background-color: #222831;">
+<main id="logInFrame" class="position-absolute p-0 container-fluid vh-100 top-0" style="z-index: 100">
+    <div class="vh-100 vw-100 position-absolute p-0 m-0 bg-blur-8"></div>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div id="loginForm" class="col col-xl-10">
-                <div class="card" style="border-radius: 1rem;">
+            <div id="loginForm" class="col col-xl-10" style="z-index: 101;">
+                <div class=" card" style="border-radius: 1rem;">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
                             <img src="assets/images/gw.jpg" alt="login form" class="img-fluid"
@@ -136,11 +137,12 @@
     </div>
 </main>
 
-<main id="registerFrame" class="container-fluid vh-100" style="background-color: #222831;">
+<main id="registerFrame" class="p-0 container-fluid vh-100 position-absolute top-0" style="z-index: 100">
+    <div class="vh-100 vw-100 position-absolute p-0 m-0 bg-blur-8"></div>
     <section class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12">
-                <div class="card" style="border-radius: 15px;">
+                <div class="card" style="border-radius: 15px; overflow: hidden">
                     <div class="card-body p-0">
                         <form class="row g-0">
                             <div class="col-lg-6">
@@ -246,6 +248,9 @@
                                     <button type="button" class="btn btn-light btn-lg"
                                             data-mdb-ripple-color="dark">Register
                                     </button>
+
+                                    <p class="mb-5 mt-5 pb-lg-2" style="color: #DBE2EF;">Already have an account?
+                                        <a id="btnLoginFR" href="#" style="color: #DBE2EF;">Sign in from here</a></p>
 
                                 </div>
                             </div>
