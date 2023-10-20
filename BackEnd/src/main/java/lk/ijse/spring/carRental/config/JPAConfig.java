@@ -15,6 +15,7 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -33,8 +34,9 @@ public class JPAConfig {
 
     @Autowired
     Environment env;
+
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter adapter){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter adapter) {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(ds);
         factoryBean.setJpaVendorAdapter(adapter);
@@ -42,9 +44,10 @@ public class JPAConfig {
 
         return factoryBean;
     }
+
     @Bean
-    public DataSource dataSource(){
-        DriverManagerDataSource ds= new DriverManagerDataSource();
+    public DataSource dataSource() {
+        DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setUsername("root");
         ds.setPassword("1234");
         ds.setDriverClassName("com.mysql.jdbc.Driver");
@@ -53,7 +56,15 @@ public class JPAConfig {
     }
 
     @Bean
-    public JpaVendorAdapter adapter(){
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setDefaultEncoding("utf-8");
+        resolver.setMaxUploadSize(10485760);
+        return resolver;
+    }
+
+    @Bean
+    public JpaVendorAdapter adapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(Database.MYSQL);
         adapter.setGenerateDdl(true);
@@ -65,7 +76,7 @@ public class JPAConfig {
 
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory factory){
+    public PlatformTransactionManager transactionManager(EntityManagerFactory factory) {
         return new JpaTransactionManager(factory);
     }
 
