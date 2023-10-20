@@ -134,6 +134,18 @@ body::-webkit-scrollbar{
 
 /*Login and Register*/
 
+.bg-blur-8{
+    backdrop-filter: blur(8px);
+}
+.bg-blur-0{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.over-card{
+    z-index: 10;
+}
+
 #btnLogInM{
     background-color: #222831;
     color: white;
