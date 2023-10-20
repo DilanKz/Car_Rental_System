@@ -6,11 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 /**
  * `@authority Tharindu Dilan`
- * 12:08 PM
+ * 5:02 PM
  * 2023-10-20 - 10 - 2023
  */
 
@@ -19,20 +18,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @ToString
-public class Customer {
+public class Admin {
     @Id
     @Column(length = 10)
-    private String cid;
+    private String adminID;
     private String name;
-    private String email;
     private String address;
-    private String contact;
-    private LocalDate regDte;
-    private String idNo;
-    @Lob
-    private byte[] imageFront;
-    @Lob
-    private byte[] imageBack;
+    private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
