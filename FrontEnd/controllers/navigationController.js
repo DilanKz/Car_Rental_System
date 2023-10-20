@@ -4,6 +4,7 @@ const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
 const addCarsFrame = $('#addCarsFrame');
 const summeryFrame = $('#summeryFrame');
+const bg = $('.bg-blur-8');
 const nav = $('#nav');
 
 
@@ -25,16 +26,16 @@ function hideAll() {
 }
 
 function showLogin() {
-    nav.css('display','none')
-    home.css('display','none')
+    /*nav.css('display','none')
+    home.css('display','none')*/
 
     logInFrame.css('display','none')
     registerFrame.css('display','block')
 }
 
 loginBtn.click(function () {
-    nav.css('display','none')
-    home.css('display','none')
+    /*nav.css('display','none')
+    home.css('display','none')*/
     logInFrame.css('display','block')
 });
 
@@ -63,6 +64,11 @@ $('#addNewCar').click(function () {
 
     addCarsFrame.css('display','block');
 });
+
+bg.click(function () {
+    logInFrame.css('display','none')
+    registerFrame.css('display','none')
+})
 
 
 $('#btnAddCarClose').click(function () {
