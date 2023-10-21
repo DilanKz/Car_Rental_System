@@ -645,21 +645,49 @@
 
 <main class="ps-0 pe-0 container-fluid vh-100" id="manageCarsFrame1">
 
+    <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+        <h2 class="h2 text-light">Place a rent</h2>
+    </div>
+    <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+        <h2 class="h2 text-light">Place a rent</h2>
+    </div>
+
+    <section class="row">
+
+
+
+    </section>
+
     <section class="col">
 
         <div class="row">
-            <div class="d-flex justify-content-center col-12" style="background-color: #222831">
-                <h2 class="h2 text-light">Place a rent</h2>
-            </div>
-            <div class="d-flex justify-content-center col-12" style="background-color: #222831">
-                <h2 class="h2 text-light">Place a rent</h2>
+
+            <div class="col-3 mt-3 ms-5 mb-2 pb-2">
+                <div class="form-outline form-white">
+                    <input type="text" id="txtReturnVenue"
+                           class="form-control form-control-sm" value="Easy Car Rental Premises">
+                    <label class="form-label" for="txtReturnVenue">Return Venue</label>
+                </div>
             </div>
 
-            <div class="col-4 mt-3 ms-5 mb-2 pb-2">
+            <div class="col-3 mt-3 ms-5 mb-2 pb-2">
                 <div class="form-outline form-white">
-                    <input type="text" id="txtRegNo"
-                           class="form-control form-control-sm"/>
-                    <label class="form-label" for="txtRegNo">Register Number</label>
+                    <input type="text" id="txtPickVenue"
+                           class="form-control form-control-sm" value="Easy Car Rental Premises">
+                    <label class="form-label" for="txtPickVenue">Pick up Venue</label>
+                </div>
+            </div>
+
+            <div class="col-9 mt-3 ms-5 mb-2 pb-2">
+                <div class="row">
+                    <div class="col-4 form-outline form-white">
+                        <input type="datetime-local" id="txtRentPickupDate" class="form-control form-control-sm"/>
+                        <label class="form-label" for="txtRentPickupDate">Pickup date and Time</label>
+                    </div>
+                    <div class="col-4 form-outline form-white">
+                        <input type="datetime-local" id="txtRentEstRDate" class="form-control form-control-sm"/>
+                        <label class="form-label" for="txtRentEstRDate">Return date and Time</label>
+                    </div>
                 </div>
             </div>
 
@@ -667,7 +695,7 @@
 
     </section>
 
-    <div class="col-7">
+    <section class="col-7">
 
         <table class="table align-middle mb-5">
             <thead>
@@ -718,7 +746,7 @@
             </tbody>
         </table>
 
-    </div>
+    </section>
 
 </main>
 <script src="assets/js/script.js"></script>
