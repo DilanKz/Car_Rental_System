@@ -306,6 +306,7 @@
     </section>
 
     <section id="premiumCars" class="p-3 d-flex col flex-wrap justify-content-around">
+
         <div class="col-3 ms-5 mb-3">
             <div class="col-md-8 col-lg-6 col-xl-4">
                 <div class="card" style="border-radius: 15px;">
@@ -641,58 +642,85 @@
         </div>
     </div>
 </main>-->
-<div class="col-7">
 
-    <table class="table align-middle mb-5">
-        <thead>
-        <tr class="table-warning">
-            <th>Name</th>
-            <th>Weiver</th>
-            <th>Color</th>
-            <th>Driver</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="table-light">
-            <td>
-                <div class="d-flex align-items-center">
-                    <img
-                            src="assets/images/gt3.jpg"
-                            alt=""
-                            style="width: 55px; height: 55px"
-                            class="img-fluid"
-                    />
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1">Suzuki</p>
-                        <p class="text-muted mb-0">Alto</p>
+<main class="ps-0 pe-0 container-fluid vh-100" id="manageCarsFrame1">
+
+    <section class="col">
+
+        <div class="row">
+            <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+                <h2 class="h2 text-light">Place a rent</h2>
+            </div>
+            <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+                <h2 class="h2 text-light">Place a rent</h2>
+            </div>
+
+            <div class="col-4 mt-3 ms-5 mb-2 pb-2">
+                <div class="form-outline form-white">
+                    <input type="text" id="txtRegNo"
+                           class="form-control form-control-sm"/>
+                    <label class="form-label" for="txtRegNo">Register Number</label>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="col-7">
+
+        <table class="table align-middle mb-5">
+            <thead>
+            <tr class="table-warning">
+                <th>Name</th>
+                <th>Waiver</th>
+                <th>Color</th>
+                <th>Driver</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-light">
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img
+                                src="assets/images/gt3.jpg"
+                                alt=""
+                                style="width: 55px; height: 55px"
+                                class="img-fluid"
+                        />
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">Suzuki</p>
+                            <p class="text-muted mb-0">Alto</p>
+                        </div>
                     </div>
-                </div>
-            </td>
+                </td>
 
-            <td>
-                <p class="text-black mb-0">19000/=</p>
-            </td>
+                <td>
+                    <p class="text-black mb-0">19000/=</p>
+                </td>
 
-            <td>
-                Red
-            </td>
+                <td>
+                    Red
+                </td>
 
-            <td>
-                <div class="form-check">
-                    <input class="form-check-input text-success checked" type="checkbox" value="" id="flexCheckDefault"/>
-                    <label class="form-check-label" for="flexCheckDefault">Driver</label>
-                </div>
-            </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input text-success checked" type="checkbox" value="" id="flexCheckDefault"/>
+                        <label class="form-check-label" for="flexCheckDefault">Driver</label>
+                    </div>
+                </td>
 
-            <td>
-                <button type="button" class="btn-close btn-item-close btn btn-link btn-sm btn-rounded"></button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                <td>
+                    <button type="button" class="btn-close btn-item-close btn btn-link btn-sm btn-rounded"></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-</div>
+    </div>
+
+</main>
 <script src="assets/js/script.js"></script>
 <script src="controllers/navigationController.js"></script>
 </body>
