@@ -264,290 +264,435 @@
 
 <main class="ps-0 pe-0 container-fluid" id="manageCarsFrame" style="background-color: #DBE2EF;">
 
-    <section class="position-relative">
+    <!--    <section class="position-relative">-->
 
-        <h2 class="h2 pt-3">cars</h2>
+    <h2 class="h2 pt-3">cars</h2>
 
-        <section class="p-3 d-flex col flex-wrap justify-content-around">
+    <section id="luxuryCars" class="p-3 d-flex col flex-wrap justify-content-around">
 
-            <div class="col-3 m-3 card rent-card">
-                <div class="rent-card-img">
-                    <img src="assets/images/gw.jpg" alt="">
-                </div>
-                <div class="rent-card-info">
+        <div class="col-3 ms-5 mb-3">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
+                         data-mdb-ripple-color="light">
+                        <img src="assets/images/gw.jpg"
+                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
+                             class="img-fluid"
+                             alt="car"/>
+                    </div>
+                    <div class="card-body pb-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="text-dark">Mercedes</p>
+                                <p class="small text-muted">Rs:1000/=</p>
+                            </div>
+                            <div>
+                                <p class="text-dark">G-Wagon</p>
+                                <p class="small text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <p class="rent-text-title">Card title</p>
-                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
-                    <button carid="" class="rent-card-button">Read More</button>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="p-3 d-flex col flex-wrap justify-content-around">
-
-            <div class="col-3 m-3 card rent-card">
-                <div class="rent-card-img">
-                    <img src="assets/images/gw.jpg" alt="">
-                </div>
-                <div class="rent-card-info">
-
-                    <p class="rent-text-title">Card title</p>
-                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
-                    <button carid="" class="rent-card-button">Read More</button>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="p-3 d-flex col flex-wrap justify-content-around">
-
-            <div class="col-3 m-3 card rent-card">
-                <div class="rent-card-img">
-                    <img src="assets/images/gw.jpg" alt="">
-                </div>
-                <div class="rent-card-info">
-
-                    <p class="rent-text-title">Card title</p>
-                    <p class="rent-text-body"><i class="li fa-solid fa-money-check-dollar"></i> LKR 2000/= </p>
-                    <button carid="" class="rent-card-button">Read More</button>
+                    <hr class="my-0"/>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
+                            <button type="button" class="btn btn-primary">Rent now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-        </section>
+    </section>
 
-        <main class="position-absolute top-0 container-fluid vh-100" id="addCarsFrame"
-              style="background-color: rgba(0,0,0,0.3);">
+    <section id="premiumCars" class="p-3 d-flex col flex-wrap justify-content-around">
+        <div class="col-3 ms-5 mb-3">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
+                         data-mdb-ripple-color="light">
+                        <img src="assets/images/gw.jpg"
+                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
+                             class="img-fluid"
+                             alt="car"/>
+                    </div>
+                    <div class="card-body pb-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="text-dark">Mercedes</p>
+                                <p class="small text-muted">Rs:1000/=</p>
+                            </div>
+                            <div>
+                                <p class="text-dark">G-Wagon</p>
+                                <p class="small text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
 
-            <section class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <form class="col-12">
-                        <div class="card overflow-hidden" style="border-radius: 15px; background-color: #DBE2EF">
+                    <hr class="my-0"/>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
+                            <button type="button" class="btn btn-primary">Rent now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                            <div class="row">
-                                <div class="d-flex justify-content-center col-12" style="background-color: #222831">
-                                    <h2 class="h2 text-light">Add Car</h2>
+    </section>
+
+    <section id="normalCars" class="p-3 d-flex col flex-wrap justify-content-around">
+
+        <div class="col-3 ms-5 mb-3">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
+                         data-mdb-ripple-color="light">
+                        <img src="assets/images/gw.jpg"
+                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
+                             class="img-fluid"
+                             alt="car"/>
+                    </div>
+                    <div class="card-body pb-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="text-dark">Mercedes</p>
+                                <p class="small text-muted">Rs:1000/=</p>
+                            </div>
+                            <div>
+                                <p class="text-dark">G-Wagon</p>
+                                <p class="small text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-0"/>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
+                            <button type="button" class="btn btn-primary">Rent now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--<main class="position-absolute top-0 container-fluid vh-100" id="addCarsFrame"
+          style="background-color: rgba(0,0,0,0.3);">
+
+        <section class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <form class="col-12">
+                    <div class="card overflow-hidden" style="border-radius: 15px; background-color: #DBE2EF">
+
+                        <div class="row">
+                            <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+                                <h2 class="h2 text-light">Add Car</h2>
+                            </div>
+
+                            <div class="col-4 mt-3 ms-5 mb-2 pb-2">
+                                <div class="form-outline form-white">
+                                    <input type="text" id="txtRegNo"
+                                           class="form-control form-control-sm"/>
+                                    <label class="form-label" for="txtRegNo">Register Number</label>
                                 </div>
+                            </div>
 
-                                <div class="col-4 mt-3 ms-5 mb-2 pb-2">
+                            <div class="row mt-1 mb-1">
+                                <div class="col-3">
+                                    <div class="mb-2 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="height: 120px; max-width: 200px "/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carFront" class="btn btn-sm btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnCarFront">Choose
+                                                file</label>
+                                            <input type="file" class="form-control d-none" id="btnCarFront"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mb-2 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="height: 120px; max-width: 200px "/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carBack" class="btn btn-sm btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnIDBack">Choose
+                                                file</label>
+                                            <input type="file" class=" form-control d-none" id="btnCarBack"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mb-2 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="height: 120px; max-width: 200px "/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carSide" class="btn btn-sm btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnCarFront">Choose
+                                                file</label>
+                                            <input type="file" class="form-control d-none" id="btnCarSide"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mb-2 d-flex justify-content-center">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                             alt="example placeholder" style="height: 120px; max-width: 200px "/>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carIn" class="btn btn-sm btn-rounded">
+                                            <label class="form-label text-white m-1" for="btnIDBack">Choose
+                                                file</label>
+                                            <input type="file" class=" form-control d-none" id="btnCarIn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+
+                                <div class="col-4 me-3 ms-5 pb-2">
                                     <div class="form-outline form-white">
-                                        <input type="text" id="txtRegNo"
+                                        <input type="text" id="txtBrand"
                                                class="form-control form-control-sm"/>
-                                        <label class="form-label" for="txtRegNo">Register Number</label>
+                                        <label class="form-label" for="txtBrand">Brand Name</label>
                                     </div>
                                 </div>
 
-                                <div class="row mt-1 mb-1">
-                                    <div class="col-3">
-                                        <div class="mb-2 d-flex justify-content-center">
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-                                            <div id="carFront" class="btn btn-sm btn-rounded">
-                                                <label class="form-label text-white m-1" for="btnCarFront">Choose
-                                                    file</label>
-                                                <input type="file" class="form-control d-none" id="btnCarFront"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="mb-2 d-flex justify-content-center">
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-                                            <div id="carBack" class="btn btn-sm btn-rounded">
-                                                <label class="form-label text-white m-1" for="btnIDBack">Choose
-                                                    file</label>
-                                                <input type="file" class=" form-control d-none" id="btnCarBack"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="mb-2 d-flex justify-content-center">
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-                                            <div id="carSide" class="btn btn-sm btn-rounded">
-                                                <label class="form-label text-white m-1" for="btnCarFront">Choose
-                                                    file</label>
-                                                <input type="file" class="form-control d-none" id="btnCarSide"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="mb-2 d-flex justify-content-center">
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                 alt="example placeholder" style="height: 120px; max-width: 200px "/>
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-                                            <div id="carIn" class="btn btn-sm btn-rounded">
-                                                <label class="form-label text-white m-1" for="btnIDBack">Choose
-                                                    file</label>
-                                                <input type="file" class=" form-control d-none" id="btnCarIn"/>
-                                            </div>
-                                        </div>
+                                <div class="ms-4 me-1 col-2 mb-3 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtWeaverPay"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtWeaverPay">Wavier Payment</label>
                                     </div>
                                 </div>
 
-                                <div class="row mt-2">
-
-                                    <div class="col-4 me-3 ms-5 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtBrand"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtBrand">Brand Name</label>
-                                        </div>
+                                <div class="ms-4 col-2 mb-3 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtWholeKm"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtWholeKm">Whole km</label>
                                     </div>
-
-                                    <div class="ms-4 me-1 col-2 mb-3 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtWeaverPay"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtWeaverPay">Wavier Payment</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-4 col-2 mb-3 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtWholeKm"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtWholeKm">Whole km</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-5 col-2">
-                                        <select id="txtCarState" class="form-select" data-live-search="true">
-                                            <option selected data-tokens="ketchup mustard">Select car State</option>
-                                            <option data-tokens="ketchup mustard">Available</option>
-                                            <option data-tokens="mustard">Maintenance</option>
-                                            <option data-tokens="frosting">Rented</option>
-                                        </select>
-                                    </div>
-
                                 </div>
 
-                                <div class="row ">
-
-                                    <div class="ms-5 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtColour"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtColour">Colour</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-1 col-1 mb-2 pb-2 me-1">
-                                        <div class="form-outline form-white">
-                                            <input type="number" id="txtPCount"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtRegNo">Passengers</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-2">
-                                        <select id="txtCarType" class="form-select" data-live-search="true">
-                                            <option selected data-tokens="ketchup mustard">Select car type</option>
-                                            <option data-tokens="ketchup mustard">Normal</option>
-                                            <option data-tokens="mustard">Premium</option>
-                                            <option data-tokens="frosting">Luxury</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-3">
-                                        <select id="txtFuelType" class="form-select" data-live-search="true">
-                                            <option selected data-tokens="ketchup mustard">Select car fuel type</option>
-                                            <option data-tokens="ketchup mustard">Diesel</option>
-                                            <option data-tokens="mustard">Petrol</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-3">
-                                        <select id="txtTransmissionType" class="form-select" data-live-search="true">
-                                            <option selected data-tokens="ketchup mustard">Select car transmission
-                                                type
-                                            </option>
-                                            <option data-tokens="ketchup mustard">Automatic</option>
-                                            <option data-tokens="mustard">Manual</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="ms-5 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtDailyRate"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtDailyRate">Daily Payment</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-3 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtMonthlyRate"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtMonthlyRate">Monthly Payment</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-3 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtDailyLimit"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtDailyLimit">Daily km limit</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-3 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtMonthlyLimit"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtMonthlyLimit">Monthly km limit</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-3 col-2 mb-2 pb-2">
-                                        <div class="form-outline form-white">
-                                            <input type="text" id="txtExtraKmPrice"
-                                                   class="form-control form-control-sm"/>
-                                            <label class="form-label" for="txtExtraKmPrice">Extra km price</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row d-flex mb-3">
-
-                                    <button id="btnAddCarClose" type="button"
-                                            class="ms-5 col-1 btn btn-outline-secondary btn-sm">Close
-                                    </button>
-                                    <div class="col-9"></div>
-                                    <button id="btnAddCarSave" type="button" class="col-1 btn btn-success btn-sm">Save
-                                    </button>
-
+                                <div class="ms-5 col-2">
+                                    <select id="txtCarState" class="form-select" data-live-search="true">
+                                        <option selected data-tokens="ketchup mustard">Select car State</option>
+                                        <option data-tokens="ketchup mustard">Available</option>
+                                        <option data-tokens="mustard">Maintenance</option>
+                                        <option data-tokens="frosting">Rented</option>
+                                    </select>
                                 </div>
 
                             </div>
 
+                            <div class="row ">
+
+                                <div class="ms-5 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtColour"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtColour">Colour</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-1 col-1 mb-2 pb-2 me-1">
+                                    <div class="form-outline form-white">
+                                        <input type="number" id="txtPCount"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtRegNo">Passengers</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-2">
+                                    <select id="txtCarType" class="form-select" data-live-search="true">
+                                        <option selected data-tokens="ketchup mustard">Select car type</option>
+                                        <option data-tokens="ketchup mustard">Normal</option>
+                                        <option data-tokens="mustard">Premium</option>
+                                        <option data-tokens="frosting">Luxury</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-3">
+                                    <select id="txtFuelType" class="form-select" data-live-search="true">
+                                        <option selected data-tokens="ketchup mustard">Select car fuel type</option>
+                                        <option data-tokens="ketchup mustard">Diesel</option>
+                                        <option data-tokens="mustard">Petrol</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-3">
+                                    <select id="txtTransmissionType" class="form-select" data-live-search="true">
+                                        <option selected data-tokens="ketchup mustard">Select car transmission
+                                            type
+                                        </option>
+                                        <option data-tokens="ketchup mustard">Automatic</option>
+                                        <option data-tokens="mustard">Manual</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="ms-5 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtDailyRate"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtDailyRate">Daily Payment</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-3 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtMonthlyRate"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtMonthlyRate">Monthly Payment</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-3 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtDailyLimit"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtDailyLimit">Daily km limit</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-3 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtMonthlyLimit"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtMonthlyLimit">Monthly km limit</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-3 col-2 mb-2 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="txtExtraKmPrice"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtExtraKmPrice">Extra km price</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row d-flex mb-3">
+
+                                <button id="btnAddCarClose" type="button"
+                                        class="ms-5 col-1 btn btn-outline-secondary btn-sm">Close
+                                </button>
+                                <div class="col-9"></div>
+                                <button id="btnAddCarSave" type="button" class="col-1 btn btn-success btn-sm">Save
+                                </button>
+
+                            </div>
+
                         </div>
-                    </form>
-                </div>
-            </section>
 
-        </main>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-    </section>
+    </main>-->
+
+    <!--    </section>-->
 
 </main>
-<!--
-<main class="container-fluid vh-100" id="summeryFrame">
 
+<!--<main class="container-fluid vh-100" id="rentForm">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-10 col-12 pt-3">
+
+            <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
+                <div class="ms-5" id="product">PRODUCTS</div>
+                <div class="px-lg-5 ms-5" id="driver">Driver</div>
+                <div class="px-lg-5 ms-5" id="prc">PRICE</div>
+                <div class="px-lg-5 ms-5" id="quantity">QUANTITY</div>
+                <div class="px-lg-5 ms-5" id="total">TOTAL</div>
+            </div>
+
+            <div class="p-5  d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom">
+                <div class="d-flex flex-row align-items-center">
+                    <div><img src="assets/images/gt3.jpg" alt="" id="image1" style="width: 150px; height: 150px"></div>
+                    <div class="ms-4 d-flex flex-column pe-1">
+                        <div><h6 class="text-black">Car Name</h6></div>
+                        <div>Color:<span class="pl-3">White</span></div>
+                        <div>Size:<span class="pl-4"> M</span></div>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input bg-success" type="checkbox" value="" id="flexCheckDefault" />
+                    <label class="form-check-label" for="flexCheckDefault">Driver</label>
+                </div>
+                <div class="pl-md-0 pl-1"><b>$9.99</b></div>
+                <div class="pl-md-0 pl-2">
+                    <span class="text-dark fw-bold">1</span>
+                </div>
+                <div class="pl-md-0 pl-1"><b>$19.98</b></div>
+                <div style="cursor: pointer"><i class="fa-solid fa-xmark fa-xs"></i></div>
+            </div>
+        </div>
+    </div>
 </main>-->
+<div class="col-7">
 
+    <table class="table align-middle mb-5">
+        <thead>
+        <tr class="table-warning">
+            <th>Name</th>
+            <th>Weiver</th>
+            <th>Color</th>
+            <th>Driver</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-light">
+            <td>
+                <div class="d-flex align-items-center">
+                    <img
+                            src="assets/images/gt3.jpg"
+                            alt=""
+                            style="width: 55px; height: 55px"
+                            class="img-fluid"
+                    />
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">Suzuki</p>
+                        <p class="text-muted mb-0">Alto</p>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+                <p class="text-black mb-0">19000/=</p>
+            </td>
+
+            <td>
+                Red
+            </td>
+
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input text-success checked" type="checkbox" value="" id="flexCheckDefault"/>
+                    <label class="form-check-label" for="flexCheckDefault">Driver</label>
+                </div>
+            </td>
+
+            <td>
+                <button type="button" class="btn-close btn-item-close btn btn-link btn-sm btn-rounded"></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
 <script src="assets/js/script.js"></script>
 <script src="controllers/navigationController.js"></script>
 </body>
