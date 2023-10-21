@@ -3,7 +3,7 @@ const logInFrame = $('#logInFrame');
 const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
 const addCarsFrame = $('#addCarsFrame');
-const summeryFrame = $('#summeryFrame');
+const rentForm = $('#rentForm');
 const bg = $('.bg-blur-8');
 const nav = $('#nav');
 
