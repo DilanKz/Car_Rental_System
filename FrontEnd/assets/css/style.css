@@ -200,7 +200,7 @@ body::-webkit-scrollbar{
 /*Cars*/
 
 /*cars new*/
-
+/*
 .card{
     width: 250px;
     border-radius: 10px;
@@ -251,7 +251,7 @@ small.justify-content-center{
     }
 }
 
-/*add car form*/
+!*add car form*!
 #carBack,#carFront,#carSide,#carIn {
     background-color: #222831;
 }
@@ -262,7 +262,7 @@ small.justify-content-center{
 
 #addNewCar{
     cursor: pointer;
-}
+}*/
 
 
 

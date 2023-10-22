@@ -25,7 +25,6 @@ public class CustomerDTO {
     private String address;
     private String contact;
     private LocalDate regDte;
-    private String idNo;
     private byte[] imageFront;
     private byte[] imageBack;
     private UserDTO dto;

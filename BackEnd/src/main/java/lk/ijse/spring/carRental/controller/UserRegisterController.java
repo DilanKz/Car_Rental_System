@@ -35,7 +35,6 @@ public class UserRegisterController {
                 dto.getAddress(),
                 dto.getContact(),
                 dto.getRegDte(),
-                dto.getIdNo(),
                 dto.getImageFront().getBytes(),
                 dto.getImageBack().getBytes(),
                 dto.getDto()

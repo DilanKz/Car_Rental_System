@@ -28,7 +28,6 @@ public class Customer {
     private String address;
     private String contact;
     private LocalDate regDte;
-    private String idNo;
     @Lob
     private byte[] imageFront;
     @Lob

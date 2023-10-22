@@ -144,13 +144,13 @@
             <div class="col-12">
                 <div class="card" style="border-radius: 15px; overflow: hidden">
                     <div class="card-body p-0">
-                        <form class="row g-0">
+                        <form id="registerFormData" class="row g-0">
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <h3 class="fw-normal mb-5" style="color: #222831;">General Information</h3>
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline">
-                                            <input type="text" id="txtName"
+                                            <input name="name" type="text" id="txtName"
                                                    class="form-control form-control-lg"/>
                                             <label class="form-label" for="txtName">Name</label>
                                         </div>
@@ -158,14 +158,14 @@
 
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline">
-                                            <input type="text" id="txtAddress"
+                                            <input name="address" type="text" id="txtAddress"
                                                    class="form-control form-control-lg"/>
                                             <label class="form-label" for="txtAddress">Address</label>
                                         </div>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="text" id="txtTp" class="form-control form-control-lg"/>
+                                        <input name="contact" type="text" id="txtTp" class="form-control form-control-lg"/>
                                         <label class="form-label" for="txtTp">Contact</label>
                                     </div>
                                     <div class="row position-relative">
@@ -182,7 +182,7 @@
                                                 <div id="idFront" class="btn btn-rounded">
                                                     <label class="form-label text-white m-1" for="btnIDFront">Choose
                                                         file</label>
-                                                    <input type="file" class="form-control d-none" id="btnIDFront"/>
+                                                    <input name="imageFront" type="file" class="form-control d-none" id="btnIDFront"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,7 +195,7 @@
                                                 <div id="idBack" class="btn btn-rounded">
                                                     <label class="form-label text-white m-1" for="btnIDBack">Choose
                                                         file</label>
-                                                    <input type="file" class=" form-control d-none" id="btnIDBack"/>
+                                                    <input name="imageBack" type="file" class=" form-control d-none" id="btnIDBack"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -210,7 +210,7 @@
 
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline form-white">
-                                            <input type="text" id="txtEmail"
+                                            <input name="email" type="text" id="txtEmail"
                                                    class="form-control form-control-lg"/>
                                             <label class="form-label" for="txtEmail">Email</label>
                                         </div>
@@ -220,7 +220,7 @@
                                         <div class="form-outline form-white">
                                             <input type="text" id="txtCode"
                                                    class="form-control form-control-lg"/>
-                                            <label class="form-label" for="txtEmail">Validation Code</label>
+                                            <label class="form-label" for="txtCode">Validation Code</label>
                                         </div>
                                     </div>
 
@@ -245,7 +245,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="button" class="btn btn-light btn-lg"
+                                    <button id="btnCustomerReg" type="button" class="btn btn-light btn-lg"
                                             data-mdb-ripple-color="dark">Register
                                     </button>
 
