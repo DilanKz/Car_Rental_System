@@ -27,12 +27,11 @@ public class UserServiceImpl implements UserService {
     ModelMapper mapper;
 
     @Override
-    public UserDTO getData(String id){
-        if (!userRepo.existsById(id)) {
-            throw new RuntimeException(id+ " User is not available, check again.!");
+    public UserDTO getData(String uName){
+        User user = userRepo.getCredentials(uName);
+        if (user==null){
+            throw new RuntimeException("This User doesn't exist");
         }
-
-        User user = userRepo.findById(id).get();
         return mapper.map(user, UserDTO.class);
     }
 
