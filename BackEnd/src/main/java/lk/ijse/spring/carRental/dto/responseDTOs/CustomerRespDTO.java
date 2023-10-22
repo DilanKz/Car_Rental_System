@@ -1,6 +1,10 @@
 package lk.ijse.spring.carRental.dto.responseDTOs;
 
 import lk.ijse.spring.carRental.dto.UserDTO;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
@@ -10,6 +14,11 @@ import java.time.LocalDate;
  * 3:30 PM
  * 2023-10-22 - 10 - 2023
  */
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class CustomerRespDTO {
     private String cid;
     private String name;
