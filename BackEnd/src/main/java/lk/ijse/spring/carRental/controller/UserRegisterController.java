@@ -5,10 +5,7 @@ import lk.ijse.spring.carRental.dto.responseDTOs.CustomerRespDTO;
 import lk.ijse.spring.carRental.service.CustomerService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -42,5 +39,10 @@ public class UserRegisterController {
 
         service.saveCustomer(customerDTO);
         return new ResponseUtil("Ok","Successfully create account",dto);
+    }
+
+    @GetMapping
+    public ResponseUtil getLastId(){
+        return new ResponseUtil("Ok","Successfully fetched",service.lastID());
     }
 }
