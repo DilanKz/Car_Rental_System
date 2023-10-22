@@ -6,12 +6,17 @@ import lk.ijse.spring.carRental.repo.CustomerRepo;
 import lk.ijse.spring.carRental.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 /**
  * `@authority Tharindu Dilan`
  * 3:03 PM
  * 2023-10-22 - 10 - 2023
  */
+@Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerRepo customerRepo;
