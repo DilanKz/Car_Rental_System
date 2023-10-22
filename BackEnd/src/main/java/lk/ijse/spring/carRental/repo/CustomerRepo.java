@@ -2,6 +2,7 @@ package lk.ijse.spring.carRental.repo;
 
 import lk.ijse.spring.carRental.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * `@authority Tharindu Dilan`
@@ -9,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * 2023-10-20 - 10 - 2023
  */
 public interface CustomerRepo extends JpaRepository<Customer,String> {
+    @Query(value = "SELECT cid FROM customer ORDER BY cid DESC LIMIT 1",nativeQuery = true)
+    String getLastID();
 }
