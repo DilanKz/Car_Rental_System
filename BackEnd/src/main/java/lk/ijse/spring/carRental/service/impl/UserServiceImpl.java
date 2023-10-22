@@ -25,11 +25,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     ModelMapper mapper;
-    
+
     @Override
     public UserDTO getData(String id){
         if (!userRepo.existsById(id)) {
-            throw new RuntimeException(id+ " Customer is not available, check again.!");
+            throw new RuntimeException(id+ " User is not available, check again.!");
         }
 
         User user = userRepo.findById(id).get();
