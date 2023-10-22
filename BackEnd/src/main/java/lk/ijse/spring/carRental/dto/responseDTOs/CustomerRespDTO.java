@@ -18,5 +18,7 @@ public class CustomerRespDTO {
     private String contact;
     private LocalDate regDte;
     private String idNo;
+    private MultipartFile imageFront;
+    private MultipartFile imageBack;
     private UserDTO dto;
 }
