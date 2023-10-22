@@ -3,6 +3,7 @@ package lk.ijse.spring.carRental.repo;
 import lk.ijse.spring.carRental.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  * `@authority Tharindu Dilan`
@@ -12,5 +13,8 @@ import org.springframework.data.jpa.repository.Query;
 public interface UserRepo extends JpaRepository<User,String> {
     @Query(value = "SELECT id FROM User ORDER BY id DESC LIMIT 1",nativeQuery = true)
     String getLastID();
+
+    @Query(value = "SELECT * FROM User WHERE User.userName=:name",nativeQuery = true)
+    User getCredentials(@Param("name") String userName);
 
 }
