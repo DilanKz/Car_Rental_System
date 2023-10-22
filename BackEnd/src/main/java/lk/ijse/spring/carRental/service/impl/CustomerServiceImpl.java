@@ -45,4 +45,9 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepo.save(map);
     }
 
+    @Override
+    public String lastID() {
+        return customerRepo.getLastID();
+    }
+
 }
