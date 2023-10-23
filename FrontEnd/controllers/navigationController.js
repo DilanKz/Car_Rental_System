@@ -12,6 +12,7 @@ const nav = $('#nav');
 const loginBtn = $('#btnLogin');
 const signInBtn = $('#signIn');
 const registerBtn = $('#btnRegister');
+const customerReg = $('#btnCustomerReg');
 
 logInFrame.css('display','none')
 registerFrame.css('display','none')
@@ -68,6 +69,9 @@ $('#addNewCar').click(function () {
 bg.click(function () {
     logInFrame.css('display','none')
     registerFrame.css('display','none')
+
+    $('#regIDFrontLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
+    $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg')
 })
 
 
@@ -77,4 +81,51 @@ $('#btnAddCarClose').click(function () {
 
 $('#btnAddCarSave').click(function () {
     addCarsFrame.css('display','none');
+});
+
+
+
+customerReg.click(function () {
+    /*let customerData=customerFormData();
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Register',
+        method: "post",
+        data: customerData,
+        processData: false,
+        contentType: false,
+        success: function (res) {
+            // Handle success
+        },
+        error: function (error) {
+            // Handle error
+        }
+    });*/
+
+    /*let idFront = $('#btnIDFront')[0].files[0];
+    let idBack = $('#btnIDBack')[0].files[0];
+
+    let fileList=[idFront,idBack];
+
+    let formData = new FormData();
+    for (let i = 0; i < fileList.length; i++) {
+        formData.append("images", fileList[i]);
+    }
+
+    console.log(formData)
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Register/uploads',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (res) {
+            console.log('Files uploaded successfully');
+        },
+        error: function (error) {
+            console.error('Error uploading files:', error);
+        }
+    });*/
+
 });
