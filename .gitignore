@@ -6,3 +6,6 @@ BackEnd/target/BackEnd-1.0-SNAPSHOT.war
 BackEnd/target/BackEnd-1.0-SNAPSHOT.war
 *.war
 *.class
+BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/config/WebAppConfig.class
+BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/config/JPAConfig.class
+BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/WebAppInitializer.class
