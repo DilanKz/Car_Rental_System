@@ -5,11 +5,208 @@
     <title>Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .car {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            border-radius: 20px;
+            position: relative;
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(1turn, #f1f6fd 30%, #edf1f7);
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
+            border: 1px solid #fff;
+        }
+
+        .car__slider img {
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        .car__slider .splide__pagination li {
+            margin-right: 10px;
+        }
+        .car__slider .splide__pagination li:last-child {
+            margin-right: 0;
+        }
+        .car__img img {
+            width: 100%;
+        }
+        .car__title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .car__name {
+            font-size: 22px;
+            line-height: 30px;
+            color: #33334f;
+            margin-bottom: 0;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            padding-right: 70px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+        .car__name a {
+            color: #33334f;
+        }
+        .car__name a:hover {
+            color: #189cf4;
+        }
+
+        .car__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 10px 10px;
+            margin-top: 5px;
+        }
+        .car__list li {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 50%;
+            margin-top: 15px;
+        }
+        .car__list svg {
+            width: 20px;
+            height: auto;
+            fill: #189cf4;
+            margin-right: 6px;
+        }
+        .car__list span {
+            font-size: 14px;
+            line-height: 20px;
+            color: #4e5d78;
+            font-family: 'Nunito', sans-serif;
+        }
+        .car__footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 10px 10px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .car__footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background-color: rgba(138,148,166,0.22);
+        }
+
+        .car__favorite svg {
+            width: 20px;
+            height: auto;
+            fill: rgba(24,156,244,0.66);
+            transition: 0.5s ease;
+        }
+
+        .car__favorite:hover svg {
+            fill: #eb5757;
+        }
+        .car__favorite--active svg {
+            fill: #eb5757;
+        }
+        .car__favorite--active:hover svg {
+            fill: #eb5757;
+        }
+        .car__price {
+            font-size: 24px;
+            line-height: 100%;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            color: #33334f;
+        }
+        .car__price sub {
+            font-size: 14px;
+            bottom: 0;
+            font-weight: 400;
+        }
+        .car__more {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+            background-color: #189cf4;
+            height: 36px;
+            padding: 0 16px;
+            border-radius: 12px;
+            transition: 0.5s ease;
+            transition-property: color, background-color, border-color, box-shadow, transform, margin-top, height;
+        }
+        .car__more span {
+            position: relative;
+            z-index: 2;
+        }
+        .car__more:before {
+            content: '';
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(90deg, #6cc4ff 6%, #189cf4);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            border-radius: 12px;
+        }
+
+        .car__more:hover {
+            box-shadow: 3px 3px 9px rgba(55,170,247,0.3);
+            color: #fff;
+        }
+
+        .car__more:hover:before {
+            opacity: 1;
+        }
+
+        @media (min-width: 768px) {
+            .car {
+                margin-top: 24px;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 <!--<main class="position-absolute top-0 container-fluid vh-100" id="addCarsFrame"
@@ -273,5 +470,68 @@
         </div>
     </div>
 </main>-->
+
+<div class="container">
+
+    <section class="row">
+        <div class="col-12 col-md-6 col-xl-4">
+            <div class="car">
+                <!--<div class="splide splide&#45;&#45;card car__slider splide&#45;&#45;loop splide&#45;&#45;ltr splide&#45;&#45;draggable is-active is-initialized" id="splide01">
+                </div>-->
+
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <div class="car__title">
+                    <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                </div>
+                <ul class="car__list">
+                    <li>
+                        <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                        <span>4 People</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                        <span>Hybrid</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                        <span>6.1km</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                        <span>Automatic</span>
+                    </li>
+                </ul>
+                <div class="car__footer">
+                    <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                    <a href="#!" class="car__more"><span>Rent now</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
 </body>
 </html>
