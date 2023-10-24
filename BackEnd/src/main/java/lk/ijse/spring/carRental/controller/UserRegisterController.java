@@ -31,8 +31,8 @@ public class UserRegisterController {
     ObjectMapper objectMapper;
 
 
-    @PostMapping("/uploads")
-    public ResponseUtil handleFileUpload(@RequestParam(value = "customerData") String customerDataJson, @RequestPart(value = "images") MultipartFile[] files) throws IOException {
+    @PostMapping
+    public ResponseUtil makeAccount(@RequestParam(value = "customerData") String customerDataJson, @RequestPart(value = "images") MultipartFile[] files) throws IOException {
         System.out.println(customerDataJson);
 
 
@@ -62,7 +62,7 @@ public class UserRegisterController {
 
 
 
-    @GetMapping("/")
+    @GetMapping("/id")
     public ResponseUtil getLastId(){
         return new ResponseUtil("Ok","Successfully fetched",service.lastID());
     }
