@@ -2,7 +2,9 @@ package lk.ijse.spring.carRental.service.impl;
 
 import lk.ijse.spring.carRental.dto.CustomerDTO;
 import lk.ijse.spring.carRental.entity.Customer;
+import lk.ijse.spring.carRental.entity.User;
 import lk.ijse.spring.carRental.repo.CustomerRepo;
+import lk.ijse.spring.carRental.repo.UserRepo;
 import lk.ijse.spring.carRental.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +24,23 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerRepo customerRepo;
 
     @Autowired
+    UserRepo userRepo;
+
+    @Autowired
     ModelMapper mapper;
 
     @Override
     public void saveCustomer(CustomerDTO dto){
 
-        if (!customerRepo.existsById(dto.getCid())){
+        if (customerRepo.existsById(dto.getCid())){
             throw new RuntimeException(dto.getCid()+" Customer already exist");
         }
 
+
         Customer customer = mapper.map(dto, Customer.class);
+        customer.setUser(mapper.map(dto.getDto(),User.class));
+
+        System.out.println(customer.getUser());
         customerRepo.save(customer);
     }
 
