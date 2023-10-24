@@ -78,6 +78,9 @@ body::-webkit-scrollbar{
 }
 
 /*Home*/
+.form-outline{
+    position: relative;
+}
 
 #home{
     background: #DBE2EF;
