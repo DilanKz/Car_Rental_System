@@ -42,11 +42,15 @@ loginBtn.click(function () {
 
 signInBtn.click(function () {
     showLogin();
+    cusIdGenerator();
+    userIdGenerator();
 });
 
 registerBtn.click(function () {
     logInFrame.css('display','none')
-    registerFrame.css('display','block')
+    registerFrame.css('display','block');
+    cusIdGenerator();
+    userIdGenerator();
 });
 
 $('#carsIt').click(function () {
@@ -71,7 +75,7 @@ bg.click(function () {
     registerFrame.css('display','none')
 
     $('#regIDFrontLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
-    $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg')
+    $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
 })
 
 
@@ -86,46 +90,34 @@ $('#btnAddCarSave').click(function () {
 
 
 customerReg.click(function () {
-    /*let customerData=customerFormData();
 
-    $.ajax({
-        url: 'http://localhost:8080/CarRental/Register',
-        method: "post",
-        data: customerData,
-        processData: false,
-        contentType: false,
-        success: function (res) {
-            // Handle success
-        },
-        error: function (error) {
-            // Handle error
-        }
-    });*/
+    let customerData=customerFormData();
 
-    /*let idFront = $('#btnIDFront')[0].files[0];
+    let idFront = $('#btnIDFront')[0].files[0];
     let idBack = $('#btnIDBack')[0].files[0];
 
-    let fileList=[idFront,idBack];
+    let fileList = [idFront, idBack];
 
     let formData = new FormData();
+
     for (let i = 0; i < fileList.length; i++) {
         formData.append("images", fileList[i]);
     }
 
-    console.log(formData)
+    formData.append("customerData", customerData);
 
     $.ajax({
-        url: 'http://localhost:8080/CarRental/Register/uploads',
+        url: 'http://localhost:8080/CarRental/Register',
         method: 'POST',
         data: formData,
         processData: false,
         contentType: false,
         success: function (res) {
-            console.log('Files uploaded successfully');
+            console.log('Files uploaded and customer data sent successfully');
         },
         error: function (error) {
-            console.error('Error uploading files:', error);
+            console.error('Error:', error);
         }
-    });*/
+    });
 
 });

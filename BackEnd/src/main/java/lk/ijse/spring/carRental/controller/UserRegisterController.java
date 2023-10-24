@@ -62,8 +62,13 @@ public class UserRegisterController {
 
 
 
-    @GetMapping("/id")
-    public ResponseUtil getLastId(){
+    @GetMapping("/cusId")
+    public ResponseUtil getLastCusId(){
+        return new ResponseUtil("Ok","Successfully fetched",service.lastID());
+    }
+
+    @GetMapping("/uId")
+    public ResponseUtil getLastUId(){
         return new ResponseUtil("Ok","Successfully fetched",service.lastID());
     }
 }
