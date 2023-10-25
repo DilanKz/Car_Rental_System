@@ -4,6 +4,7 @@ const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
 const addCarsFrame = $('#addCarsFrame');
 const rentACarFrame = $('#rentACarFrame');
+const carViewForm = $('#carViewForm');
 const rentForm = $('#rentForm');
 const bg = $('.bg-blur-8');
 const nav = $('#nav');
@@ -21,6 +22,7 @@ registerFrame.css('display','none')
 manageCarsFrame.css('display','none');
 addCarsFrame.css('display','none');
 rentACarFrame.css('display','none');
+carViewForm.css('display','none');
 
 function hideAll() {
     logInFrame.css('display','none')
@@ -82,6 +84,7 @@ $('#addNewCar').click(function () {
 bg.click(function () {
     logInFrame.css('display','none')
     registerFrame.css('display','none')
+    carViewForm.css('display','none')
 
     $('#regIDFrontLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
     $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
