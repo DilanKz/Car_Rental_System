@@ -468,8 +468,12 @@
     transition-property: color, background-color, border-color, box-shadow;
     cursor: pointer;
 }
-searchBtn:focus {
+.searchBtn:focus {
     outline: none;
+}
+
+.carNameAnchor{
+    cursor: pointer;
 }
 
 .main__filter-wrap {
