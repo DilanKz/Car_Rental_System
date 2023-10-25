@@ -39,7 +39,26 @@ function customerFormData() {
     };
     console.log(customerData)
 
-    return JSON.stringify(customerData);
+
+    let formData = new FormData();
+
+    formData.append('cid', cusID);
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('address', address);
+    formData.append('contact', tp);
+    formData.append('regDte', "date");
+    formData.append('imageFront', null);
+    formData.append('imageBack', null);
+    formData.append('uid', userID);
+    formData.append('userName', regUserName);
+    formData.append('password', pass);
+    formData.append('type', 'customer');
+    formData.append('id', cusID);
+
+    return formData;
+
+    //return JSON.stringify(customerData);
 
 }
 
