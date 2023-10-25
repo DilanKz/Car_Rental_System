@@ -3,16 +3,15 @@ package lk.ijse.spring.carRental.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lk.ijse.spring.carRental.dto.CustomerDTO;
 import lk.ijse.spring.carRental.dto.responseDTOs.CustomerRespDTO;
+import lk.ijse.spring.carRental.dto.responseDTOs.CustomerResponseDTO;
+import lk.ijse.spring.carRental.dto.responseDTOs.UserResponseDTO;
 import lk.ijse.spring.carRental.service.CustomerService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * `@authority Tharindu Dilan`
@@ -70,5 +69,12 @@ public class UserRegisterController {
     @GetMapping("/uId")
     public ResponseUtil getLastUId(){
         return new ResponseUtil("Ok","Successfully fetched",service.lastID());
+    }
+
+    @PostMapping("/makeAccount")
+    public String getAllData(@ModelAttribute CustomerResponseDTO customerResponseDTO, @ModelAttribute UserResponseDTO UserResponseDTO){
+        System.out.println(customerResponseDTO);
+        System.out.println(UserResponseDTO);
+        return "Got it";
     }
 }
