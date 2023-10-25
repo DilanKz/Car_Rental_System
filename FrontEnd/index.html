@@ -10,6 +10,7 @@
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/car.css">
 </head>
 <body>
 <!--navigation-->
@@ -272,315 +273,160 @@
     </section>
 </main>
 
-<main class="ps-0 pe-0 container-fluid" id="manageCarsFrame" style="background-color: #DBE2EF;">
 
-    <h2 class="h2 pt-3">cars</h2>
+<main class="main mt-5 position-relative vh-100" id="manageCarsFrame">
+    <section class="col h-100 position-relative  mb-4">
 
-    <section id="luxuryCars" class="p-3 d-flex col flex-wrap justify-content-around">
+        <div class=" row ms-5" id="displayCarForm">
 
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0"/>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
+            <div class="col-6 mt-5" >
+                <div class="row rounded-4 p-3 " style="background-color: #9eeaf9">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control text-primary" aria-label="Username">
+                            <button class="btn bg-info"><i class="text-light fa-solid fa-magnifying-glass"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row mt-3">
 
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
+                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
 
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-luxury">Luxury</span></div>
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
-    </section>
-
-    <section id="premiumCars" class="p-3 d-flex col flex-wrap justify-content-around">
-
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
                     </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
 
-                    <hr class="my-0"/>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-premium">Premium</span></div>
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
                     </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
 
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
-    </section>
-
-    <section id="normalCars" class="p-3 d-flex col flex-wrap justify-content-around">
-
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
                     </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
 
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3 ms-5 mb-3">
-            <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="car-card" style="border-radius: 15px;">
-                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="assets/images/gw.jpg"
-                             style="border-top-left-radius: 15px; border-top-right-radius: 15px; height: 200px; width: 250px"
-                             class="img-fluid"
-                             alt="car"/>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <p class="text-dark">Mercedes</p>
-                                <p class="small text-muted">Rs:1000/=</p>
-                            </div>
-                            <div>
-                                <p class="text-dark">G-Wagon</p>
-                                <p class="small text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-                            <button type="button" class="btn btn-primary">Rent now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </section>
