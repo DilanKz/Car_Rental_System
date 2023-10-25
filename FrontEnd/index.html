@@ -85,7 +85,7 @@
     </section>
 </main>
 
-<main id="logInFrame" class="position-absolute p-0 container-fluid vh-100 top-0" style="z-index: 100">
+<main id="logInFrame" class="position-fixed p-0 container-fluid vh-100 top-0" style="z-index: 100">
     <div class="vh-100 vw-100 position-absolute p-0 m-0 bg-blur-8"></div>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -137,7 +137,7 @@
     </div>
 </main>
 
-<main id="registerFrame" class="p-0 container-fluid vh-100 position-absolute top-0" style="z-index: 100">
+<main id="registerFrame" class="p-0 container-fluid vh-100 position-fixed top-0" style="z-index: 100">
     <div class="vh-100 vw-100 position-absolute p-0 m-0 bg-blur-8"></div>
     <section class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -298,73 +298,7 @@
                     <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
                     <div class="car__title">
-                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
-                    </div>
-                    <ul class="car__list">
-                        <li>
-                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
-                            <span>4 People</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
-                            <span>Hybrid</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
-                            <span>6.1km</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
-                            <span>Automatic</span>
-                        </li>
-                    </ul>
-                    <div class="car__footer">
-                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
-
-                        <a href="#!" class="car__more"><span>Rent now</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
-                <div class="car">
-                    <div class="ribbon ribbon-top-left"><span class="ribbon-luxury">Luxury</span></div>
-                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
-
-                    <div class="car__title">
-                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
-                    </div>
-                    <ul class="car__list">
-                        <li>
-                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
-                            <span>4 People</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
-                            <span>Hybrid</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
-                            <span>6.1km</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
-                            <span>Automatic</span>
-                        </li>
-                    </ul>
-                    <div class="car__footer">
-                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
-
-                        <a href="#!" class="car__more"><span>Rent now</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
-                <div class="car">
-                    <div class="ribbon ribbon-top-left"><span class="ribbon-premium">Premium</span></div>
-                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
-
-                    <div class="car__title">
-                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
                     </div>
                     <ul class="car__list">
                         <li>
@@ -394,10 +328,76 @@
             <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
                 <div class="car">
                     <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
-                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
                     <div class="car__title">
-                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
+                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
+                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+
+                    <div class="car__title">
+                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
+                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+                <div class="car">
+                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
+                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+
+                    <div class="car__title">
+                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
                     </div>
                     <ul class="car__list">
                         <li>
@@ -430,12 +430,14 @@
     </section>
 </main>
 
-<main id="carViewFrame" class="position-absolute p-0 container-fluid vh-100 top-0 z-index: 100" style="z-index: 100;display: none">
+<main id="carViewFrame" class="vh-100 position-fixed p-0 container-fluid top-0 z-index: 100" style="z-index: 100;">
 
-    <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-blur-8">
+    <div class="vw-100 vh-100 d-flex position-absolute top-0 bg-blur-8" style="z-index: 100;" >
+    </div>
+    <div class="vw-100 vh-100 d-flex justify-content-center align-items-center" style="z-index: 101;">
 
         <div class="container ">
-            <section class="bg-light ps-3 pb-3 pe-3 row overflow-hidden rounded-5" style="z-index: 101;">
+            <section class="position-relative bg-light ps-3 pb-3 pe-3 row overflow-hidden rounded-5" style="z-index: 102;">
 
 
                 <div class="row">
