@@ -12,166 +12,150 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <style>
-        .car {
+
+        .main__filter {
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
-            border-radius: 20px;
-            position: relative;
             margin-top: 20px;
-            padding: 10px;
+            padding: 0 20px;
+            height: 60px;
             background: linear-gradient(1turn, #f1f6fd 30%, #edf1f7);
             box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
             border: 1px solid #fff;
-        }
-
-        .car__slider img {
-            width: 100%;
-            border-radius: 16px;
-        }
-
-        .car__slider .splide__pagination li {
-            margin-right: 10px;
-        }
-        .car__slider .splide__pagination li:last-child {
-            margin-right: 0;
-        }
-        .car__img img {
-            width: 100%;
-        }
-        .car__title {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
             position: relative;
-            width: 100%;
-            padding: 0 10px;
-        }
-        .car__name {
-            font-size: 22px;
-            line-height: 30px;
-            color: #33334f;
-            margin-bottom: 0;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 400;
-            padding-right: 70px;
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            word-wrap: break-word;
-        }
-        .car__name a {
-            color: #33334f;
-        }
-        .car__name a:hover {
-            color: #189cf4;
+            border-radius: 20px;
         }
 
-        .car__list {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            padding: 0 10px 10px;
-            margin-top: 5px;
-        }
-        .car__list li {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            width: 50%;
-            margin-top: 15px;
-        }
-        .car__list svg {
+
+
+        .main__filter-menu svg {
             width: 20px;
-            height: auto;
+            height: 20px;
             fill: #189cf4;
             margin-right: 6px;
         }
-        .car__list span {
-            font-size: 14px;
-            line-height: 20px;
-            color: #4e5d78;
-            font-family: 'Nunito', sans-serif;
-        }
-        .car__footer {
+
+        .main__select {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            width: 100%;
-            padding: 20px 10px 10px;
-            margin-top: 10px;
-            position: relative;
+            width: auto;
+            margin-right: 30px;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            background: transparent;
         }
-        .car__footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 10px;
-            right: 10px;
-            height: 1px;
-            background-color: rgba(138,148,166,0.22);
+        .main__select:focus {
+            box-shadow: none;
         }
-
-        .car__favorite svg {
-            width: 20px;
-            height: auto;
-            fill: rgba(24,156,244,0.66);
-            transition: 0.5s ease;
-        }
-
-        .car__favorite:hover svg {
-            fill: #eb5757;
-        }
-        .car__favorite--active svg {
-            fill: #eb5757;
-        }
-        .car__favorite--active:hover svg {
-            fill: #eb5757;
-        }
-        .car__price {
-            font-size: 24px;
-            line-height: 100%;
+        .main__select .ss-single {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            height: 40px;
+            padding: 0;
+            margin: 0 !important;
+            font-size: 14px;
             font-family: 'Nunito', sans-serif;
             font-weight: 400;
+            color: #4e5d78;
+        }
+        .main__select .ss-arrow {
+            width: 8px;
+            height: 8px;
+            margin: 3px 0 0 5px;
+        }
+        .main__select .ss-arrow path {
+            stroke: #4e5d78;
+        }
+        .main__select .ss-search {
+            padding: 0;
+            margin-bottom: 12px;
+            font-size: 12px;
             color: #33334f;
+            width: 100%;
         }
-        .car__price sub {
+        .main__select .ss-search:last-child {
+            margin-bottom: 0;
+        }
+        .main__select .ss-search input {
+            padding: 0;
+            background-color: transparent;
+            font-family: 'Nunito', sans-serif;
+            color: #33334f;
             font-size: 14px;
-            bottom: 0;
-            font-weight: 400;
+            border-radius: 0;
+            border: none;
+            border-bottom: 1px solid rgba(138,148,166,0.2);
+            height: 40px;
         }
-        .car__more {
+        .main__select .ss-search input:focus {
+            box-shadow: none;
+        }
+        .main__select .ss-search input::placeholder {
+            color: #8a94a6;
+        }
+        .main__select .ss-list {
+            width: 100%;
+        }
+        .main__select .ss-list .ss-option {
+            font-size: 14px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            color: #4e5d78;
+            line-height: 36px;
+            padding: 0;
+            transition: 0.5s ease;
+        }
+        .main__select .ss-list .ss-option:hover {
+            background-color: transparent;
+            color: #189cf4;
+        }
+        .main__select .ss-list .ss-option.ss-selected {
+            background-color: transparent !important;
+            color: #189cf4 !important;
+        }
+        .main__select.ss-content {
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 20px;
+            min-width: 170px;
+            padding: 12px 20px;
+            border: 1px solid #fff;
+            background: linear-gradient(1turn, #f1f6fd 30%, #edf1f7);
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
+        }
+        .main__load {
+            width: 160px;
+            height: 50px;
+            border-radius: 16px;
+            background-color: #189cf4;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            position: relative;
-            font-family: 'Nunito', sans-serif;
-            font-size: 14px;
             color: #fff;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            background-color: #189cf4;
-            height: 36px;
-            padding: 0 16px;
-            border-radius: 12px;
+            margin: 30px auto 0;
             transition: 0.5s ease;
             transition-property: color, background-color, border-color, box-shadow, transform, margin-top, height;
         }
-        .car__more span {
+        .main__load span {
             position: relative;
             z-index: 2;
         }
-        .car__more:before {
+        .main__load:before {
             content: '';
             position: absolute;
             display: flex;
@@ -187,23 +171,377 @@
             opacity: 0;
             transition: opacity 0.5s ease;
             pointer-events: none;
-            border-radius: 12px;
+            border-radius: 16px;
         }
-
-        .car__more:hover {
+        .main__load:hover {
             box-shadow: 3px 3px 9px rgba(55,170,247,0.3);
             color: #fff;
         }
-
-        .car__more:hover:before {
+        .main__load:hover:before {
             opacity: 1;
         }
-
-        @media (min-width: 768px) {
-            .car {
-                margin-top: 24px;
+        .main__load[aria-expanded="true"] {
+            margin-top: 0;
+            transform: scale(0);
+            height: 1px;
+        }
+        .main__tabs {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            border-bottom: 2px solid rgba(138,148,166,0.2);
+        }
+        .main__tabs--page {
+            margin-top: 6px;
+        }
+        .main__tabs li {
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+        .main__tabs li:last-child {
+            margin-right: 0;
+        }
+        .main__tabs button {
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: auto;
+            color: #4e5d78;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+            padding: 0 0 10px;
+            position: relative;
+        }
+        .main__tabs button:before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0;
+            background-color: #189cf4;
+            border-radius: 3px 3px 0 0;
+            transition: height 0.5s ease;
+        }
+        .main__tabs button:hover {
+            color: #33334f;
+        }
+        .main__tabs button.active {
+            color: #33334f;
+        }
+        .main__tabs button.active:before {
+            height: 3px;
+        }
+        .main__nav {
+            display: none;
+        }
+        .main__carousel {
+            display: block;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-left: 15px;
+        }
+        .main__carousel .splide__pagination {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 15px;
+            position: relative;
+            padding: 0 15px 0 0;
+            bottom: 0;
+        }
+        .main__carousel .splide__pagination li {
+            margin-right: 10px;
+        }
+        .main__carousel .splide__pagination li:last-child {
+            margin-right: 0;
+        }
+        .main__carousel .splide__pagination__page {
+            display: block;
+            height: 4px;
+            width: 10px;
+            border-radius: 4px;
+            background-color: rgba(138,148,166,0.23);
+            transition: 0.5s ease;
+            opacity: 1;
+            margin: 0;
+        }
+        .main__carousel .splide__pagination__page.is-active {
+            transform: scale(1);
+            width: 20px;
+            background-color: #189cf4;
+        }
+        @media (min-width: 576px) {
+            .main__tabs li {
+                margin-right: 30px;
+            }
+            .main__tabs li:last-child {
+                margin-right: 0;
+            }
+            .main__carousel {
+                padding-left: calc((100% - 510px) / 2);
+            }
+            .main__carousel .splide__pagination {
+                padding-right: 0;
+                width: 510px;
             }
         }
+        @media (min-width: 768px) {
+            .main {
+                padding: 0 0 70px;
+            }
+            .main--sign {
+                padding: 0;
+            }
+            .main__title {
+                margin-top: 70px;
+            }
+            .main__title h1 {
+                font-size: 36px;
+                line-height: 46px;
+            }
+            .main__title h2 {
+                font-size: 32px;
+                line-height: 42px;
+            }
+            .main__title p:last-child {
+                margin-bottom: 10px;
+            }
+            .main__title--sidebar {
+                margin-bottom: 10px;
+            }
+            .main__title--page {
+                margin-top: 50px;
+                margin-bottom: -5px;
+            }
+            .main__title--first {
+                margin-top: 30px;
+            }
+            .main__filter {
+                padding: 0 20px;
+                justify-content: flex-start;
+                margin-top: 30px;
+                height: 70px;
+            }
+
+
+            .main__filter-search:hover input {
+                border-color: #189cf4;
+            }
+            .main__filter-search input {
+                width: 285px;
+                height: 40px;
+                background-color: #fff;
+                color: #33334f;
+                font-size: 14px;
+                border-radius: 16px;
+                border: 1px solid rgba(138,148,166,0.2);
+                padding: 0 60px 0 20px;
+                font-family: 'Nunito', sans-serif;
+            }
+            .main__filter-search input:focus {
+                border-color: #189cf4;
+            }
+            .main__filter-search button {
+                position: absolute;
+                right: 20px;
+                top: 0;
+                height: 40px;
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .main__filter-search button svg {
+                width: 20px;
+                height: auto;
+                fill: #4e5d78;
+                transition: fill 0.5s ease;
+            }
+            .main__filter-search button:hover svg {
+                fill: #189cf4;
+            }
+
+            .main__tabs li {
+                margin-top: 20px;
+                margin-right: 30px;
+            }
+            .main__tabs li:last-child {
+                margin-right: 0;
+            }
+        }
+
+
+        /*==============================
+            Splide
+        ==============================*/
+        .splide--content .splide__arrows {
+            position: relative;
+        }
+        .splide--content .splide__arrow {
+            display: none;
+        }
+        .splide--card .splide__arrow {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            margin-top: -16px;
+            z-index: 2;
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
+            background: #fff;
+            border-radius: 10px;
+            opacity: 0;
+            transform: scale(0.92);
+            transition: 0.5s ease;
+            transition-property: opacity, transform;
+        }
+        .splide--card .splide__arrow svg {
+            width: 22px;
+            height: auto;
+            fill: #4e5d78;
+            transition: fill 0.5s ease;
+        }
+        .splide--card .splide__arrow:hover {
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.3);
+        }
+        .splide--card .splide__arrow:hover svg {
+            fill: #189cf4;
+        }
+        .splide--card .splide__arrow--prev {
+            left: 10px;
+        }
+        .splide--card .splide__arrow--prev svg {
+            transform: none;
+        }
+        .splide--card .splide__arrow--next {
+            right: 10px;
+        }
+        .splide--details {
+            width: 100%;
+        }
+        .splide--details .splide__slide img {
+            width: 100%;
+        }
+        .splide--details .splide__arrow {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            top: 50%;
+            z-index: 2;
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
+            background: #fff;
+            border-radius: 12px;
+            opacity: 1;
+            transition: 0.5s ease;
+            transition-property: opacity, transform;
+        }
+        .splide--details .splide__arrow svg {
+            width: 22px;
+            height: auto;
+            fill: #4e5d78;
+            transition: fill 0.5s ease;
+        }
+        .splide--details .splide__arrow:hover {
+            box-shadow: 3px 3px 9px rgba(164,164,186,0.3);
+        }
+        .splide--details .splide__arrow:hover svg {
+            fill: #189cf4;
+        }
+        .splide--details .splide__arrow--prev {
+            left: 15px;
+        }
+        .splide--details .splide__arrow--prev svg {
+            transform: none;
+        }
+        .splide--details .splide__arrow--next {
+            right: 15px;
+        }
+        @media (min-width: 1200px) {
+            .splide--content .splide__arrows {
+                width: 1116px;
+                margin: 0 auto;
+            }
+            .splide--content .splide__arrow {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
+                right: 0;
+                top: -44px;
+                z-index: 2;
+                box-shadow: 3px 3px 9px rgba(164,164,186,0.2);
+                background: #fff;
+                border-radius: 12px;
+                opacity: 1;
+                transform: none;
+            }
+            .splide--content .splide__arrow svg {
+                width: 22px;
+                height: auto;
+                fill: #4e5d78;
+                transition: fill 0.5s ease;
+            }
+            .splide--content .splide__arrow:hover {
+                box-shadow: 3px 3px 9px rgba(164,164,186,0.3);
+            }
+            .splide--content .splide__arrow:hover svg {
+                fill: #189cf4;
+            }
+            .splide--content .splide__arrow--prev {
+                right: 51px;
+                left: auto;
+            }
+            .splide--content .splide__arrow--prev svg {
+                transform: none;
+            }
+            .splide--content .splide__arrow--next {
+                right: 0;
+            }
+            .splide--card .splide__arrow,
+            .splide--details .splide__arrow {
+                display: flex;
+            }
+        }
+        @media (min-width: 1400px) {
+            .splide--content .splide__arrows {
+                width: 1200px;
+            }
+        }
+
+        .main__select {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: auto;
+            margin-right: 30px;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            background: transparent;
+        }
+        /*=================*/
 
     </style>
 
@@ -470,36 +808,292 @@
         </div>
     </div>
 </main>-->
+<!--
+<main class="main">
+    <div class="container">
+        <section class="row">
+            &lt;!&ndash; breadcrumb &ndash;&gt;
+            <div class="col-12">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumbs__item"><a href="cars.html">Explore cars</a></li>
+                    <li class="breadcrumbs__item breadcrumbs__item&#45;&#45;active">Toyota RAV4</li>
+                </ul>
+            </div>
+            &lt;!&ndash; end breadcrumb &ndash;&gt;
+
+            &lt;!&ndash; title &ndash;&gt;
+            <div class="col-12">
+                <div class="main__title main__title&#45;&#45;page">
+                    <h1>Toyota RAV4</h1>
+                </div>
+            </div>
+            &lt;!&ndash; end title &ndash;&gt;
+
+            &lt;!&ndash; details &ndash;&gt;
+            <div class="col-12 col-lg-7">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            &lt;!&ndash; end details &ndash;&gt;
+
+            &lt;!&ndash; offer &ndash;&gt;
+            <div class="col-12 col-lg-5">
+                <div class="offer">
+                    <span class="offer__title">Offer</span>
+                    <div class="offer__wrap">
+                        <span class="offer__price">$440 <sub>/ month</sub></span>
+                        <button class="offer__favorite" type="button" aria-label="Add to favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="offer__rent" data-bs-toggle="modal" data-bs-target="#rent-modal">
+                            <span>Rent now</span></button>
+                    </div>
+
+                    <span class="offer__title">Lease terms</span>
+                    <ul class="offer__list">
+                        <li>
+                            <span class="offer__list-name">Monthly payment</span>
+                            <span class="offer__list-value offer__list-value&#45;&#45;dark">$440</span>
+                        </li>
+                        <li>
+                            <span class="offer__list-name">Cash incentive</span>
+                            <span class="offer__list-value">To be provided by seller</span>
+                        </li>
+                        <li>
+                            <span class="offer__list-name">Transfer fee</span>
+                            <span class="offer__list-value">To be provided by seller</span>
+                        </li>
+                        <li>
+                            <span class="offer__list-name">Disposition fee</span>
+                            <span class="offer__list-value">To be provided by seller</span>
+                        </li>
+                        <li>
+                            <span class="offer__list-name">Leasing company</span>
+                            <span class="offer__list-value offer__list-value&#45;&#45;dark">Toyota Financial Services</span>
+                        </li>
+                        <li>
+                            <span class="offer__list-name">Lease end date</span>
+                            <span class="offer__list-value offer__list-value&#45;&#45;dark">01 Dec 2022</span>
+                        </li>
+                    </ul>
+
+                    <span class="offer__title">Car details</span>
+                    <ul class="offer__details">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12.3,12.22A4.92,4.92,0,0,0,14,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,1,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,12.3,12.22ZM9,11.5a3,3,0,1,1,3-3A3,3,0,0,1,9,11.5Zm9.74.32A5,5,0,0,0,15,3.5a1,1,0,0,0,0,2,3,3,0,0,1,3,3,3,3,0,0,1-1.5,2.59,1,1,0,0,0-.5.84,1,1,0,0,0,.45.86l.39.26.13.07a7,7,0,0,1,4,6.38,1,1,0,0,0,2,0A9,9,0,0,0,18.74,11.82Z"></path>
+                            </svg>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20.54,6.29,19,4.75,17.59,3.34a1,1,0,0,0-1.42,1.42l1,1-.83,2.49a3,3,0,0,0,.73,3.07l2.95,3V19a1,1,0,0,1-2,0V17a3,3,0,0,0-3-3H14V5a3,3,0,0,0-3-3H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3h6a3,3,0,0,0,3-3V16h1a1,1,0,0,1,1,1v2a3,3,0,0,0,6,0V9.83A5,5,0,0,0,20.54,6.29ZM12,19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12h8Zm0-9H4V5A1,1,0,0,1,5,4h6a1,1,0,0,1,1,1Zm8,1.42L18.46,9.88a1,1,0,0,1-.24-1l.51-1.54.39.4A3,3,0,0,1,20,9.83Z"></path>
+                            </svg>
+                            <span>Gasoline</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19.088,4.95453c-.00732-.00781-.00952-.01819-.01715-.02582s-.01819-.00995-.02606-.01733a9.97886,9.97886,0,0,0-14.08948,0c-.00787.00738-.01837.00964-.02606.01733s-.00983.018-.01715.02582a10,10,0,1,0,14.1759,0ZM12,20a7.9847,7.9847,0,0,1-6.235-3H9.78027a2.9636,2.9636,0,0,0,4.43946,0h4.01532A7.9847,7.9847,0,0,1,12,20Zm-1-5a1,1,0,1,1,1,1A1.001,1.001,0,0,1,11,15Zm8.41022.00208L19.3999,15H15a2.99507,2.99507,0,0,0-2-2.81573V9a1,1,0,0,0-2,0v3.18427A2.99507,2.99507,0,0,0,9,15H4.6001l-.01032.00208A7.93083,7.93083,0,0,1,4.06946,13H5a1,1,0,0,0,0-2H4.06946A7.95128,7.95128,0,0,1,5.68854,7.10211l.65472.65473A.99989.99989,0,1,0,7.75732,6.34277l-.65466-.65466A7.95231,7.95231,0,0,1,11,4.06946V5a1,1,0,0,0,2,0V4.06946a7.95231,7.95231,0,0,1,3.89734,1.61865l-.65466.65466a.99989.99989,0,1,0,1.41406,1.41407l.65472-.65473A7.95128,7.95128,0,0,1,19.93054,11H19a1,1,0,0,0,0,2h.93054A7.93083,7.93083,0,0,1,19.41022,15.00208Z"></path>
+                            </svg>
+                            <span>8.2km / 1-litre</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12,12a1,1,0,1,0,1,1A1,1,0,0,0,12,12Zm9.71-2.36a0,0,0,0,1,0,0,10,10,0,0,0-19.4,0,0,0,0,0,1,0,0,9.75,9.75,0,0,0,0,4.72,0,0,0,0,1,0,0A10,10,0,0,0,9.61,21.7h0a9.67,9.67,0,0,0,4.7,0h0a10,10,0,0,0,7.31-7.31,0,0,0,0,1,0,0,9.75,9.75,0,0,0,0-4.72ZM12,4a8,8,0,0,1,7.41,5H4.59A8,8,0,0,1,12,4ZM4,12a8.26,8.26,0,0,1,.07-1H6v2H4.07A8.26,8.26,0,0,1,4,12Zm5,7.41A8,8,0,0,1,4.59,15H7a2,2,0,0,1,2,2Zm4,.52A8.26,8.26,0,0,1,12,20a8.26,8.26,0,0,1-1-.07V18h2ZM13.14,16H10.86A4,4,0,0,0,8,13.14V11h8v2.14A4,4,0,0,0,13.14,16ZM15,19.41V17a2,2,0,0,1,2-2h2.41A8,8,0,0,1,15,19.41ZM19.93,13H18V11h1.93A8.26,8.26,0,0,1,20,12,8.26,8.26,0,0,1,19.93,13Z"></path>
+                            </svg>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+
+                    <span class="offer__title">Share</span>
+                    <div class="offer__share">
+                        <a href="#" class="offer__share-link offer__share-link&#45;&#45;fb">
+                            <svg width="9" height="17" viewBox="0 0 9 17" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.56341 16.8197V8.65888H7.81615L8.11468 5.84663H5.56341L5.56724 4.43907C5.56724 3.70559 5.63693 3.31257 6.69042 3.31257H8.09873V0.5H5.84568C3.1394 0.5 2.18686 1.86425 2.18686 4.15848V5.84695H0.499939V8.6592H2.18686V16.8197H5.56341Z"></path>
+                            </svg>
+                            share</a>
+                        <a href="#" class="offer__share-link offer__share-link&#45;&#45;tw">
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.55075 3.19219L7.58223 3.71122L7.05762 3.64767C5.14804 3.40404 3.47978 2.57782 2.06334 1.1902L1.37085 0.501686L1.19248 1.01013C0.814766 2.14353 1.05609 3.34048 1.843 4.14552C2.26269 4.5904 2.16826 4.65396 1.4443 4.38914C1.19248 4.3044 0.972149 4.24085 0.951164 4.27263C0.877719 4.34677 1.12953 5.31069 1.32888 5.69202C1.60168 6.22165 2.15777 6.74068 2.76631 7.04787L3.28043 7.2915L2.67188 7.30209C2.08432 7.30209 2.06334 7.31268 2.12629 7.53512C2.33613 8.22364 3.16502 8.95452 4.08833 9.2723L4.73884 9.49474L4.17227 9.8337C3.33289 10.321 2.34663 10.5964 1.36036 10.6175C0.888211 10.6281 0.5 10.6705 0.5 10.7023C0.5 10.8082 1.78005 11.4014 2.52499 11.6344C4.75983 12.3229 7.41435 12.0264 9.40787 10.8506C10.8243 10.0138 12.2408 8.35075 12.9018 6.74068C13.2585 5.88269 13.6152 4.315 13.6152 3.56293C13.6152 3.07567 13.6467 3.01212 14.2343 2.42953C14.5805 2.09056 14.9058 1.71983 14.9687 1.6139C15.0737 1.41264 15.0632 1.41264 14.5281 1.59272C13.6362 1.91049 13.5103 1.86812 13.951 1.39146C14.2762 1.0525 14.6645 0.438131 14.6645 0.258058C14.6645 0.22628 14.5071 0.279243 14.3287 0.374576C14.1398 0.480501 13.7202 0.639389 13.4054 0.734722L12.8388 0.914795L12.3247 0.565241C12.0414 0.374576 11.6427 0.162725 11.4329 0.0991699C10.8978 -0.0491255 10.0794 -0.0279404 9.59673 0.14154C8.2852 0.618204 7.45632 1.84694 7.55075 3.19219Z"></path>
+                            </svg>
+                            tweet</a>
+                        <a href="#" class="offer__share-link offer__share-link&#45;&#45;link">
+                            <svg width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M8,12a1,1,0,0,0,1,1h6a1,1,0,0,0,0-2H9A1,1,0,0,0,8,12Zm2,3H7A3,3,0,0,1,7,9h3a1,1,0,0,0,0-2H7A5,5,0,0,0,7,17h3a1,1,0,0,0,0-2Zm7-8H14a1,1,0,0,0,0,2h3a3,3,0,0,1,0,6H14a1,1,0,0,0,0,2h3A5,5,0,0,0,17,7Z"></path>
+                            </svg>
+                            <span>link</span></a>
+                    </div>
+                </div>
+            </div>
+            &lt;!&ndash; end offer &ndash;&gt;
+        </section>
+    </div>
+    <div class="container">
+        &lt;!&ndash; cars &ndash;&gt;
+        <section class="row">
+            &lt;!&ndash; title &ndash;&gt;
+            <div class="col-12">
+                <div class="main__title">
+                    <h2>You may also like</h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="car">
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="car">
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="car">
+                    <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
+
+                    <div class="car__title">
+                        <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
+                    </div>
+                    <ul class="car__list">
+                        <li>
+                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                            <span>4 People</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                            <span>Hybrid</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                            <span>6.1km</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                            <span>Automatic</span>
+                        </li>
+                    </ul>
+                    <div class="car__footer">
+                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
+
+                        <a href="#!" class="car__more"><span>Rent now</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
 
 <div class="container">
 
     <section class="row">
         <div class="col-12 col-md-6 col-xl-4">
             <div class="car">
-                <!--<div class="splide splide&#45;&#45;card car__slider splide&#45;&#45;loop splide&#45;&#45;ltr splide&#45;&#45;draggable is-active is-initialized" id="splide01">
-                </div>-->
-
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../assets/images/gt3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <img src="../assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
 
                 <div class="car__title">
                     <h3 class="car__name"><a href="">Toyota RAV4</a></h3>
@@ -531,7 +1125,29 @@
         </div>
     </section>
 
-</div>
+</div>-->
+
+<main>
+
+    <div class="col-12">
+        <div class="main__filter">
+            <form action="#" class="main__filter-search">
+                <input type="text" placeholder="Search...">
+                <button class="searchBtn" type="button" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path></svg></button>
+            </form>
+
+            <div class="main__filter-wrap">
+
+
+            </div>
+
+            <button class="main__filter-menu" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H5A3,3,0,0,0,2,5V6.17a3,3,0,0,0,.25,1.2l0,.06a2.81,2.81,0,0,0,.59.86L9,14.41V21a1,1,0,0,0,.47.85A1,1,0,0,0,10,22a1,1,0,0,0,.45-.11l4-2A1,1,0,0,0,15,19V14.41l6.12-6.12a2.81,2.81,0,0,0,.59-.86l0-.06A3,3,0,0,0,22,6.17V5A3,3,0,0,0,19,2ZM13.29,13.29A1,1,0,0,0,13,14v4.38l-2,1V14a1,1,0,0,0-.29-.71L5.41,8H18.59ZM20,6H4V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1Z"></path></svg>Filter</button>
+
+            <span class="main__filter-amount">Showing 6 of 129</span>
+        </div>
+    </div>
+
+</main>
 
 </body>
 </html>
