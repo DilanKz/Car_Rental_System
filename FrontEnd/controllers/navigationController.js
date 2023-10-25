@@ -4,7 +4,7 @@ const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
 const addCarsFrame = $('#addCarsFrame');
 const rentACarFrame = $('#rentACarFrame');
-const carViewForm = $('#carViewForm');
+const carViewForm = $('#carViewFrame');
 const rentForm = $('#rentForm');
 const bg = $('.bg-blur-8');
 const nav = $('#nav');
@@ -16,6 +16,7 @@ const btnLogInM = $('#btnLogInM');
 const signInBtn = $('#signIn');
 const registerBtn = $('#btnRegister');
 const customerReg = $('#btnCustomerReg');
+const carNameAnchor = $('.carNameAnchor');
 
 logInFrame.css('display','none')
 registerFrame.css('display','none')
@@ -90,15 +91,9 @@ bg.click(function () {
     $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
 })
 
-
-$('#btnAddCarClose').click(function () {
-    addCarsFrame.css('display','none');
-});
-
-$('#btnAddCarSave').click(function () {
-    addCarsFrame.css('display','none');
-});
-
+carNameAnchor.click(function () {
+    carViewForm.css('display','block');
+})
 
 btnLogInM.click(function () {
     let userName = $('#txtLogUserName').val();
