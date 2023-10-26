@@ -20,42 +20,56 @@
 
 <main class="w-25 position-fixed" style="top: 10px; z-index: 50">
 
-    <div class="ms-2 rounded-5 d-flex flex-column flex-shrink-0 " style="width: 60px; height: 96vh; background-color: #DBE2EF">
-        <a href="#" class=" d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Easy Car Rentals">
+    <div class="ms-2 rounded-4 d-flex flex-column flex-shrink-0 "
+         style="margin-top: 8px; width: 60px; height: 97vh; background-color: #DBE2EF">
+        <a href="#" class=" d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip"
+           data-bs-placement="right" data-bs-original-title="Easy Car Rentals">
             <i class=" fa-solid fa-house"></i>
             <span class="visually-hidden show">Easy Car Rentals</span>
         </a>
         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
-                <a id="btnDashboard" href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Dashboard">
+                <a id="btnDashboard" href="#" class="nav-link bottomLine py-3 border-bottom rounded-0" aria-current="page"
+                   data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home"
+                   data-bs-original-title="Dashboard">
                     <i class="fa-solid fa-chart-simple"></i>
                 </a>
             </li>
             <li>
-                <a id="btnAccount" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Account hub">
+                <a id="btnAccount" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                   data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard"
+                   data-bs-original-title="Account hub">
                     <i class="fa-solid fa-user-group"></i>
                 </a>
             </li>
             <li>
-                <a id="btnRequests" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Requests">
+                <a id="btnRequests" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                   data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders"
+                   data-bs-original-title="Requests">
                     <i class="fa-solid fa-square-poll-horizontal"></i>
                 </a>
             </li>
             <li>
-                <a id="btnCars" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Manage Cars">
+                <a id="btnCars" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                   data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products"
+                   data-bs-original-title="Manage Cars">
                     <i class="fa-solid fa-file-contract"></i>
                 </a>
             </li>
         </ul>
         <div class="dropdown border-top">
-            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#"
+               class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle"
+               data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small shadow">
                 <li><a class="dropdown-item" href="#">New project...</a></li>
                 <li><a class="dropdown-item" href="#">Settings</a></li>
                 <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
             </ul>
         </div>
@@ -63,9 +77,93 @@
 
 </main>
 
-<main class="bg-warning vh-100">
+<main id="dashboardFrame" class="vh-100">
 
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Dashboard</h4>
+            </div>
+        </div>
+
+        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
+
+        </div>
+
+    </section>
+
+</main>
+
+<main id="accountFrame" class="vh-100">
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Account hub</h4>
+            </div>
+        </div>
+
+        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
+
+        </div>
+
+    </section>
+
+</main>
+
+<main id="requestsFrame" class="vh-100">
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Requests</h4>
+            </div>
+        </div>
+
+        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
+
+        </div>
+
+    </section>
+
+</main>
+
+<main id="carsFrame" class="vh-100">
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Manage Cars</h4>
+            </div>
+        </div>
+
+        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
+
+        </div>
+
+    </section>
+
+</main>
+
+<main id="profileFrame" class="vh-100">
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Profile</h4>
+            </div>
+        </div>
+
+        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
+
+        </div>
+
+    </section>
 
 </main>
 
