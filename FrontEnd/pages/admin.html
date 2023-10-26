@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/admin.css">
 
 
 </head>
@@ -17,51 +18,56 @@
 <body>
 
 
-<div class="d-flex flex-column flex-shrink-0 bg-body-tertiary vh-100" style="width: 60px;">
-    <a href="#" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Easy Car Rentals">
-        <i class="me-1 fa-solid fa-house"></i></a>
-    <span class="visually-hidden show">Easy Car Rentals</span>
-    </a>
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-        <li class="nav-item">
-            <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-                <i class="me-1 fa-solid fa-house"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
-                <i class="me-1 fa-solid fa-house"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
-                <i class="me-1 fa-solid fa-house"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
-                <i class="me-1 fa-solid fa-house"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
-                <i class="me-1 fa-solid fa-house"></i>
-            </a>
-        </li>
-    </ul>
-    <div class="dropdown border-top">
-        <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+<main class="w-25 position-fixed" style="top: 10px; z-index: 50">
+
+    <div class="ms-2 rounded-5 d-flex flex-column flex-shrink-0 " style="width: 60px; height: 96vh; background-color: #DBE2EF">
+        <a href="#" class=" d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Easy Car Rentals">
+            <i class=" fa-solid fa-house"></i>
+            <span class="visually-hidden show">Easy Car Rentals</span>
         </a>
-        <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+                <a id="btnDashboard" href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Dashboard">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </a>
+            </li>
+            <li>
+                <a id="btnAccount" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Account hub">
+                    <i class="fa-solid fa-user-group"></i>
+                </a>
+            </li>
+            <li>
+                <a id="btnRequests" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Requests">
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                </a>
+            </li>
+            <li>
+                <a id="btnCars" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Manage Cars">
+                    <i class="fa-solid fa-file-contract"></i>
+                </a>
+            </li>
         </ul>
+        <div class="dropdown border-top">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
     </div>
-</div>
+
+</main>
+
+<main class="bg-warning vh-100">
+
+
+
+</main>
 
 
 <script src="../controllers/adminDashboardController.js"></script>
