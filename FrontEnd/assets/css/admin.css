@@ -1,13 +1,11 @@
-body {
-    min-height: 100vh;
-
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
-main {
-    height: 100vh;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
+body::-webkit-scrollbar{
+    display: none;
 }
 
 .dropdown-toggle { outline: 0; }
@@ -54,15 +52,11 @@ main {
 }
 
 .tooltip{
-    --bs-tooltip-bg: #7deeff;
-    --bs-tooltip-color: #06381c;
+    --bs-tooltip-bg: #5667f3;
+    --bs-tooltip-color: #d7d7ff;
 }
 
 .bottomLine{
-    border-bottom: none;
-}
-
-.bottomLine:hover{
     border-right: 5px solid #0a53be;
     padding-right: 0.7rem;
 }
