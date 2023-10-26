@@ -57,3 +57,12 @@ main {
     --bs-tooltip-bg: #7deeff;
     --bs-tooltip-color: #06381c;
 }
+
+.bottomLine{
+    border-bottom: none;
+}
+
+.bottomLine:hover{
+    border-right: 5px solid #0a53be;
+    padding-right: 0.7rem;
+}
