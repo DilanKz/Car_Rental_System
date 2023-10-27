@@ -17,6 +17,7 @@ let btnDashboard = $('#btnDashboard');
 let btnCars = $('#btnCars');
 let btnAccount = $('#btnAccount');
 let btnRequests = $('#btnRequests');
+let clickable = $('.clickable');
 
 function hide() {
     dashboardFrame.css('display','none');
@@ -60,3 +61,16 @@ btnAccount.click(function () {
     accountFrame.css('display','block');
     $(this).addClass('bottomLine')
 });
+
+clickable.click(function () {
+
+    let car={
+        id:'CV-001',
+        name:'Mercedes GT3',
+        fuelType:'hybrid',
+        file:new File()
+    }
+    $(this).attr('carid',JSON.stringify(car));
+
+    console.log(JSON.parse($(this).attr('carid')))
+})
