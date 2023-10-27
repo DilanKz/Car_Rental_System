@@ -15,7 +15,7 @@ import java.io.IOException;
  * 2023-10-27 - 10 - 2023
  */
 @RestController
-@RequestMapping("/car")
+@RequestMapping("/Car")
 @CrossOrigin
 public class CarController {
     @Autowired
