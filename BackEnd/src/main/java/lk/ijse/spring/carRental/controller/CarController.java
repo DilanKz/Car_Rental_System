@@ -1,9 +1,7 @@
 package lk.ijse.spring.carRental.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.spring.carRental.dto.responseDTOs.CarResponseDTO;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * `@authority Tharindu Dilan`
@@ -16,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CarController {
 
     @PostMapping
-    public String addCar(){
-
+    public String addCar(@ModelAttribute CarResponseDTO carResponseDTO){
+        System.out.println(carResponseDTO);
         return "got it";
     }
 }
