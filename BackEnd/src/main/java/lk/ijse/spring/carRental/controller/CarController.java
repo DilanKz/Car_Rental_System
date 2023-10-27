@@ -1,6 +1,7 @@
 package lk.ijse.spring.carRental.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
  * 2023-10-27 - 10 - 2023
  */
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/car")
 @CrossOrigin
 public class CarController {
+
+    @PostMapping
+    public String addCar(){
+
+        return "got it";
+    }
 }
