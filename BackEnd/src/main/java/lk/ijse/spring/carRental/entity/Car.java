@@ -5,7 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 
 /**
  * `@authority Tharindu Dilan`
@@ -18,6 +21,8 @@ import javax.persistence.Entity;
 @Data
 @ToString
 public class Car {
+    @Id
+    @Column(length = 10)
     private String carId;
     private String name;
     private String regNo;
@@ -35,8 +40,12 @@ public class Car {
     private String maintained;
     private String dailyKmLimit;
     private String monthlyKmLimit;
+    @Lob
     private byte[] carFront;
+    @Lob
     private byte[] carBack;
+    @Lob
     private byte[] carSide;
+    @Lob
     private byte[] carInside;
 }
