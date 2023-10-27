@@ -1,6 +1,6 @@
 let carID;
 
-function cusIdGenerator() {
+function carIdGenerator() {
     $.ajax({
         url: 'http://localhost:8080/CarRental/Car/carID',
         method: 'GET',
@@ -14,6 +14,7 @@ function cusIdGenerator() {
                 number++;
                 carID = "C_reg-" + number.toString().padStart(4, "0");
             }
+            console.log(carID)
         },
         error: function (error) {
             console.error('Error:', error);
