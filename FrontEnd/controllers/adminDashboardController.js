@@ -81,7 +81,7 @@ $('#btnAddCarSave').click(function () {
     let formData=new FormData($('#carFormData')[0]);
 
     $.ajax({
-        url: 'http://localhost:8080/CarRental',
+        url: 'http://localhost:8080/CarRental/car',
         method: 'POST',
         data: formData,
         processData: false,
