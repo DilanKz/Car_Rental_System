@@ -18,7 +18,7 @@
 <body>
 
 
-<main class="w-25 position-fixed" style="top: 10px; z-index: 50">
+<main class=" position-fixed" style="top: 10px; z-index: 50">
 
     <div class="ms-2 rounded-4 d-flex flex-column flex-shrink-0 "
          style="margin-top: 8px; width: 60px; height: 97vh; background-color: #DBE2EF">
@@ -176,13 +176,31 @@
             </div>
         </div>
 
-        <div class="p-2 row mt-3 d-flex justify-content-between flex-wrap align-items-start w-100 rounded-4" style="background-color: #DBE2EF; height: 89%">
-            
-            <div class="col-2 p-3 bg-light rounded-4 d-flex">
-                <img class="col w-100 rounded-2" src="../assets/images/gt3.jpg" alt="">
-                <h5 class="h5" style="justify-self: center">Car Name</h5>
+        <div class="col mt-3 rounded-4" style="background-color: #DBE2EF; min-height: 89%">
+
+            <div class="ms-2 row">
+
+                <div class="col-2 mt-3">
+
+                    <button class="btn btn-success"><i class="fa-solid fa-plus me-1"></i> Add new car</button>
+
+                </div>
+
             </div>
-            
+
+            <div class="row p-4 d-flex justify-content-between flex-wrap align-items-start w-100">
+
+                <div class="col-2 ms-2 me-2 mb-3 p-3 bg-light rounded-4 clickable" carid="">
+                    <div class="row rounded-4 overflow-hidden">
+                        <img src="../assets/images/gt3.jpg" alt="" class="h-100 rounded-4 card-link">
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <h5 class="h5 mb-0 mt-1 w-auto">car name</h5>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
