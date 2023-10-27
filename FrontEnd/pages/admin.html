@@ -212,7 +212,7 @@
 
 
                 <div class="d-flex justify-content-center col-12" style="background-color: #222831">
-                    <h2 class="h2 text-light">Add Car</h2>
+                    <h2 class="h2 text-light">Car Form</h2>
                 </div>
 
                 <form class="col-12">
@@ -221,7 +221,7 @@
 
                         <div class="col-4 mt-3 ms-5 mb-2 pb-2">
                             <div class="form-outline form-white">
-                                <input type="text" id="txtRegNo"
+                                <input name="regNo" type="text" id="txtRegNo"
                                        class="form-control form-control-sm"/>
                                 <label class="form-label" for="txtRegNo">Register Number</label>
                             </div>
@@ -229,15 +229,15 @@
 
                         <div class="row mt-1 mb-1">
                             <div class="col-3">
-                                <div class="mb-2 d-flex justify-content-center">
+                                <div  class="mb-2 d-flex justify-content-center">
                                     <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                          alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div id="carFront" class="btn btn-sm btn-rounded">
+                                    <div id="carFront" class="btn btn-sm btn-rounded bg-dark">
                                         <label class="form-label text-white m-1" for="btnCarFront">Choose
                                             file</label>
-                                        <input type="file" class="form-control d-none" id="btnCarFront"/>
+                                        <input name="carFront" type="file" class="form-control d-none" id="btnCarFront"/>
                                     </div>
                                 </div>
                             </div>
@@ -247,10 +247,10 @@
                                          alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div id="carBack" class="btn btn-sm btn-rounded">
+                                    <div id="carBack" class="btn btn-sm btn-rounded bg-dark">
                                         <label class="form-label text-white m-1" for="btnCarBack">Choose
                                             file</label>
-                                        <input type="file" class=" form-control d-none" id="btnCarBack"/>
+                                        <input name="carBack" type="file" class=" form-control d-none" id="btnCarBack"/>
                                     </div>
                                 </div>
                             </div>
@@ -260,10 +260,10 @@
                                          alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div id="carSide" class="btn btn-sm btn-rounded">
+                                    <div id="carSide" class="btn btn-sm btn-rounded bg-dark">
                                         <label class="form-label text-white m-1" for="btnCarFront">Choose
                                             file</label>
-                                        <input type="file" class="form-control d-none" id="btnCarSide"/>
+                                        <input name="carSide" type="file" class="form-control d-none" id="btnCarSide"/>
                                     </div>
                                 </div>
                             </div>
@@ -273,10 +273,10 @@
                                          alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div id="carIn" class="btn btn-sm btn-rounded">
+                                    <div id="carIn" class="btn btn-sm btn-rounded bg-dark">
                                         <label class="form-label text-white m-1" for="btnCarIn">Choose
                                             file</label>
-                                        <input type="file" class=" form-control d-none" id="btnCarIn"/>
+                                        <input name="carInside" type="file" class=" form-control d-none" id="btnCarIn"/>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@
 
                             <div class="col-4 me-3 ms-5 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtBrand"
+                                    <input name="name" type="text" id="txtBrand"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtBrand">Brand Name</label>
                                 </div>
@@ -294,7 +294,7 @@
 
                             <div class="ms-4 me-1 col-2 mb-3 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtWeaverPay"
+                                    <input name="waverPay" type="text" id="txtWeaverPay"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtWeaverPay">Wavier Payment</label>
                                 </div>
@@ -302,14 +302,14 @@
 
                             <div class="ms-4 col-2 mb-3 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtWholeKm"
+                                    <input name="wholeKm" type="text" id="txtWholeKm"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtWholeKm">Whole km</label>
                                 </div>
                             </div>
 
                             <div class="ms-5 col-2">
-                                <select id="txtCarState" class="form-select" data-live-search="true">
+                                <select name="carState" id="txtCarState" class="form-select" data-live-search="true">
                                     <option selected data-tokens="ketchup mustard">Select car State</option>
                                     <option data-tokens="ketchup mustard">Available</option>
                                     <option data-tokens="mustard">Maintenance</option>
@@ -323,7 +323,7 @@
 
                             <div class="ms-5 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtColour"
+                                    <input name="color" type="text" id="txtColour"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtColour">Colour</label>
                                 </div>
@@ -331,14 +331,14 @@
 
                             <div class="ms-1 col-1 mb-2 pb-2 me-1">
                                 <div class="form-outline form-white">
-                                    <input type="number" id="txtPCount"
+                                    <input name="passengers" type="number" id="txtPCount"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtRegNo">Passengers</label>
                                 </div>
                             </div>
 
                             <div class="col-2">
-                                <select id="txtCarType" class="form-select" data-live-search="true">
+                                <select name="carType" id="txtCarType" class="form-select" data-live-search="true">
                                     <option selected data-tokens="ketchup mustard">Select car type</option>
                                     <option data-tokens="ketchup mustard">Normal</option>
                                     <option data-tokens="mustard">Premium</option>
@@ -347,7 +347,7 @@
                             </div>
 
                             <div class="col-3">
-                                <select id="txtFuelType" class="form-select" data-live-search="true">
+                                <select name="carFuelType" id="txtFuelType" class="form-select" data-live-search="true">
                                     <option selected data-tokens="ketchup mustard">Select car fuel type</option>
                                     <option data-tokens="ketchup mustard">Diesel</option>
                                     <option data-tokens="mustard">Petrol</option>
@@ -355,7 +355,7 @@
                             </div>
 
                             <div class="col-3">
-                                <select id="txtTransmissionType" class="form-select" data-live-search="true">
+                                <select name="carTransmission" id="txtTransmissionType" class="form-select" data-live-search="true">
                                     <option selected data-tokens="ketchup mustard">Select car transmission
                                         type
                                     </option>
@@ -370,7 +370,7 @@
 
                             <div class="ms-5 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtDailyRate"
+                                    <input name="dailyPayment" type="text" id="txtDailyRate"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtDailyRate">Daily Payment</label>
                                 </div>
@@ -378,7 +378,7 @@
 
                             <div class="ms-3 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtMonthlyRate"
+                                    <input name="monthlyPayment" type="text" id="txtMonthlyRate"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtMonthlyRate">Monthly Payment</label>
                                 </div>
@@ -386,7 +386,7 @@
 
                             <div class="ms-3 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtDailyLimit"
+                                    <input name="dailyKmLimit" type="text" id="txtDailyLimit"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtDailyLimit">Daily km limit</label>
                                 </div>
@@ -394,7 +394,7 @@
 
                             <div class="ms-3 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtMonthlyLimit"
+                                    <input name="monthlyKmLimit" type="text" id="txtMonthlyLimit"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtMonthlyLimit">Monthly km limit</label>
                                 </div>
@@ -402,7 +402,7 @@
 
                             <div class="ms-3 col-2 mb-2 pb-2">
                                 <div class="form-outline form-white">
-                                    <input type="text" id="txtExtraKmPrice"
+                                    <input name="extraPerKm" type="text" id="txtExtraKmPrice"
                                            class="form-control form-control-sm"/>
                                     <label class="form-label" for="txtExtraKmPrice">Extra km price</label>
                                 </div>
