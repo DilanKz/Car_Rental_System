@@ -11,6 +11,7 @@ let requestsFrame = $('#requestsFrame');
 let carsFrame = $('#carsFrame');
 let accountFrame = $('#accountFrame');
 let profileFrame = $('#profileFrame');
+let carViewFrame = $('#carViewFrame');
 
 
 let btnDashboard = $('#btnDashboard');
@@ -73,4 +74,23 @@ clickable.click(function () {
     $(this).attr('carid',JSON.stringify(car));
 
     console.log(JSON.parse($(this).attr('carid')))
+});
+
+$('#btnAddCarSave').click(function () {
+
+    let formData=new FormData($('#carFormData')[0]);
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (res) {
+            console.log('Files uploaded and customer data sent successfully');
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
 })
