@@ -101,3 +101,9 @@ body::-webkit-scrollbar{
 .counter-box.colored .counter {
     color: #fff
 }
+
+.col-2.clickable {
+    cursor: pointer !important;
+}
+
+
