@@ -24,12 +24,18 @@ public class CarServiceImpl implements CarService {
     @Autowired
     ModelMapper mapper;
 
-    public void addCar(CarDTO dto){
+    @Override
+    public void saveCar(CarDTO dto){
         if (carRepo.existsById(dto.getCarId())){
             throw new RuntimeException("This car already exist");
         }
 
         Car map = mapper.map(dto, Car.class);
         carRepo.save(map);
+    }
+
+    @Override
+    public String lastCarID(){
+        return carRepo.getLastID();
     }
 }
