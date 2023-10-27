@@ -4,6 +4,8 @@ import lk.ijse.spring.carRental.entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 4:33 PM
@@ -12,4 +14,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CarRepo extends JpaRepository<Car,String> {
     @Query(value = "SELECT carId FROM car ORDER BY carId DESC LIMIT 1",nativeQuery = true)
     String getLastID();
+
+    @Query(value = "SELECT regNo FROM Car",nativeQuery = true)
+    List<String> getAllRegNumbers();
 }
