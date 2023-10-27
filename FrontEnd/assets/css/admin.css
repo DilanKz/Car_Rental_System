@@ -106,4 +106,7 @@ body::-webkit-scrollbar{
     cursor: pointer !important;
 }
 
+.bg-blur-8{
+    backdrop-filter: blur(8px);
+}
 
