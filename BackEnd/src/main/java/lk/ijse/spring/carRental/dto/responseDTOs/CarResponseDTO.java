@@ -25,7 +25,7 @@ public class CarResponseDTO {
     private String carFuelType;
     private String carState;
     private String carTransmission;
-    private String waverPay;
+    private String waiverPay;
     private String monthlyPayment;
     private String dailyPayment;
     private String extraPerKm;
