@@ -1,5 +1,9 @@
 package lk.ijse.spring.carRental.dto.responseDTOs;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -7,6 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
  * 3:47 PM
  * 2023-10-27 - 10 - 2023
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class CarResponseDTO {
     private String carId;
     private String name;
