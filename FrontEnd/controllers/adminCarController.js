@@ -37,6 +37,12 @@ function byteArrayToImage(byteArray) {
     return imageUrl;
 }
 
+function byteArrayToFile(byteArray) {
+    const blob = new Blob([base64ToUint8Array(byteArray)], { type: 'image/jpeg' });
+    const file = new File([blob], 'a.jpg', { type: blob.type });
+    return file;
+}
+
 function addCarToView(car) {
 
     console.log(car);
@@ -58,10 +64,47 @@ function addCarToView(car) {
     containerView.append(carElementHTML);
 
 }
+
+
 $(document).ready(function() {
     $(document).on('click', '.customer', function() {
         let attr = $(this).attr('carid');
-        console.log(attr);
+        loadCarFrame(JSON.parse(attr));
     });
 });
+
+
+function loadCarFrame(car) {
+    carViewFrame.css('display','block');
+    $('#btnAddCarSave').css('display','none');
+    $('#btnAddCarUpdate').css('display','block');
+    carID=car.carId;
+    maintenance=car.maintained;
+
+    let imageFront=byteArrayToFile(car.carFront);
+    let imageBack=byteArrayToFile(car.carBack);
+    let imageSide=byteArrayToFile(car.carSide);
+    let imageInside=byteArrayToFile(car.carInside);
+
+    $('#imgCarFront').attr('src',byteArrayToImage(car.carFront))
+    $('#imgCarBack').attr('src',byteArrayToImage(car.carBack))
+    $('#imgCarSide').attr('src',byteArrayToImage(car.carSide))
+    $('#imgCarIn').attr('src',byteArrayToImage(car.carInside))
+
+    $('#txtRegNo').val(car.regNo);
+    $('#txtBrand').val(car.name);
+    $('#txtWeaverPay').val(car.waiverPay);
+    $('#txtWholeKm').val(car.wholeKm);
+    $('#txtCarState').val(car.carState);
+    $('#txtColour').val(car.color);
+    $('#txtPCount').val(car.passengers);
+    $('#txtCarType').val(car.carType);
+    $('#txtFuelType').val(car.carFuelType);
+    $('#txtTransmissionType').val(car.carTransmission);
+    $('#txtDailyRate').val(car.dailyPayment);
+    $('#txtMonthlyRate').val(car.monthlyPayment);
+    $('#txtDailyLimit').val(car.dailyKmLimit);
+    $('#txtMonthlyLimit').val(car.monthlyKmLimit);
+    $('#txtExtraKmPrice').val(car.extraPerKm);
+}
 
