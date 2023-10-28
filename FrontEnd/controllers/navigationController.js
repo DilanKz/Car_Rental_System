@@ -62,6 +62,7 @@ registerBtn.click(function () {
 $('#carsIt').click(function () {
     home.css('display','none')
     manageCarsFrame.css('display','block');
+    loadAllCustomerCars()
 });
 
 $('#homeIt').click(function () {
