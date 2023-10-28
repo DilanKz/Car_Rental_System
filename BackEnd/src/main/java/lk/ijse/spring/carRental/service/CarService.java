@@ -2,6 +2,8 @@ package lk.ijse.spring.carRental.service;
 
 import lk.ijse.spring.carRental.dto.CarDTO;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 4:48 PM
@@ -11,4 +13,6 @@ public interface CarService {
     void saveCar(CarDTO dto);
 
     String lastCarID();
+
+    List<CarDTO> getAllCars();
 }
