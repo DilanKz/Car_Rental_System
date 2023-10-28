@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * `@authority Tharindu Dilan`
@@ -56,5 +57,12 @@ public class CarController {
     @GetMapping("/carID")
     public ResponseUtil getID() throws IOException {
         return new ResponseUtil("Ok","id fetched",carService.lastCarID());
+    }
+    @GetMapping("/allCars")
+    public ResponseUtil getAllCars(){
+
+        List<CarDTO> allCars = carService.getAllCars();
+
+        return new ResponseUtil("Ok","id fetched",allCars);
     }
 }

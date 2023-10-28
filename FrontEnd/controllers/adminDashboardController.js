@@ -18,7 +18,6 @@ let btnDashboard = $('#btnDashboard');
 let btnCars = $('#btnCars');
 let btnAccount = $('#btnAccount');
 let btnRequests = $('#btnRequests');
-let clickable = $('.clickable');
 
 function hide() {
     dashboardFrame.css('display','none');
@@ -49,7 +48,8 @@ btnDashboard.click(function () {
 btnCars.click(function () {
     hide();
     carsFrame.css('display','block');
-    $(this).addClass('bottomLine')
+    $(this).addClass('bottomLine');
+    loadAllCars();
 });
 
 btnRequests.click(function () {
@@ -64,19 +64,6 @@ btnAccount.click(function () {
     $(this).addClass('bottomLine')
 });
 
-clickable.click(function () {
-
-    let car={
-        id:'CV-001',
-        name:'Mercedes GT3',
-        fuelType:'hybrid',
-        file:new File()
-    }
-    $(this).attr('carid',JSON.stringify(car));
-
-    console.log(JSON.parse($(this).attr('carid')))
-});
-
 $('#btnAddNewCar').click(function () {
     carIdGenerator();
     carViewFrame.css('display','block');
@@ -85,6 +72,8 @@ $('#btnAddNewCar').click(function () {
 $('#btnAddCarClose').click(function () {
     carViewFrame.css('display','none');
 });
+
+
 $('#btnAddCarSave').click(function () {
 
     let formData=new FormData($('#carFormData')[0]);
