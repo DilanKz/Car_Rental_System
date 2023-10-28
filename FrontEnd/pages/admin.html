@@ -183,16 +183,7 @@
                 <button id="btnAddNewCar" class="btn btn-success"><i class="fa-solid fa-plus me-1"></i> Add new car</button>
             </div>
 
-            <div class="row p-4 d-flex justify-content-between flex-wrap align-items-start w-100">
-
-                <div class="col-2 ms-2 me-2 mb-3 p-3 bg-light rounded-4 clickable" carid="">
-                    <div class="row rounded-4 overflow-hidden">
-                        <img src="../assets/images/gt3.jpg" alt="" class="h-100 rounded-4 card-link">
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <h5 class="h5 mb-0 mt-1 w-auto">car name</h5>
-                    </div>
-                </div>
+            <div class="row p-4 d-flex justify-content-start flex-wrap align-items-start w-100" id="carContainerView">
 
             </div>
 
@@ -450,6 +441,7 @@
 
 
 <script src="../controllers/addCarForm.js"></script>
+<script src="../controllers/adminCarController.js"></script>
 <script src="../controllers/adminDashboardController.js"></script>
 <script src="../util/frontendUtils.js"></script>
 
