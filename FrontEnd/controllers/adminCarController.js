@@ -1,4 +1,6 @@
 let containerView = $('#carContainerView');
+let data;
+
 function loadAllCars() {
 
     $.ajax({
@@ -78,14 +80,60 @@ function loadCarFrame(car) {
     carViewFrame.css('display','block');
     $('#btnAddCarSave').css('display','none');
     $('#btnAddCarUpdate').css('display','block');
-    carID=car.carId;
-    maintenance=car.maintained;
 
+
+    let carID=car.carId;
+    let maintenance=car.maintained;
     let imageFront=byteArrayToFile(car.carFront);
     let imageBack=byteArrayToFile(car.carBack);
     let imageSide=byteArrayToFile(car.carSide);
     let imageInside=byteArrayToFile(car.carInside);
 
+    loadCarData(car);
+
+    $('#btnCarFront').on('change', function() {
+        const selectedFile = this.files[0];
+
+        if (selectedFile) {
+            imageFront = selectedFile;
+        }
+    });
+
+    $('#btnCarBack').on('change', function() {
+        const selectedFile = this.files[0];
+
+        if (selectedFile) {
+            imageBack = selectedFile;
+        }
+    });
+
+    $('#btnCarSide').on('change', function() {
+        const selectedFile = this.files[0];
+
+        if (selectedFile) {
+            imageSide = selectedFile;
+        }
+    });
+
+    $('#btnCarIn').on('change', function() {
+        const selectedFile = this.files[0];
+
+        if (selectedFile) {
+            imageInside = selectedFile;
+        }
+    });
+
+    data = new FormData();
+    data.set('carFront',imageFront);
+    data.set('carBack',imageBack);
+    data.set('carSide',imageSide);
+    data.set('carInside',imageInside);
+    data.set('carId',carID);
+    data.set('maintained',maintenance);
+}
+
+
+function loadCarData(car){
     $('#imgCarFront').attr('src',byteArrayToImage(car.carFront))
     $('#imgCarBack').attr('src',byteArrayToImage(car.carBack))
     $('#imgCarSide').attr('src',byteArrayToImage(car.carSide))
@@ -108,3 +156,44 @@ function loadCarFrame(car) {
     $('#txtExtraKmPrice').val(car.extraPerKm);
 }
 
+function finalizeFormData(){
+    data.set('regNo',$('#txtRegNo').val());
+    data.set('name',$('#txtBrand').val());
+    data.set('waiverPay',$('#txtWeaverPay').val());
+    data.set('wholeKm',$('#txtWholeKm').val());
+    data.set('carState',$('#txtCarState').val());
+    data.set('color',$('#txtColour').val());
+    data.set('passengers',$('#txtPCount').val());
+    data.set('carType',$('#txtCarType').val());
+    data.set('carFuelType',$('#txtFuelType').val());
+    data.set('carTransmission',$('#txtTransmissionType').val());
+    data.set('dailyPayment',$('#txtDailyRate').val());
+    data.set('monthlyPayment',$('#txtMonthlyRate').val());
+    data.set('dailyKmLimit',$('#txtDailyLimit').val());
+    data.set('monthlyKmLimit',$('#txtMonthlyLimit').val());
+    data.set('extraPerKm',$('#txtExtraKmPrice').val());
+}
+
+$('#btnAddCarUpdate').click(function () {
+    updateCar()
+});
+
+function updateCar() {
+
+    finalizeFormData();
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Car/update',
+        method: 'PUT',
+        data: data,
+        processData: false,
+        contentType: false,
+        success: function (res) {
+            console.log('Files uploaded and customer data sent successfully');
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+
+}
