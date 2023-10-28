@@ -1,4 +1,5 @@
 let carID;
+let maintenance;
 
 function carIdGenerator() {
     $.ajax({

@@ -192,7 +192,8 @@ $('#btnAddCarSave').click(function () {
         processData: false,
         contentType: false,
         success: function (res) {
-            console.log('Files uploaded and customer data sent successfully');
+            //toast here
+            loadAllCars();
         },
         error: function (error) {
             console.error('Error:', error);
@@ -211,6 +212,7 @@ function updateCar() {
         processData: false,
         contentType: false,
         success: function (res) {
+            //toast here
             loadAllCars();
         },
         error: function (error) {

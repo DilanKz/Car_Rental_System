@@ -74,7 +74,6 @@ $('#btnAddNewCar').click(function () {
 $('#btnAddCarClose').click(function () {
     carViewFrame.css('display','none');
 });
- let maintenance;
 
 
 
