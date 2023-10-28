@@ -47,7 +47,10 @@ public class CarController {
                 resp.getCarSide().getBytes(),
                 resp.getCarInside().getBytes()
         );
-        return new ResponseUtil("ok","Car saved",resp);
+
+        carService.saveCar(carDTO);
+
+        return new ResponseUtil("ok","Car saved",carDTO);
     }
 
     @GetMapping("/carID")
