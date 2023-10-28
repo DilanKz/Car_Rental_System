@@ -38,7 +38,7 @@ function addCustomerCars(car,index) {
 
     let carHtml=`<div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
                         <div class="car">
-                            <div class="ribbon ribbon-top-left"><span class='${ribbonClass}'>Normal</span></div>
+                            <div class="ribbon ribbon-top-left"><span class='${ribbonClass}'>${car.carType}</span></div>
                             <img src="${imageFront}" class="d-block w-100 rounded-4" alt="..." style="height: 210px">
                             <div class="car__title">
                                  <h3 class="car__name carNameAnchor" carid="${car.carId}" carIndex="${index}" "> ${car.name} </h3>
@@ -78,6 +78,28 @@ $(document).ready(function() {
         let attr = $(this).attr('carid');
         let listElement = carsList[$(this).attr('carIndex')];
 
-        console.log(listElement)
+        console.log(listElement);
+        loadCarViewPopUp(listElement)
     });
 });
+
+function loadCarViewPopUp(car) {
+
+    $('#lblCarFrontPic').attr('src',byteArrayToImage(car.carFront))
+    $('#lblCarBackPic').attr('src',byteArrayToImage(car.carBack))
+    $('#lblCarSidePic').attr('src',byteArrayToImage(car.carSide))
+    $('#lblCarInsidePic').attr('src',byteArrayToImage(car.carInside))
+
+    $('#lblDayPay').text()
+
+    $('#lblWaiverPay').text(car.dailyPayment)
+    $('#lblMonthPay').text(car.monthlyPayment)
+    $('#lblPPerKm').text(car.extraPerKm)
+    $('#lblPassenger').text(car.passengers)
+    $('#lblFuelType').text(car.carFuelType)
+    $('#lblWholeKm').text(car.wholeKm)
+    $('#lblTransmission').text(car.carTransmission)
+
+
+    $('#carViewFrame').css('display','block');
+}
