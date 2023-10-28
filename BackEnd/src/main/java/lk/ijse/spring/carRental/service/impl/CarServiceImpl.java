@@ -37,6 +37,16 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public void updateCar(CarDTO dto) {
+        if (!carRepo.existsById(dto.getCarId())) {
+            throw new RuntimeException("This car doesn't exist");
+        }
+
+        Car map = mapper.map(dto, Car.class);
+        carRepo.save(map);
+    }
+
+    @Override
     public String lastCarID() {
         return carRepo.getLastID();
     }

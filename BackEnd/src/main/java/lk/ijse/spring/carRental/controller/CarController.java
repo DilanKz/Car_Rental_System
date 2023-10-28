@@ -23,30 +23,30 @@ public class CarController {
     CarService carService;
 
     @PostMapping("/save")
-    public ResponseUtil addCar(@ModelAttribute CarResponseDTO resp) throws IOException {
-        System.out.println(resp);
+    public ResponseUtil addCar(@ModelAttribute CarResponseDTO req) throws IOException {
+        System.out.println(req);
         CarDTO carDTO = new CarDTO(
-                resp.getCarId(),
-                resp.getName(),
-                resp.getRegNo(),
-                resp.getColor(),
-                resp.getPassengers(),
-                resp.getCarType(),
-                resp.getCarFuelType(),
-                resp.getCarState(),
-                resp.getCarTransmission(),
-                resp.getWaiverPay(),
-                resp.getMonthlyPayment(),
-                resp.getDailyPayment(),
-                resp.getExtraPerKm(),
-                resp.getWholeKm(),
-                resp.getMaintained(),
-                resp.getDailyKmLimit(),
-                resp.getMonthlyKmLimit(),
-                resp.getCarFront().getBytes(),
-                resp.getCarBack().getBytes(),
-                resp.getCarSide().getBytes(),
-                resp.getCarInside().getBytes()
+                req.getCarId(),
+                req.getName(),
+                req.getRegNo(),
+                req.getColor(),
+                req.getPassengers(),
+                req.getCarType(),
+                req.getCarFuelType(),
+                req.getCarState(),
+                req.getCarTransmission(),
+                req.getWaiverPay(),
+                req.getMonthlyPayment(),
+                req.getDailyPayment(),
+                req.getExtraPerKm(),
+                req.getWholeKm(),
+                req.getMaintained(),
+                req.getDailyKmLimit(),
+                req.getMonthlyKmLimit(),
+                req.getCarFront().getBytes(),
+                req.getCarBack().getBytes(),
+                req.getCarSide().getBytes(),
+                req.getCarInside().getBytes()
         );
 
         carService.saveCar(carDTO);
@@ -64,5 +64,11 @@ public class CarController {
         List<CarDTO> allCars = carService.getAllCars();
 
         return new ResponseUtil("Ok","id fetched",allCars);
+    }
+
+    @PutMapping("/update")
+    public ResponseUtil updateCar(@ModelAttribute CarResponseDTO req) throws IOException {
+        System.out.println(req);
+        return new ResponseUtil();
     }
 }
