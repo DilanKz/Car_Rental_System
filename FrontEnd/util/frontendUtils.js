@@ -46,3 +46,4 @@ function loadImage(image,file) {
     };
 
 }
+

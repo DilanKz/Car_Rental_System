@@ -69,6 +69,31 @@ public class CarController {
     @PutMapping("/update")
     public ResponseUtil updateCar(@ModelAttribute CarResponseDTO req) throws IOException {
         System.out.println(req);
-        return new ResponseUtil();
+        CarDTO carDTO = new CarDTO(
+                req.getCarId(),
+                req.getName(),
+                req.getRegNo(),
+                req.getColor(),
+                req.getPassengers(),
+                req.getCarType(),
+                req.getCarFuelType(),
+                req.getCarState(),
+                req.getCarTransmission(),
+                req.getWaiverPay(),
+                req.getMonthlyPayment(),
+                req.getDailyPayment(),
+                req.getExtraPerKm(),
+                req.getWholeKm(),
+                req.getMaintained(),
+                req.getDailyKmLimit(),
+                req.getMonthlyKmLimit(),
+                req.getCarFront().getBytes(),
+                req.getCarBack().getBytes(),
+                req.getCarSide().getBytes(),
+                req.getCarInside().getBytes()
+        );
+
+        carService.updateCar(carDTO);
+        return new ResponseUtil("ok","Car updated",carDTO);
     }
 }
