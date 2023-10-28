@@ -5,10 +5,12 @@ import lk.ijse.spring.carRental.entity.Car;
 import lk.ijse.spring.carRental.repo.CarRepo;
 import lk.ijse.spring.carRental.service.CarService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * `@authority Tharindu Dilan`
@@ -25,8 +27,8 @@ public class CarServiceImpl implements CarService {
     ModelMapper mapper;
 
     @Override
-    public void saveCar(CarDTO dto){
-        if (carRepo.existsById(dto.getCarId())){
+    public void saveCar(CarDTO dto) {
+        if (carRepo.existsById(dto.getCarId())) {
             throw new RuntimeException("This car already exist");
         }
 
@@ -35,7 +37,14 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public String lastCarID(){
+    public String lastCarID() {
         return carRepo.getLastID();
+    }
+
+    @Override
+    public List<CarDTO> getAllCars() {
+        List<Car> all = carRepo.findAll();
+        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        }.getType());
     }
 }
