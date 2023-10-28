@@ -67,18 +67,20 @@ btnAccount.click(function () {
 $('#btnAddNewCar').click(function () {
     carIdGenerator();
     carViewFrame.css('display','block');
+    $('#btnAddCarSave').css('display','block');
+    $('#btnAddCarUpdate').css('display','none');
 });
 
 $('#btnAddCarClose').click(function () {
     carViewFrame.css('display','none');
 });
-
+ let maintenance;
 
 $('#btnAddCarSave').click(function () {
 
     let formData=new FormData($('#carFormData')[0]);
     formData.set('carId',carID)
-    formData.set('maintained','not')
+    formData.set('maintained',maintenance)
 
     $.ajax({
         url: 'http://localhost:8080/CarRental/Car/save',
