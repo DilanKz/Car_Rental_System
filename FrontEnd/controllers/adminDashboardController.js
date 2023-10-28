@@ -26,6 +26,7 @@ function hide() {
     carsFrame.css('display','none');
     accountFrame.css('display','none');
     profileFrame.css('display','none');
+    carViewFrame.css('display','none');
 
     btnDashboard.removeClass('bottomLine')
     btnCars.removeClass('bottomLine')
@@ -76,12 +77,22 @@ clickable.click(function () {
     console.log(JSON.parse($(this).attr('carid')))
 });
 
+$('#btnAddNewCar').click(function () {
+    carIdGenerator();
+    carViewFrame.css('display','block');
+});
+
+$('#btnAddCarClose').click(function () {
+    carViewFrame.css('display','none');
+});
 $('#btnAddCarSave').click(function () {
 
     let formData=new FormData($('#carFormData')[0]);
+    formData.set('carId',carID)
+    formData.set('maintained','not')
 
     $.ajax({
-        url: 'http://localhost:8080/CarRental/car',
+        url: 'http://localhost:8080/CarRental/Car/save',
         method: 'POST',
         data: formData,
         processData: false,
@@ -93,4 +104,6 @@ $('#btnAddCarSave').click(function () {
             console.error('Error:', error);
         }
     });
-})
+});
+
+
