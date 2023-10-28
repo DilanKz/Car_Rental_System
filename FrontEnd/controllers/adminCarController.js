@@ -178,6 +178,28 @@ $('#btnAddCarUpdate').click(function () {
     updateCar()
 });
 
+
+$('#btnAddCarSave').click(function () {
+
+    let formData=new FormData($('#carFormData')[0]);
+    formData.set('carId',carID)
+    formData.set('maintained',maintenance)
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Car/save',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (res) {
+            console.log('Files uploaded and customer data sent successfully');
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+});
+
 function updateCar() {
 
     finalizeFormData();
@@ -189,7 +211,7 @@ function updateCar() {
         processData: false,
         contentType: false,
         success: function (res) {
-            console.log('Files uploaded and customer data sent successfully');
+            loadAllCars();
         },
         error: function (error) {
             console.error('Error:', error);
