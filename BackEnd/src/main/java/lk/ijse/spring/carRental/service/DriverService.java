@@ -17,5 +17,7 @@ public interface DriverService {
 
     DriverDTO getDriverData(String id);
 
+    String getLastID();
+
     DriverDTO getDriverByUID(String id);
 }

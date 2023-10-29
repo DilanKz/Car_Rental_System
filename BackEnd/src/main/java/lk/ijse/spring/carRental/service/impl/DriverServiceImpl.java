@@ -56,7 +56,12 @@ public class DriverServiceImpl implements DriverService {
 
         return driverDTO;
     }
-    
+
+    @Override
+    public String getLastID(){
+        return userRepo.getLastID();
+    }
+
     @Override
     public DriverDTO getDriverByUID(String id){
         Driver driver = repo.getDriverData(id);
