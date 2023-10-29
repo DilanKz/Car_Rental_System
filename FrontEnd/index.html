@@ -272,7 +272,7 @@
     </section>
 </main>
 
-<main class="main mt-5 position-relative vh-100" id="manageCarsFrame">
+<main class="main mt-5 position-relative vh-100 bg-light" id="manageCarsFrame">
     <section class="col h-100 position-relative  mb-4">
 
         <div class=" row ms-5" id="displayCarForm">
@@ -292,7 +292,7 @@
 
         <div class="row mt-3" id="viewCarFrame">
 
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0 position-relative">
                 <div class="car">
                     <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
                     <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
@@ -325,104 +325,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
-                <div class="car">
-                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
-                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
-
-                    <div class="car__title">
-                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
-                    </div>
-                    <ul class="car__list">
-                        <li>
-                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
-                            <span>4 People</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
-                            <span>Hybrid</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
-                            <span>6.1km</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
-                            <span>Automatic</span>
-                        </li>
-                    </ul>
-                    <div class="car__footer">
-                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
-
-                        <a href="#!" class="car__more"><span>Rent now</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
-                <div class="car">
-                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
-                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
-
-                    <div class="car__title">
-                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
-                    </div>
-                    <ul class="car__list">
-                        <li>
-                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
-                            <span>4 People</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
-                            <span>Hybrid</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
-                            <span>6.1km</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
-                            <span>Automatic</span>
-                        </li>
-                    </ul>
-                    <div class="car__footer">
-                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
-
-                        <a href="#!" class="car__more"><span>Rent now</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
-                <div class="car">
-                    <div class="ribbon ribbon-top-left"><span class="ribbon-normal">Normal</span></div>
-                    <img src="assets/images/gt3.jpg" class="d-block w-100 rounded-4" alt="...">
-
-                    <div class="car__title">
-                        <h3 class="car__name carNameAnchor"> Mercedes GT3 </h3>
-                    </div>
-                    <ul class="car__list">
-                        <li>
-                            <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
-                            <span>4 People</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
-                            <span>Hybrid</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
-                            <span>6.1km</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
-                            <span>Automatic</span>
-                        </li>
-                    </ul>
-                    <div class="car__footer">
-                        <span class="car__price">RS 1000 <sub>/ day</sub></span>
-
-                        <a href="#!" class="car__more"><span>Rent now</span></a>
-                    </div>
-                </div>
+            <div id="carLoaderScreen" class="h-75 w-100 position-absolute d-flex justify-content-center align-items-center bg-light">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
 
         </div>
