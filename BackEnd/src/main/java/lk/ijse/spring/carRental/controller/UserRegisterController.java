@@ -33,12 +33,6 @@ public class UserRegisterController {
     public ResponseUtil getLastCusId(){
         return new ResponseUtil("Ok","Successfully fetched",service.lastID());
     }
-
-    @GetMapping("/uId")
-    public ResponseUtil getLastUId(){
-        return new ResponseUtil("Ok","Successfully fetched",service.lastID());
-    }
-
     @PostMapping("/makeAccount")
     public ResponseUtil getAllData(@ModelAttribute CustomerResponseDTO cusReq, @ModelAttribute UserResponseDTO userReq) throws IOException {
         System.out.println(cusReq);
@@ -58,6 +52,13 @@ public class UserRegisterController {
                 userDTO
         );
 
+        service.saveCustomer(dto);
+
         return new ResponseUtil("Ok","Customer Added",dto);
+    }
+
+    @GetMapping("/")
+    public ResponseUtil getCustomerDataByUID(){
+        new ResponseUtil();
     }
 }
