@@ -1,12 +1,17 @@
 package lk.ijse.spring.carRental.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lk.ijse.spring.carRental.dto.CustomerDTO;
+import lk.ijse.spring.carRental.dto.UserDTO;
 import lk.ijse.spring.carRental.dto.responseDTOs.CustomerResponseDTO;
 import lk.ijse.spring.carRental.dto.responseDTOs.UserResponseDTO;
 import lk.ijse.spring.carRental.service.CustomerService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.time.LocalDate;
 
 /**
  * `@authority Tharindu Dilan`
@@ -35,9 +40,24 @@ public class UserRegisterController {
     }
 
     @PostMapping("/makeAccount")
-    public String getAllData(@ModelAttribute CustomerResponseDTO customerResponseDTO, @ModelAttribute UserResponseDTO UserResponseDTO){
-        System.out.println(customerResponseDTO);
-        System.out.println(UserResponseDTO);
-        return "Got it";
+    public ResponseUtil getAllData(@ModelAttribute CustomerResponseDTO cusReq, @ModelAttribute UserResponseDTO userReq) throws IOException {
+        System.out.println(cusReq);
+        System.out.println(userReq);
+
+        UserDTO userDTO = new UserDTO(userReq.getUid(), userReq.getUserName(), userReq.getPassword(), userReq.getType(), userReq.getId());
+
+        CustomerDTO dto=new CustomerDTO(
+                cusReq.getCid(),
+                cusReq.getName(),
+                cusReq.getEmail(),
+                cusReq.getAddress(),
+                cusReq.getContact(),
+                LocalDate.parse(cusReq.getRegDte()),
+                cusReq.getImageFront().getBytes(),
+                cusReq.getImageBack().getBytes(),
+                userDTO
+        );
+
+        return new ResponseUtil("Ok","Customer Added",dto);
     }
 }
