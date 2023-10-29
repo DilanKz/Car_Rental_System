@@ -8,10 +8,12 @@ function loadAllCustomerCars() {
         method: 'GET',
         success: function (res) {
             viewCarFrame.empty();
+            $('#carLoaderScreen').css('display','flex')
             carsList = res.data;
             for (let i = 0; i < carsList.length; i++) {
                 addCustomerCars(carsList[i],i)
             }
+            $('#carLoaderScreen').css('display','none')
         },
         error: function (error) {
             console.error('Error:', error);
@@ -90,9 +92,9 @@ function loadCarViewPopUp(car) {
     $('#lblCarSidePic').attr('src',byteArrayToImage(car.carSide))
     $('#lblCarInsidePic').attr('src',byteArrayToImage(car.carInside))
 
-    $('#lblDayPay').text()
+    $('#lblDayPay').text(car.dailyPayment)
 
-    $('#lblWaiverPay').text(car.dailyPayment)
+    $('#lblWaiverPay').text(car.waiverPay)
     $('#lblMonthPay').text(car.monthlyPayment)
     $('#lblPPerKm').text(car.extraPerKm)
     $('#lblPassenger').text(car.passengers)
