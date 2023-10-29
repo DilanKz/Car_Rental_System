@@ -133,7 +133,7 @@
 
 <main id="accountFrame" class="vh-100">
 
-    <section class="pt-3 h-100 col ps-3" style="width: 94vw;margin-left: 6vw">
+    <!--<section class="pt-3 h-100 col ps-3" style="width: 94vw;margin-left: 6vw">
 
         <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
             <div class="w-auto ps-3 pe-3 py-2">
@@ -143,10 +143,58 @@
 
         <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 89%">
 
+            <div class="w-100" style="height: 50px">
+                <ul class="ms-2 mt-2 nav nav-pills nav-fill" style="width: 200px;height: 50px">
+                    <li class="nav-item">
+                        <a class="nav-link navItem active bg-info" aria-current="page" href="#">Driver</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navItem" href="#">Customer</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col w-100 h-100">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>-->
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Manage Cars</h4>
+            </div>
+        </div>
+
+        <div class="row pt-1 mt-3 rounded-4 w-100" style="background-color: #DBE2EF; min-height: 89%;display: block">
+
+            <div class="ms-2 col-2 mt-3 " style="height: max-content">
+                <ul class="ms-2 mt-2 nav  nav-fill" style="width: 200px;">
+                    <li class="nav-item topLeftRadius">
+                        <a class="nav-link navItem active bg-white text-primary" tab="driver" aria-current="page" href="#">Driver</a>
+                    </li>
+                    <li class="nav-item topRightRadius">
+                        <a class="nav-link bg-gray navItem text-primary" tab="customer" href="#">Customer</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="driverTab" class="row d-flex justify-content-start flex-wrap align-items-start bg-white" style="height: 200px; width: 96%;margin-left: 28px;">
+                <h1>Driver</h1>
+            </div>
+
+            <div id="customerTab" class="row justify-content-start flex-wrap align-items-start bg-white" style="height: 200px; width: 96%;margin-left: 28px;display: none">
+                <h1>Customer</h1>
+            </div>
+
         </div>
 
     </section>
-
 </main>
 
 <main id="requestsFrame" class="vh-100">
@@ -441,6 +489,28 @@
 
 </main>
 
+
+<script !src="">
+    $(document).ready(function(){
+        $(".navItem").click(function(){
+            $(".navItem").removeClass("active bg-white");
+            $(".navItem").addClass("bg-gray");
+            $(this).addClass("active bg-white");
+
+            if ($(this).attr('tab')==='customer'){
+                $('#driverTab').removeClass("d-flex");
+                $('#driverTab').css('display','none');
+                $('#customerTab').css('display','flex');
+                console.log('hi')
+            }else {
+                $('#customerTab').css('display','none');
+                $('#driverTab').css('display','flex');
+            }
+
+        });
+    });
+
+</script>
 
 <script src="../controllers/addCarForm.js"></script>
 <script src="../util/frontendUtils.js"></script>

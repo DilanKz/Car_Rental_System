@@ -110,3 +110,19 @@ body::-webkit-scrollbar{
     backdrop-filter: blur(8px);
 }
 
+.bg-gray{
+    background-color: #eee;
+}
+
+.bg-white{
+    background-color: #fff;
+}
+
+.topLeftRadius{
+    border-top-left-radius: 8px;
+    overflow: hidden;
+}
+.topRightRadius{
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
