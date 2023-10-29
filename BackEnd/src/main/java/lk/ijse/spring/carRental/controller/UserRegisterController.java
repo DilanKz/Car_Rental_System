@@ -57,8 +57,8 @@ public class UserRegisterController {
         return new ResponseUtil("Ok","Customer Added",dto);
     }
 
-    @GetMapping("/")
-    public ResponseUtil getCustomerDataByUID(){
-        new ResponseUtil();
+    @GetMapping("/getUser")
+    public ResponseUtil getCustomerDataByUID(@RequestParam("id")String id ){
+        return new ResponseUtil();
     }
 }
