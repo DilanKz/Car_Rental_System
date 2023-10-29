@@ -3,6 +3,7 @@ package lk.ijse.spring.carRental.repo;
 import lk.ijse.spring.carRental.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  * `@authority Tharindu Dilan`
@@ -12,4 +13,6 @@ import org.springframework.data.jpa.repository.Query;
 public interface CustomerRepo extends JpaRepository<Customer,String> {
     @Query(value = "SELECT cid FROM customer ORDER BY cid DESC LIMIT 1",nativeQuery = true)
     String getLastID();
+    @Query(value = "SELECT * FROM customer WHERE cid=:id",nativeQuery = true)
+    Customer getCustomerData(@Param("id") String id);
 }
