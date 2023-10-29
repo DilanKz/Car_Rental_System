@@ -10,6 +10,5 @@ BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/con
 BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/config/JPAConfig.class
 BackEnd/target/BackEnd-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/spring/carRental/WebAppInitializer.class
 .idea/uiDesigner.xml
-*.java
 *.war
 BackEnd/target/BackEnd-1.0-SNAPSHOT.war
