@@ -17,6 +17,6 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     String getLastID();
     @Query(value = "SELECT * FROM customer WHERE cid=:id",nativeQuery = true)
     Customer getCustomerData(@Param("id") String id);
-    @Query(value = "SELECT * FROM customer WHERE state=:'none'",nativeQuery = true)
+    @Query(value = "SELECT * FROM customer WHERE state='none'",nativeQuery = true)
     List<Customer> getNewCustomer();
 }
