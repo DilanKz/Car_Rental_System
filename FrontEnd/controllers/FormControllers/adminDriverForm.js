@@ -29,3 +29,13 @@ function createDriverJSON() {
 
     return driverJSON;
 }
+
+function loadClearDriverData(name,address,licNo,contact,email,username,password) {
+    txtDriverName.val(name);
+    txtDriverAddress.val(address);
+    txtDriverLicNo.val(licNo);
+    txtDriverContact.val(contact);
+    txtDriverEmail.val(email);
+    txtDriverUsername.val(username);
+    txtDriverPassword.val(password);
+}
