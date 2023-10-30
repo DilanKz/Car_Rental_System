@@ -5,7 +5,10 @@ function approveCustomer(id) {
         url: customerURL + 'approve?id='+id,
         method: 'post',
         success: function (res) {
-
+            if (res.state==='Ok'){
+                $('#approveCustomer').css('display','none');
+                getNewCustomers()
+            }
         },
         error: function (error) {
             console.error('Error:', error);
