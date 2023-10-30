@@ -6,6 +6,7 @@ import lk.ijse.spring.carRental.dto.UserDTO;
 import lk.ijse.spring.carRental.dto.responseDTOs.CustomerResponseDTO;
 import lk.ijse.spring.carRental.dto.responseDTOs.UserResponseDTO;
 import lk.ijse.spring.carRental.service.CustomerService;
+import lk.ijse.spring.carRental.service.UserService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,9 @@ public class UserRegisterController {
 
     @Autowired
     CustomerService service;
+
+    @Autowired
+    UserService userService;
 
     @Autowired
     ObjectMapper objectMapper;
@@ -60,5 +64,10 @@ public class UserRegisterController {
     @GetMapping("/getUser")
     public ResponseUtil getCustomerDataByUID(@RequestParam("id")String id ){
         return new ResponseUtil();
+    }
+
+    @GetMapping("/uId")
+    public ResponseUtil getLastUID(){
+        return new ResponseUtil("OK","Last ID",userService.getLastID());
     }
 }

@@ -59,7 +59,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public String getLastID(){
-        return userRepo.getLastID();
+        return repo.getLastID();
     }
 
     @Override

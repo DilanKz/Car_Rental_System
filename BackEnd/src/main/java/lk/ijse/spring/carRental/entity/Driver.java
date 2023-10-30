@@ -25,8 +25,9 @@ public class Driver {
     String name;
     String address;
     String licenseNo;
+    String contact;
+    String email;
     String status;
-    String id;
     @OneToOne(cascade = CascadeType.ALL)
     User user;
 }

@@ -198,17 +198,17 @@
                                         <fieldset>
                                             <p class="text-uppercase pull-center">General Information</p>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="username" id="username1" class="form-control input-lg" placeholder="Name">
+                                                <input type="text" name="username" id="txtDriverName" class="form-control input-lg" placeholder="Name">
                                             </div>
 
                                             <div class="form-group pb-5">
-                                                <input type="text" name="address" id="email" class="form-control input-lg" placeholder="Address">
+                                                <input type="text" name="address" id="txtDriverAddress" class="form-control input-lg" placeholder="Address">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="password1" class="form-control input-lg" placeholder="contact">
+                                                <input type="text" name="password" id="txtDriverContact" class="form-control input-lg" placeholder="contact">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password2" id="password2" class="form-control input-lg" placeholder="License NO">
+                                                <input type="text" name="password2" id="txtDriverLicNo" class="form-control input-lg" placeholder="License NO">
                                             </div>
                                         </fieldset>
                                     </form>
@@ -220,18 +220,18 @@
                                             <p class="text-uppercase"> Account information </p>
 
                                             <div class="form-group pb-5">
-                                                <input type="email" name="username" id="username" class="form-control input-lg" placeholder="Email">
+                                                <input type="email" name="username" id="txtDriverEmail" class="form-control input-lg" placeholder="Email">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="password" class="form-control input-lg" placeholder="Username">
+                                                <input type="text" name="password" id="txtDriverUsername" class="form-control input-lg" placeholder="Username">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="password14" class="form-control input-lg" placeholder="Password">
+                                                <input type="text" name="password" id="txtDriverPassword" class="form-control input-lg" placeholder="Password">
                                             </div>
 
                                             <div class="pb-5">
-                                                <input type="button" class="btn btn-sm btn-primary"   value="Register">
-                                                <input type="button" class="btn btn-sm btn-warning"   value="Update">
+                                                <input id="btnDriverRegister" type="button" class="btn btn-sm btn-primary"   value="Register">
+                                                <input id="btnDriverUpdate" type="button" class="btn btn-sm btn-warning"   value="Update">
                                             </div>
 
                                         </fieldset>
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                 </section>
-                <h3 class="h3 mt-3">Manage Driver</h3>
+                <h3 class="h3 mt-3 col-2">Manage Driver</h3> <button type="button" class="btn btn-sm btn-success mt-4 col-1" id="btnAddDriver"> Add Driver + </button>
                 <div class="page-content page-container" id="page-content">
                     <div>
                         <div class="row container d-flex justify-content-center">
@@ -647,11 +647,12 @@
 
 </script>
 
-<script src="../controllers/addCarForm.js"></script>
+<script src="../controllers/FormControllers/addCarForm.js"></script>
 <script src="../util/frontendUtils.js"></script>
-<script src="../controllers/adminCarController.js"></script>
-<script src="../controllers/adminDashboardController.js"></script>
-
+<script src="../controllers/adminControllers/adminCarController.js"></script>
+<script src="../controllers/adminControllers/adminDashboardController.js"></script>
+<script src="../controllers/adminControllers/adminDriverControler.js"></script>
+<script src="../controllers/FormControllers/adminDriverForm.js"></script>
 </body>
 
 </html>
