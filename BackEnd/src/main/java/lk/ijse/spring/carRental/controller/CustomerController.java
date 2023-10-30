@@ -3,10 +3,8 @@ package lk.ijse.spring.carRental.controller;
 import lk.ijse.spring.carRental.service.CustomerService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * `@authority Tharindu Dilan`
@@ -25,5 +23,11 @@ public class CustomerController {
     @GetMapping("/newAll")
     public ResponseUtil getNewCustomers(){
         return new ResponseUtil("Ok","Fetched",service.getNewCustomers());
+    }
+
+    @PostMapping("/approve")
+    public ResponseUtil approveCustomer(@Param("id")String id){
+        service.updateState(id);
+        return new ResponseUtil("Ok","Customer Approved",id);
     }
 }
