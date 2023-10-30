@@ -39,6 +39,7 @@ btnDashboard.addClass('bottomLine');
 
 $('#btnProfile')
 
+
 btnDashboard.click(function () {
     hide();
     dashboardFrame.css('display','block');
@@ -62,6 +63,7 @@ btnAccount.click(function () {
     hide();
     accountFrame.css('display','block');
     getAllDrivers()
+    getNewCustomers()
     $(this).addClass('bottomLine')
 });
 
