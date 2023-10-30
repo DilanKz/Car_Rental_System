@@ -77,4 +77,9 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println(dtoList);
         return dtoList;
     }
+
+    @Override
+    public void updateState(String id){
+        customerRepo.approveCustomer(id);
+    }
 }

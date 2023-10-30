@@ -17,4 +17,6 @@ public interface CustomerService {
     String lastID();
 
     List<CustomerDTO> getNewCustomers();
+
+    void updateState(String id);
 }
