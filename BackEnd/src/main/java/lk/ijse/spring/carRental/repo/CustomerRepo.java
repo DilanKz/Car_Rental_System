@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 4:57 PM
@@ -15,4 +17,6 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     String getLastID();
     @Query(value = "SELECT * FROM customer WHERE cid=:id",nativeQuery = true)
     Customer getCustomerData(@Param("id") String id);
+    @Query(value = "SELECT * FROM customer WHERE state=:'none'",nativeQuery = true)
+    List<Customer> getNewCustomer();
 }
