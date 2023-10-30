@@ -23,6 +23,7 @@ public class CustomerResponseDTO {
     private String email;
     private String address;
     private String contact;
+    private String state;
     private String regDte;
     private MultipartFile imageFront;
     private MultipartFile imageBack;

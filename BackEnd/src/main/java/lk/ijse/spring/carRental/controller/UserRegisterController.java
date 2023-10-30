@@ -50,12 +50,14 @@ public class UserRegisterController {
                 cusReq.getEmail(),
                 cusReq.getAddress(),
                 cusReq.getContact(),
-                LocalDate.parse(cusReq.getRegDte()),
+                cusReq.getState(),
+                cusReq.getRegDte(),
                 cusReq.getImageFront().getBytes(),
                 cusReq.getImageBack().getBytes(),
                 userDTO
         );
 
+        System.out.println(dto);
         service.saveCustomer(dto);
 
         return new ResponseUtil("Ok","Customer Added",dto);

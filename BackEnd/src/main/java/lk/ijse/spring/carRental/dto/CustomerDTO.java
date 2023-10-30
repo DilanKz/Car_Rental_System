@@ -24,7 +24,8 @@ public class CustomerDTO {
     private String email;
     private String address;
     private String contact;
-    private LocalDate regDte;
+    private String state;
+    private String regDte;
     private byte[] imageFront;
     private byte[] imageBack;
     private UserDTO dto;
