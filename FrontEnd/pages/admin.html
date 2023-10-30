@@ -188,8 +188,8 @@
                 <section id="addDriverFrame">
                     <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0" style="z-index: 52;">
 
-                        <div id="bgs" class="w-100 h-100 bg-blur-8 position-absolute z-1"></div>
-                        <div class="col-7 bg-info rounded-5 z-3">
+                        <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
+                        <div style="background-color: #DBE2EF;border: 2px solid #86b7fe" class="col-7 rounded-5 z-3">
                             <h2 class="text-center pt-3 mb-5" id="title">Register Driver</h2>
 
                             <div class="row">
@@ -289,6 +289,35 @@
 
             <div id="customerTab" class="row justify-content-start flex-wrap align-items-start bg-white" style="height: 70vh; width: 96%;margin-left: 28px;display: none">
                 <h3 class="h3 mt-3">Manage Customer</h3>
+                <section id="approveCustomer">
+                    <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0" style="z-index: 52;">
+
+                        <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
+                        <div class="col-7 rounded-5 z-3" style="background-color: #DBE2EF;border: 2px solid #86b7fe">
+                            <h2 class="text-center pt-3 mb-5" >Approve Customer</h2>
+                            <div class="row">
+
+                                <div class="col-5 me-2" style="margin-left: 100px">
+                                    <img id="frontID" src="" alt="" style="width: 300px;height: 200px">
+                                </div>
+
+                                <div class="col-5 ms-3 me-2">
+                                    <img id="backID" src="" alt="" style="width: 300px;height: 200px">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-4 mt-5 mb-5" style="margin-left: 80px">
+                                    <button class="btn btn-sm btn-success" type="button" id="submitUser"> Approve </button>
+                                    <button class="btn btn-sm btn-danger" type="button" id="cancelUser"> Reject </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div class="page-content page-container">
                     <div>
                         <div class="row container d-flex justify-content-center">
@@ -623,6 +652,7 @@
 
 <script !src="">
     $('#addDriverFrame').css('display','none');
+    $('#approveCustomer').css('display','none');
     $(document).ready(function(){
         $(".navItem").click(function(){
             $(".navItem").removeClass("active bg-white");
@@ -642,8 +672,9 @@
         });
     });
 
-    $('#bgs').click(function () {
+    $('.bgs').click(function () {
         $('#addDriverFrame').css('display','none');
+        $('#approveCustomer').css('display','none');
     });
 
 </script>
