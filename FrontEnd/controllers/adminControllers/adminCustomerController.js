@@ -2,7 +2,7 @@ let customerURL = 'http://localhost:8080/CarRental/customer/'
 
 function approveCustomer(id) {
     $.ajax({
-        url: customerURL + 'approve?id'+id,
+        url: customerURL + 'approve?id='+id,
         method: 'post',
         success: function (res) {
 
@@ -43,15 +43,19 @@ function loadNewCustomers(customer) {
 
     $('#tblNewCustomers').append(tr);
 }
-
+let cid;
 $('#tblNewCustomers').on('click', 'tr', function() {
     let frontImage = $(this).attr('front');
     let backImage = $(this).attr('back');
-    let id = $(this).attr('id');
+    cid = $(this).attr('id');
 
     console.log(frontImage,backImage)
     $('#approveCustomer').css('display','block');
 
     $('#frontID').attr('src',frontImage);
     $('#backID').attr('src',backImage);
+});
+
+$('#submitUser').click(function () {
+    approveCustomer(cid);
 });
