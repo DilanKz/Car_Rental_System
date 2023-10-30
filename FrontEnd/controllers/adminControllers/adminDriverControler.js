@@ -8,7 +8,7 @@ $('#btnAddDriver').click(function () {
 
     $('#btnDriverRegister').css('display','block')
     $('#btnDriverUpdate').css('display','none')
-
+    $('#driverStateGroup').css('display','none');
     nextDriverIdGenerator();
     nextUserIdGenerator();
 });
@@ -112,13 +112,40 @@ function loadOne(driver) {
     $('#tblDrivers').append(tr);
 }
 
+let driver;
+
 $('#tblDrivers').on('click', 'tr', function() {
     let clickedRow = $(this);
     console.log(clickedRow)
-    let driver = JSON.parse(clickedRow.attr('admin'));
+    driver = JSON.parse(clickedRow.attr('admin'));
     console.log(driver);
     loadClearDriverData(driver.name,driver.address,driver.licenseNo,driver.contact,driver.email,driver.dto.userName,driver.dto.password)
     $('#addDriverFrame').css('display', 'block');
-    $('#btnDriverUpdate').css('display','block')
-    $('#btnDriverRegister').css('display','none')
+    $('#btnDriverUpdate').css('display','block');
+    $('#btnDriverRegister').css('display','none');
+    $('#driverStateGroup').css('display','block');
+});
+
+$('#btnDriverUpdate').click(function () {
+
+    let driverJSON = createDriverJSON();
+    driverJSON.did=driver.did;
+    driverJSON.status=driver.status;
+    driverJSON.dto.uid=driver.dto.uid;
+    driverJSON.dto.id=driver.dto.id;
+
+
+    $.ajax({
+        url: baseURL + 'makeAccount',
+        method: 'POST',
+        data: JSON.stringify(driverJSON),
+        contentType: 'application/json',
+        success: function (res) {
+            console.log(res.state);
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+
 });

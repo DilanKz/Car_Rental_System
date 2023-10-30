@@ -25,6 +25,7 @@ public class CustomerRespDTO {
     private String email;
     private String address;
     private String contact;
+    private String state;
     private LocalDate regDte;
     private MultipartFile imageFront;
     private MultipartFile imageBack;

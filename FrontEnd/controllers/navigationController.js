@@ -146,6 +146,7 @@ customerReg.click(function () {
     customerData.set('id', cusID);
     customerData.set('uid', userID);
     customerData.set('type', userID);
+    customerData.set('state', 'none');
 
     /*let idFront = $('#btnIDFront')[0].files[0];
     let idBack = $('#btnIDBack')[0].files[0];
