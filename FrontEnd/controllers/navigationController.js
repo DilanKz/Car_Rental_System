@@ -147,6 +147,7 @@ customerReg.click(function () {
     customerData.set('uid', userID);
     customerData.set('type', userID);
     customerData.set('state', 'none');
+    customerData.set('regDte', '2023-10-30');
 
     /*let idFront = $('#btnIDFront')[0].files[0];
     let idBack = $('#btnIDBack')[0].files[0];
@@ -162,7 +163,7 @@ customerReg.click(function () {
     formData.append("customerData", customerData);*/
 
     $.ajax({
-        url: 'http://localhost:8080/CarRental/Register/test',
+        url: 'http://localhost:8080/CarRental/Register/makeAccount',
         method: 'POST',
         data: customerData,
         processData: false,
