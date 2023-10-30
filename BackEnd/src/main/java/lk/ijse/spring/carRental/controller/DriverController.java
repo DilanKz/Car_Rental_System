@@ -39,6 +39,7 @@ public class DriverController {
 
     @GetMapping("/all")
     public ResponseUtil getAllDrivers(){
+        System.out.println(service.getAllDrivers());
         return new ResponseUtil("Ok","Drivers fetched ",service.getAllDrivers());
     }
 }
