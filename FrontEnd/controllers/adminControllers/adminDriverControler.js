@@ -5,6 +5,10 @@ let driveID;
 
 $('#btnAddDriver').click(function () {
     $('#addDriverFrame').css('display', 'block');
+
+    $('#btnDriverRegister').css('display','block')
+    $('#btnDriverUpdate').css('display','none')
+
     nextDriverIdGenerator();
     nextUserIdGenerator();
 });
@@ -96,7 +100,7 @@ function loadOne(driver) {
         stateTr= `<td><label class="badge bg-success">${driver.status}</label></td>`;
     }
 
-    let tr = `<tr admin="${driver}">
+    let tr = `<tr admin='${JSON.stringify(driver)}'>
                   <td>${driver.did}</td>
                   <td>${driver.name}</td>
                   <td>${driver.address}</td>
@@ -105,5 +109,16 @@ function loadOne(driver) {
                   ${stateTr}
               </tr>`
 
-    $('#tblDrivers').append(tr)
+    $('#tblDrivers').append(tr);
 }
+
+$('#tblDrivers').on('click', 'tr', function() {
+    let clickedRow = $(this);
+    console.log(clickedRow)
+    let driver = JSON.parse(clickedRow.attr('admin'));
+    console.log(driver);
+    loadClearDriverData(driver.name,driver.address,driver.licenseNo,driver.contact,driver.email,driver.dto.userName,driver.dto.password)
+    $('#addDriverFrame').css('display', 'block');
+    $('#btnDriverUpdate').css('display','block')
+    $('#btnDriverRegister').css('display','none')
+});
