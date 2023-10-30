@@ -2,6 +2,7 @@ package lk.ijse.spring.carRental.repo;
 
 import lk.ijse.spring.carRental.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -19,6 +20,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     Customer getCustomerData(@Param("id") String id);
     @Query(value = "SELECT * FROM customer WHERE state='none'",nativeQuery = true)
     List<Customer> getNewCustomer();
-    @Query(value = "UPDATE customer SET state = 'approved' WHERE cid=:id",nativeQuery = true)
-    void approveCustomer(@Param("id") String id);
+    @Modifying
+    @Query(value = "UPDATE customer SET state ='approved' WHERE cid=:id",nativeQuery = true)
+    int approveCustomer(@Param("id") String id);
 }

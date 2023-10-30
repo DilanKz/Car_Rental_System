@@ -80,6 +80,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateState(String id){
+        System.out.println(id);
         customerRepo.approveCustomer(id);
     }
 }
