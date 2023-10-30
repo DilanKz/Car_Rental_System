@@ -1,8 +1,17 @@
-function approveCustomer() {
-
-}
-
 let customerURL = 'http://localhost:8080/CarRental/customer/'
+
+function approveCustomer(id) {
+    $.ajax({
+        url: customerURL + 'approve?id'+id,
+        method: 'post',
+        success: function (res) {
+
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
 
 function getNewCustomers() {
     $.ajax({
@@ -25,7 +34,7 @@ function getNewCustomers() {
 
 function loadNewCustomers(customer) {
 
-    let tr = `<tr front="${byteArrayToImage(customer.imageFront)}" back="${byteArrayToImage(customer.imageBack)}">
+    let tr = `<tr front="${byteArrayToImage(customer.imageFront)}" back="${byteArrayToImage(customer.imageBack)}" id="${customer.cid}">
                  <td>${customer.cid}</td>
                  <td>${customer.name}</td>
                  <td>${customer.address}</td>
@@ -38,6 +47,11 @@ function loadNewCustomers(customer) {
 $('#tblNewCustomers').on('click', 'tr', function() {
     let frontImage = $(this).attr('front');
     let backImage = $(this).attr('back');
+    let id = $(this).attr('id');
 
     console.log(frontImage,backImage)
+    $('#approveCustomer').css('display','block');
+
+    $('#frontID').attr('src',frontImage);
+    $('#backID').attr('src',backImage);
 });
