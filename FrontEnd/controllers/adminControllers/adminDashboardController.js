@@ -61,6 +61,7 @@ btnRequests.click(function () {
 btnAccount.click(function () {
     hide();
     accountFrame.css('display','block');
+    getAllDrivers()
     $(this).addClass('bottomLine')
 });
 
