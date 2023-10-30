@@ -32,7 +32,7 @@ public class DriverController {
     @PostMapping("/makeAccount")
     public ResponseUtil getAllData(@RequestBody DriverDTO dto) throws IOException {
         System.out.println(dto);
-        //service.saveDriver(dto);
+        service.saveDriver(dto);
 
         return new ResponseUtil("Ok","Driver added successfully",dto);
     }
