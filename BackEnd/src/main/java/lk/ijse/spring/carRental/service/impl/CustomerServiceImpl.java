@@ -43,7 +43,8 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = mapper.map(dto, Customer.class);
         customer.setUser(mapper.map(dto.getDto(), User.class));
 
-        System.out.println(customer.getUser());
+        System.out.println(customer.getRegDte());
+        System.out.println(customer.getState());
         customerRepo.save(customer);
     }
 
@@ -70,8 +71,10 @@ public class CustomerServiceImpl implements CustomerService {
         for (Customer customer : customers) {
             CustomerDTO map = mapper.map(customer, CustomerDTO.class);
             map.setDto(mapper.map(customer.getUser(), UserDTO.class));
+            dtoList.add(map);
         }
 
+        System.out.println(dtoList);
         return dtoList;
     }
 }
