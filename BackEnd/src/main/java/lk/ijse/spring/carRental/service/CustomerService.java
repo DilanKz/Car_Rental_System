@@ -2,6 +2,8 @@ package lk.ijse.spring.carRental.service;
 
 import lk.ijse.spring.carRental.dto.CustomerDTO;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 3:02 PM
@@ -13,4 +15,6 @@ public interface CustomerService {
     void updateCustomer(CustomerDTO c);
 
     String lastID();
+
+    List<CustomerDTO> getNewCustomers();
 }

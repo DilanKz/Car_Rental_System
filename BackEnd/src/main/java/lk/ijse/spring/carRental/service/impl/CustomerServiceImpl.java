@@ -33,15 +33,15 @@ public class CustomerServiceImpl implements CustomerService {
     ModelMapper mapper;
 
     @Override
-    public void saveCustomer(CustomerDTO dto){
+    public void saveCustomer(CustomerDTO dto) {
 
-        if (customerRepo.existsById(dto.getCid())){
-            throw new RuntimeException(dto.getCid()+" Customer already exist");
+        if (customerRepo.existsById(dto.getCid())) {
+            throw new RuntimeException(dto.getCid() + " Customer already exist");
         }
 
 
         Customer customer = mapper.map(dto, Customer.class);
-        customer.setUser(mapper.map(dto.getDto(),User.class));
+        customer.setUser(mapper.map(dto.getDto(), User.class));
 
         System.out.println(customer.getUser());
         customerRepo.save(customer);
@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void updateCustomer(CustomerDTO c) {
         if (!customerRepo.existsById(c.getCid())) {
-            throw new RuntimeException(c.getCid()+ " Customer is not available, check again.!");
+            throw new RuntimeException(c.getCid() + " Customer is not available, check again.!");
         }
 
         Customer map = mapper.map(c, Customer.class);
@@ -62,8 +62,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepo.getLastID();
     }
 
-
-    public List<CustomerDTO> getNewCustomers(){
+    @Override
+    public List<CustomerDTO> getNewCustomers() {
         List<Customer> customers = customerRepo.getNewCustomer();
         List<CustomerDTO> dtoList = new ArrayList<>();
 
