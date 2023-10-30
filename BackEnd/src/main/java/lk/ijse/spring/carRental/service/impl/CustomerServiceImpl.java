@@ -1,6 +1,7 @@
 package lk.ijse.spring.carRental.service.impl;
 
 import lk.ijse.spring.carRental.dto.CustomerDTO;
+import lk.ijse.spring.carRental.dto.UserDTO;
 import lk.ijse.spring.carRental.entity.Customer;
 import lk.ijse.spring.carRental.entity.User;
 import lk.ijse.spring.carRental.repo.CustomerRepo;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * `@authority Tharindu Dilan`
@@ -59,4 +62,16 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepo.getLastID();
     }
 
+
+    public List<CustomerDTO> getNewCustomers(){
+        List<Customer> customers = customerRepo.getNewCustomer();
+        List<CustomerDTO> dtoList = new ArrayList<>();
+
+        for (Customer customer : customers) {
+            CustomerDTO map = mapper.map(customer, CustomerDTO.class);
+            map.setDto(mapper.map(customer.getUser(), UserDTO.class));
+        }
+
+        return dtoList;
+    }
 }
