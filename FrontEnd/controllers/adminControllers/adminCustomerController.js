@@ -13,7 +13,7 @@ function getNewCustomers() {
             console.log(customer);
             $('#tblNewCustomers').empty()
             for (let i = 0; i < customer.length; i++) {
-
+                loadNewCustomers(customer[i])
             }
 
         },
@@ -22,3 +22,22 @@ function getNewCustomers() {
         }
     });
 }
+
+function loadNewCustomers(customer) {
+
+    let tr = `<tr front="${byteArrayToImage(customer.imageFront)}" back="${byteArrayToImage(customer.imageBack)}">
+                 <td>${customer.cid}</td>
+                 <td>${customer.name}</td>
+                 <td>${customer.address}</td>
+                 <td>${customer.contact}</td>
+             </tr>;`
+
+    $('#tblNewCustomers').append(tr);
+}
+
+$('#tblNewCustomers').on('click', 'tr', function() {
+    let frontImage = $(this).attr('front');
+    let backImage = $(this).attr('back');
+
+    console.log(frontImage,backImage)
+});
