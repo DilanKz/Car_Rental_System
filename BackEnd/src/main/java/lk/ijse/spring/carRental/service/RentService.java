@@ -6,4 +6,5 @@ package lk.ijse.spring.carRental.service;
  * 2023-10-31 - 10 - 2023
  */
 public interface RentService {
+    String lastID();
 }
