@@ -1,6 +1,5 @@
 package lk.ijse.spring.carRental.service.impl;
 
-import lk.ijse.spring.carRental.repo.AdminRepo;
 import lk.ijse.spring.carRental.repo.PaymentRepo;
 import lk.ijse.spring.carRental.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     PaymentRepo repo;
 
+    @Override
     public String lastID(){
         return repo.getLastID();
     }
