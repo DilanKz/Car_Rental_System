@@ -1,6 +1,7 @@
 package lk.ijse.spring.carRental.service.impl;
 
 import lk.ijse.spring.carRental.repo.AdminRepo;
+import lk.ijse.spring.carRental.repo.PaymentRepo;
 import lk.ijse.spring.carRental.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,9 @@ import javax.transaction.Transactional;
 @Transactional
 public class PaymentServiceImpl implements PaymentService {
     @Autowired
-    AdminRepo adminRepo;
+    PaymentRepo repo;
+
+    public String lastID(){
+        return repo.getLastID();
+    }
 }
