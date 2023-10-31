@@ -82,14 +82,15 @@ function addCustomerCars(car,index) {
 $(document).ready(function() {
     $(document).on('click', '.carNameAnchor', function() {
         let attr = $(this).attr('carid');
-        let listElement = carsList[$(this).attr('carIndex')];
+        let index = $(this).attr('carIndex');
+        let listElement = carsList[index];
 
-        console.log(listElement);
+        console.log(listElement,index);
         loadCarViewPopUp(listElement)
     });
 });
 
-function loadCarViewPopUp(car) {
+function loadCarViewPopUp(car,index) {
 
     $('#lblCarFrontPic').attr('src',byteArrayToImage(car.carFront))
     $('#lblCarBackPic').attr('src',byteArrayToImage(car.carBack))
@@ -106,7 +107,7 @@ function loadCarViewPopUp(car) {
     $('#lblWholeKm').text(car.wholeKm)
     $('#lblTransmission').text(car.carTransmission);
     btnRentNow.prop('disabled', false);
-    btnRentNow.attr(car.carId);
+    btnRentNow.attr('carindex',index);
 
     if (car.carState==='Available'){
         btnRentNow.prop('disabled', false);
@@ -116,9 +117,9 @@ function loadCarViewPopUp(car) {
 }
 
 btnRentNow.click(function () {
-    $(this).attr('carid');
+    $(this).attr('carindex');
 });
 
 $('.btnRentNow').click(function () {
-    $(this).attr('carid');
+    $(this).attr('carindex');
 });
