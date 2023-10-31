@@ -22,9 +22,15 @@ public class Rent {
     @Id
     private String RentID;
     private String FullPaymentStatus;
+    @Lob
+    private byte[] waiverPaymentSlip;
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Payment payment;
+
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "customerID",referencedColumnName = "cusID",nullable = false)
     private Customer customerID;
     @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
     private List<RentDetails> rentDetails;
+
 }
