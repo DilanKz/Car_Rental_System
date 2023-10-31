@@ -36,7 +36,7 @@ function addCustomerCars(car,index) {
     } else if (car.carType === "Luxury") {
         ribbonClass = "ribbon-luxury";
     }
-    let rentButton = car.carState === "Available" ? '<a href="#!" class="car__more btnRentNow" carid="'+car.carId+'"><span>Add to cart</span></a>' : '<a href="#!" class="car__more"  carid="'+car.carId+'" disabled><span>Add to cart</span></a>';
+    let rentButton = car.carState === "Available" ? '<a href="#!" class="car__more btnRentNow" carindex="'+index+'"><span>Add to cart</span></a>' : '<a href="#!" class="car__more"  carindex="'+index+'" disabled><span>Add to cart</span></a>';
     let imageFront = byteArrayToImage(car.carFront);
 
     let stateTr = car.carState === "Available"?`<span class="p-1 ps-2 pe-2 text-bg-success rounded-4">${car.carState}</span>`:`<span class="p-1 ps-2 pe-2 text-bg-warning rounded-4">${car.carState}</span>`;
