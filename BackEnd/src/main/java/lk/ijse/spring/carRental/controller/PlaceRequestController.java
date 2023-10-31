@@ -34,11 +34,11 @@ public class PlaceRequestController {
         return  new ResponseUtil("OK","Added Image",slip.getName());
     }
 
-    @PostMapping("/payID")
+    @GetMapping("/payID")
     public ResponseUtil lastPayID(){
         return new ResponseUtil("OK","Fetched PaymentID",paymentService.lastID());
     }
-    @PostMapping("/rentID")
+    @GetMapping("/rentID")
     public ResponseUtil lastRentID(){
         return new ResponseUtil("OK","Fetched PaymentID",rentService.lastID());
     }
