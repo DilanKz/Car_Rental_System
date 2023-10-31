@@ -32,11 +32,11 @@ public class RentDetails{
     private Rent rent;
 
     @ManyToOne
-    @JoinColumn(name = "carID",referencedColumnName = "carID",insertable = false,updatable = false)
+    @JoinColumn(name = "carID",referencedColumnName = "carId",insertable = false,updatable = false)
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "driverID",referencedColumnName = "driverID",insertable = false,updatable = false)
+    @JoinColumn(name = "driverID",referencedColumnName = "dID",insertable = false,updatable = false)
     private Driver driver;
 
 }
