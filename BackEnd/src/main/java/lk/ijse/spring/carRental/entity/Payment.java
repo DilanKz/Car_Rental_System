@@ -24,7 +24,5 @@ public class Payment {
     private String paymentID;
     private String payment;
     private String paymentExtraMillage;
-    @Lob
-    private byte[] wavierPayment;
 
 }
