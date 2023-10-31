@@ -40,6 +40,6 @@ public class PlaceRequestController {
     }
     @PostMapping("/rentID")
     public ResponseUtil lastRentID(){
-        return new ResponseUtil();
+        return new ResponseUtil("OK","Fetched PaymentID",rentService.lastID());
     }
 }
