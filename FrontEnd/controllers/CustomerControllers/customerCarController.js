@@ -9,12 +9,12 @@ function loadAllCustomerCars() {
         method: 'GET',
         success: function (res) {
             viewCarFrame.empty();
-            $('#carLoaderScreen').css('display','flex')
+            $('#carLoaderScreen').css('display', 'flex')
             carsList = res.data;
             for (let i = 0; i < carsList.length; i++) {
-                addCustomerCars(carsList[i],i)
+                addCustomerCars(carsList[i], i)
             }
-            $('#carLoaderScreen').css('display','none')
+            $('#carLoaderScreen').css('display', 'none')
         },
         error: function (error) {
             console.error('Error:', error);
@@ -22,7 +22,7 @@ function loadAllCustomerCars() {
     });
 }
 
-function addCustomerCars(car,index) {
+function addCustomerCars(car, index) {
 
     let ribbonClass;
 
@@ -36,12 +36,12 @@ function addCustomerCars(car,index) {
     } else if (car.carType === "Luxury") {
         ribbonClass = "ribbon-luxury";
     }
-    let rentButton = car.carState === "Available" ? '<a href="#!" class="car__more btnRentNow" carindex="'+index+'"><span>Add to cart</span></a>' : '<a href="#!" class="car__more"  carindex="'+index+'" disabled><span>Add to cart</span></a>';
+    let rentButton = car.carState === "Available" ? '<a href="#!" class="text-decoration-none car__more btnRentNow" carindex="' + index + '"><span>Add to cart <i class="ms-2 fa-solid fa-cart-plus"></i></span></a>' : '<a href="#!" class="text-decoration-none car__more"  carindex="' + index + '" disabled><span>Add to cart <i class="ms-2 fa-solid fa-cart-plus"></i></span></a>';
     let imageFront = byteArrayToImage(car.carFront);
 
-    let stateTr = car.carState === "Available"?`<span class="p-1 ps-2 pe-2 text-bg-success rounded-4">${car.carState}</span>`:`<span class="p-1 ps-2 pe-2 text-bg-warning rounded-4">${car.carState}</span>`;
+    let stateTr = car.carState === "Available" ? `<span class="p-1 ps-2 pe-2 text-bg-success rounded-4">${car.carState}</span>` : `<span class="p-1 ps-2 pe-2 text-bg-warning rounded-4">${car.carState}</span>`;
 
-    let carHtml=`<div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
+    let carHtml = `<div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
                         <div class="car">
                             <div class="ribbon ribbon-top-left"><span class='${ribbonClass}'>${car.carType}</span></div>
                             <img src="${imageFront}" class="d-block w-100 rounded-4" alt="..." style="height: 210px">
@@ -79,23 +79,22 @@ function addCustomerCars(car,index) {
 
 }
 
-$(document).ready(function() {
-    $(document).on('click', '.carNameAnchor', function() {
-        let attr = $(this).attr('carid');
+$(document).ready(function () {
+    $(document).on('click', '.carNameAnchor', function () {
         let index = $(this).attr('carIndex');
-        let listElement = carsList[index];
+        let listElement = carsList[$(this).attr('carIndex')];
 
-        console.log(listElement,index);
-        loadCarViewPopUp(listElement)
+        console.log(listElement);
+        loadCarViewPopUp(listElement,index)
     });
 });
 
-function loadCarViewPopUp(car,index) {
+function loadCarViewPopUp(car, index) {
 
-    $('#lblCarFrontPic').attr('src',byteArrayToImage(car.carFront))
-    $('#lblCarBackPic').attr('src',byteArrayToImage(car.carBack))
-    $('#lblCarSidePic').attr('src',byteArrayToImage(car.carSide))
-    $('#lblCarInsidePic').attr('src',byteArrayToImage(car.carInside))
+    $('#lblCarFrontPic').attr('src', byteArrayToImage(car.carFront))
+    $('#lblCarBackPic').attr('src', byteArrayToImage(car.carBack))
+    $('#lblCarSidePic').attr('src', byteArrayToImage(car.carSide))
+    $('#lblCarInsidePic').attr('src', byteArrayToImage(car.carInside))
 
     $('#lblDayPay').text(car.dailyPayment)
 
@@ -107,19 +106,27 @@ function loadCarViewPopUp(car,index) {
     $('#lblWholeKm').text(car.wholeKm)
     $('#lblTransmission').text(car.carTransmission);
     btnRentNow.prop('disabled', false);
-    btnRentNow.attr('carindex',index);
+    btnRentNow.attr('carindex', index);
 
-    if (car.carState==='Available'){
+    if (car.carState === 'Available') {
         btnRentNow.prop('disabled', false);
     }
 
-    $('#carViewFrame').css('display','block');
+    $('#carViewFrame').css('display', 'block');
 }
 
-btnRentNow.click(function () {
-    $(this).attr('carindex');
+$(document).ready(function () {
+    btnRentNow.click(function () {
+        let listElement = carsList[$(this).attr('carIndex')];
+        console.log(listElement)
+    });
 });
 
-$('.btnRentNow').click(function () {
-    $(this).attr('carindex');
+
+$(document).ready(function () {
+    $(document).on('click', '.btnRentNow', function () {
+        let listElement = carsList[$(this).attr('carIndex')];
+        console.log(listElement)
+        addCarToTheCart(listElement);
+    });
 });
