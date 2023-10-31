@@ -36,7 +36,7 @@ public class PlaceRequestController {
 
     @PostMapping("/payID")
     public ResponseUtil lastPayID(){
-        return new ResponseUtil();
+        return new ResponseUtil("OK","Fetched PaymentID",paymentService.lastID());
     }
     @PostMapping("/rentID")
     public ResponseUtil lastRentID(){
