@@ -1,7 +1,10 @@
 package lk.ijse.spring.carRental.controller;
 
 import lk.ijse.spring.carRental.dto.RentDTO;
+import lk.ijse.spring.carRental.service.PaymentService;
+import lk.ijse.spring.carRental.service.RentService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,6 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin
 public class PlaceRequestController {
 
+    @Autowired
+    PaymentService paymentService;
+
+    @Autowired
+    RentService rentService;
+
     @PostMapping
     public ResponseUtil placeRequest(@RequestBody RentDTO dto){
         System.out.println(dto);
@@ -23,5 +32,14 @@ public class PlaceRequestController {
     @PostMapping("/paySlip")
     public ResponseUtil getImages(@RequestPart MultipartFile slip){
         return  new ResponseUtil("OK","Added Image",slip.getName());
+    }
+
+    @PostMapping("/payID")
+    public ResponseUtil lastPayID(){
+        return new ResponseUtil();
+    }
+    @PostMapping("/rentID")
+    public ResponseUtil lastRentID(){
+        return new ResponseUtil();
     }
 }
