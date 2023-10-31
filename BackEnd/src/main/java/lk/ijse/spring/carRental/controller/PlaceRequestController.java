@@ -20,4 +20,8 @@ public class PlaceRequestController {
         System.out.println(dto);
         return new ResponseUtil("","",dto);
     }
+    @PostMapping("/paySlip")
+    public ResponseUtil getImages(@RequestPart MultipartFile slip){
+        return  new ResponseUtil("OK","Added Image",slip.getName());
+    }
 }
