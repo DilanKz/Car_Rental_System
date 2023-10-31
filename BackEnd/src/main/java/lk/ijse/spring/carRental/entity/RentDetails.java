@@ -27,9 +27,6 @@ public class RentDetails{
 
     private String driverID;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    private Payment payment;
-
     @ManyToOne
     @JoinColumn(name = "rentID",referencedColumnName = "RentID",insertable = false,updatable = false)
     private Rent rent;
