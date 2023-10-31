@@ -105,7 +105,7 @@ function loadCarViewPopUp(car) {
     $('#lblWholeKm').text(car.wholeKm)
     $('#lblTransmission').text(car.carTransmission)
     $('#btnRentNow').prop('disabled', false);
-    
+
     if (car.carState==='Available'){
         $('#btnRentNow').prop('disabled', false);
     }
