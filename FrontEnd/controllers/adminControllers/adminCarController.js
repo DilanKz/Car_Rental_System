@@ -3,6 +3,7 @@ let data;
 
 function loadAllCars() {
 
+    $('#carLoader').css('display','block')
     $.ajax({
         url: 'http://localhost:8080/CarRental/Car/allCars',
         method: 'GET',
@@ -10,7 +11,8 @@ function loadAllCars() {
             containerView.empty();
             let carsList = res.data;
             for (let i = 0; i < carsList.length; i++) {
-                addCarToView(carsList[i])
+                addCarToView(carsList[i]);
+                $('#carLoader').css('display','none')
             }
         },
         error: function (error) {
