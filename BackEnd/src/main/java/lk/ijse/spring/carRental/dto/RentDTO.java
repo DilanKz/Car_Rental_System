@@ -1,7 +1,5 @@
 package lk.ijse.spring.carRental.dto;
 
-import lk.ijse.spring.carRental.entity.Payment;
-import lk.ijse.spring.carRental.entity.RentDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,6 +25,6 @@ public class RentDTO {
     private String FullPaymentStatus;
     private String state;
     private byte[] waiverPaymentSlip;
-    private Payment payment;
-    private List<RentDetails> rentDetails;
+    private PaymentDTO payment;
+    private List<RentDetailsDTO> rentDetails;
 }
