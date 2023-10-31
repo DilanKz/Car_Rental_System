@@ -35,8 +35,10 @@ function addCustomerCars(car,index) {
     } else if (car.carType === "Luxury") {
         ribbonClass = "ribbon-luxury";
     }
-    let rentButton = car.state === "available" ? '<a href="#!" class="car__more"><span>Rent now</span></a>' : '<a href="#!" class="car__more" disabled><span>Rent now</span></a>';
+    let rentButton = car.carState === "Available" ? '<a href="#!" class="car__more"><span>Rent now</span></a>' : '<a href="#!" class="car__more" disabled><span>Rent now</span></a>';
     let imageFront = byteArrayToImage(car.carFront);
+
+    let stateTr = car.carState === "Available"?`<span class="p-1 ps-2 pe-2 text-bg-success rounded-4">${car.carState}</span>`:`<span class="p-1 ps-2 pe-2 text-bg-warning rounded-4">${car.carState}</span>`;
 
     let carHtml=`<div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
                         <div class="car">
@@ -44,6 +46,7 @@ function addCustomerCars(car,index) {
                             <img src="${imageFront}" class="d-block w-100 rounded-4" alt="..." style="height: 210px">
                             <div class="car__title">
                                  <h3 class="car__name carNameAnchor" carid="${car.carId}" carIndex="${index}" "> ${car.name} </h3>
+                                 ${stateTr}
                             </div>
                             <ul class="car__list">
                                 <li>
