@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 /**
  * `@authority Tharindu Dilan`
@@ -23,6 +24,7 @@ public class Payment {
     private String paymentID;
     private String payment;
     private String paymentExtraMillage;
-    private String wavierPayment;
+    @Lob
+    private byte[] wavierPayment;
 
 }
