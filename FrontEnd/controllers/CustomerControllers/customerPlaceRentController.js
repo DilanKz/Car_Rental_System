@@ -56,3 +56,20 @@ $(document).ready(function () {
         selectedCarList.splice(indexToRemove,1);
     });
 });
+
+function getRentOB() {
+    let rent={
+            rentID: null,
+            pickupDate: "12",
+            pickupTime: "23",
+            estReturnDate: "4334",
+            estReturnTime: "3434",
+            fullPaymentStatus: "23423",
+            state: "pending",
+            waiverPaymentSlip: null,
+            payment: null,
+            rentDetails: null
+    }
+
+    return rent;
+}
