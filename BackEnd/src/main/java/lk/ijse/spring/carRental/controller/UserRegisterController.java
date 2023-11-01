@@ -65,7 +65,7 @@ public class UserRegisterController {
 
     @GetMapping("/getUser")
     public ResponseUtil getCustomerDataByUID(@RequestParam("id")String id ){
-        return new ResponseUtil();
+        return new ResponseUtil("Ok","Customer Added",service.getCustomer(id));
     }
 
     @GetMapping("/uId")
