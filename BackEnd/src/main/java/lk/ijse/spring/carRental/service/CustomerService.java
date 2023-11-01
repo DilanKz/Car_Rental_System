@@ -12,6 +12,8 @@ import java.util.List;
 public interface CustomerService {
     void saveCustomer(CustomerDTO dto);
 
+    CustomerDTO getCustomer(String id);
+
     void updateCustomer(CustomerDTO c);
 
     String lastID();
