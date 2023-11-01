@@ -29,9 +29,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getData(String uName){
         User user = userRepo.getCredentials(uName);
-        if (user==null){
-            throw new RuntimeException("This User doesn't exist");
-        }
         return mapper.map(user, UserDTO.class);
     }
 
