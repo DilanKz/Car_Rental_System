@@ -39,7 +39,7 @@ function addCustomerCars(car, index) {
     let rentButton = car.carState === "Available" ? '<a href="#!" class="text-decoration-none car__more btnRentNow" carindex="' + index + '"><span>Add to cart <i class="ms-2 fa-solid fa-cart-plus"></i></span></a>' : '<a href="#!" class="text-decoration-none car__more"  carindex="' + index + '" disabled><span>Add to cart <i class="ms-2 fa-solid fa-cart-plus"></i></span></a>';
     let imageFront = byteArrayToImage(car.carFront);
 
-    let stateTr = car.carState === "Available" ? `<span class="p-1 ps-2 pe-2 text-bg-success rounded-4">${car.carState}</span>` : `<span class="p-1 ps-2 pe-2 text-bg-warning rounded-4">${car.carState}</span>`;
+    let stateTr = car.carState === "Available" ? `<span class="p-1 ps-2 pe-2 text-bg-success rounded-2">${car.carState}</span>` : `<span class="p-1 ps-2 pe-2 text-bg-warning rounded-2">${car.carState}</span>`;
 
     let carHtml = `<div class="col-10 col-md-6 col-xl-3 m-5 mt-0">
                         <div class="car">
