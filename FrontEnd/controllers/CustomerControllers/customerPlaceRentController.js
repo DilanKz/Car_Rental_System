@@ -1,4 +1,4 @@
-let selectedCarList=[]
+let selectedCarList = []
 
 function addCarToTheCart(listElement) {
 
@@ -9,7 +9,7 @@ function addCarToTheCart(listElement) {
     let image = byteArrayToImage(listElement.carFront);
 
 
-    let cartItem=`<div class="cartItemCarCard col-11 my-3 rounded-4 box-shadow" carindex="${listElement.carId}" style="height: 120px">
+    let cartItem = `<div class="cartItemCarCard col-11 my-3 rounded-4 box-shadow" carindex="${listElement.carId}" style="height: 120px">
                                                     <div class="p-2 row">
                                                         <div class="ms-3 p-0 rounded-4 overflow-hidden" style="height: 100px;width: 100px">
                                                             <img src="${image}" alt="" style="height: 100px;width: 100px">
@@ -30,13 +30,13 @@ function addCarToTheCart(listElement) {
                                                         </div>
                                                         <div class="col-1 ms-2 d-flex justify-content-center align-items-center" style="height: 100px">
                                                             <div class="form-check">
-                                                                <input class="driveCheck form-check-input text-success checked" type="checkbox" value="" carindex="${selectedCarList.length-1}"/>
+                                                                <input class="driveCheck form-check-input text-success checked" type="checkbox" value="" carindex="${selectedCarList.length - 1}"/>
                                                                 <label class="form-check-label">Driver</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-1 ms-2 d-flex justify-content-center align-items-center" style="height: 100px">
-                                                            <button carindex="${selectedCarList.length-1}" type="button" class="btnItemClose btn-close p-2 box-shadow-2 bg-light"></button>
+                                                            <button carindex="${selectedCarList.length - 1}" type="button" class="btnItemClose btn-close p-2 box-shadow-2 bg-light"></button>
                                                         </div>
                                                     </div>
                                                 </div>`
@@ -50,41 +50,47 @@ $(document).ready(function () {
         let indexToRemove = $(this).attr('carindex');
         //$(this).parent().parent().css('display','none')
         $(this).parent().parent().parent().remove();
-        selectedCarList.splice(indexToRemove,1);
+        selectedCarList.splice(indexToRemove, 1);
     });
 });
 
 function getRentOB() {
-    let rent={
-            rentID: null,
-            pickupDate: "12",
-            pickupTime: "23",
-            estReturnDate: "4334",
-            estReturnTime: "3434",
-            fullPaymentStatus: "23423",
-            state: "pending",
-            waiverPaymentSlip: null,
-            payment: null,
-            rentDetails: null
+    let rent = {
+        rentID: null,
+        pickupDate: "12",
+        pickupTime: "23",
+        estReturnDate: "4334",
+        estReturnTime: "3434",
+        fullPaymentStatus: "23423",
+        state: "pending",
+        waiverPaymentSlip: null,
+        payment: null,
+        customerID: "C00-002",
+        rentDetails: null
     }
 
     return rent;
 }
 
-let detailList=[];
-let driverList=[];
+let detailList = [];
+let driverList = [];
 let payID;
 let rentID;
-let selectedFullDate=null;
-let selectedFullTime=null;
-let estReturnData=null;
-let estReturnTime=null;
+let selectedFullDate = null;
+let selectedFullTime = null;
+let estReturnData = null;
+let estReturnTime = null;
+
+
+$('#btnPlaceRequest').click(function () {
+    makeRentDetailList();
+});
 
 function makeRentDetailList() {
-    detailList=[];
+    detailList = [];
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         let card = $('.cartItemCarCard');
         let drivers = $('.driveCheck');
 
@@ -93,27 +99,32 @@ function makeRentDetailList() {
         for (let i = 0; i < card.length; i++) {
 
             let carID = $(card[i]).attr('carindex');
-            let driverID=null;
+            let driverID = null;
             if ($(drivers[i]).is(':checked')) {
-                driverID=driverList[i];
+                driverID = driverList[i];
             }
 
             detailList.push({
-                rentID:rentID,
-                carID:carID,
-                driverID:driverID
+                rentID: rentID,
+                carID: carID,
+                driverID: driverID
             });
         }
     });
 
     let rent = getRentOB();
-    rent.rentID=rentID;
-    rent.rentDetails=detailList;
-    rent.payment= {
+    rent.rentID = rentID;
+    rent.rentDetails = detailList;
+    rent.payment = {
         paymentID: payID,
         payment: "0",
-        paymentExtraMillage: "0"
+        paymentExtraMillage: "0",
+
     };
+    rent.pickupDate = selectedFullDate;
+    rent.pickupTime = selectedFullTime;
+    rent.estReturnDate = estReturnData;
+    rent.estReturnTime = estReturnTime;
 
     if (selectedFullDate && selectedFullTime && estReturnData && estReturnTime) {
         console.log(rent);
@@ -127,7 +138,7 @@ function makeRentDetailList() {
 }
 
 
-$('#txtRentPickupDate').change(function() {
+$('#txtRentPickupDate').change(function () {
     let selectedDateTime = new Date($(this).val());
     let currentDateTime = new Date();
     currentDateTime.setDate(currentDateTime.getDate() + 2);
@@ -137,8 +148,8 @@ $('#txtRentPickupDate').change(function() {
         let selectedHours = selectedDateTime.getHours();
         let selectedMinutes = selectedDateTime.getMinutes();
 
-        selectedFullDate=selectedDateTime.getFullYear()+'-'+(selectedDateTime.getMonth() + 1)+'-'+selectedDateTime.getDate();
-        selectedFullTime=selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
+        selectedFullDate = selectedDateTime.getFullYear() + '-' + (selectedDateTime.getMonth() + 1) + '-' + selectedDateTime.getDate();
+        selectedFullTime = selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
 
         console.log(selectedFullDate);
         console.log(selectedFullTime);
@@ -147,33 +158,33 @@ $('#txtRentPickupDate').change(function() {
     }
 });
 
-$('#txtRentEstRDate').change(function() {
+$('#txtRentEstRDate').change(function () {
     let selectedDateTime = new Date($(this).val());
 
     let selectedHours = selectedDateTime.getHours();
     let selectedMinutes = selectedDateTime.getMinutes();
 
-    estReturnData=selectedDateTime.getFullYear()+'-'+(selectedDateTime.getMonth() + 1)+'-'+selectedDateTime.getDate();
-    estReturnTime=selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
+    estReturnData = selectedDateTime.getFullYear() + '-' + (selectedDateTime.getMonth() + 1) + '-' + selectedDateTime.getDate();
+    estReturnTime = selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
 
     console.log(estReturnData);
     console.log(estReturnTime);
 });
 
-let slipFile=null;
+let slipFile = null;
 
-$(document).ready(function() {
-    slipFile=null;
-    $('#slipFile').change(function() {
-        slipFile=($(this).val());
+$(document).ready(function () {
+    slipFile = null;
+    $('#slipFile').change(function () {
+        slipFile = ($(this).val());
     });
 });
 
 
 function addRequest(rentOB) {
-    if (slipFile!=null){
-        let formData=new FormData();
-        formData.set('slip',slipFile)
+    if (slipFile != null) {
+        let formData = new FormData();
+        formData.set('slip', $('#slipFile')[0].files[0])
 
         $.ajax({
             url: 'http://localhost:8080/CarRental/Request/paySlip',
@@ -182,28 +193,28 @@ function addRequest(rentOB) {
             processData: false,
             contentType: false,
             success: function (res) {
+                if (res.state === "OK") {
+                    $.ajax({
+                        url: 'http://localhost:8080/CarRental/Request',
+                        method: 'POST',
+                        data: JSON.stringify(rentOB),
+                        contentType: 'application/json',
+                        success: function (res) {
 
-                $.ajax({
-                    url: 'http://localhost:8080/CarRental/Request/paySlip',
-                    method: 'POST',
-                    data: JSON.stringify(rentOB),
-                    contentType: 'application/json',
-                    success: function (res) {
-
-
-
-                    },
-                    error: function (error) {
-                        console.error('Error:', error);
-                    }
-                });
-
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                }
             },
             error: function (error) {
                 console.error('Error:', error);
+                return "";
             }
         });
-    }else {
+
+    } else {
         //toast
     }
 }
