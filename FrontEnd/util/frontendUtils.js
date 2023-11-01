@@ -30,7 +30,7 @@ $('#btnCarIn').change(function (event) {
     loadImage($('#imgCarIn'),file)
 });
 
-
+/*===================IMAGE LOADERS=====================*/
 function loadImage(image,file) {
 
     console.log(file)
@@ -71,4 +71,26 @@ function byteArrayToFile(byteArray) {
     const blob = new Blob([base64ToUint8Array(byteArray)], { type: 'image/jpeg' });
     const file = new File([blob], 'a.jpg', { type: blob.type });
     return file;
+}
+
+/*=====================TOASTS==========================*/
+function blueToastShow(message) {
+    $('#toastBlueText').text(message);
+    const toastBLueFrame = $('#toastBLueFrame');
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
+    toastBootstrap.show();
+}
+
+function greenToastShow(message) {
+    $('#toastGreenText').text(message);
+    const toastBLueFrame = $('#toastGreenFrame');
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
+    toastBootstrap.show();
+}
+
+function yellowToastShow(message) {
+    $('#toastYellowText').text(message);
+    const toastBLueFrame = $('#toastYellowFrame');
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
+    toastBootstrap.show();
 }
