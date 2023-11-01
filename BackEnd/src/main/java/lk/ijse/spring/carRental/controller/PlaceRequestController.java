@@ -31,7 +31,7 @@ public class PlaceRequestController {
     @PostMapping
     public ResponseUtil placeRequest(@RequestBody RentDTO dto ) throws IOException {
         dto.setWaiverPaymentSlip(multipartFile);
-        System.out.println(dto);
+        rentService.save(dto);
         return new ResponseUtil("Ok","Rent requested",dto);
     }
     @PostMapping("/paySlip")
