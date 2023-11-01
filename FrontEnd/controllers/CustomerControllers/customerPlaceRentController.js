@@ -117,6 +117,9 @@ function makeRentDetailList() {
 
     if (selectedFullDate && selectedFullTime && estReturnData && estReturnTime) {
         console.log(rent);
+
+        addRequest(rent);
+
     } else {
         console.log('One or more variables are null.');
     }
@@ -157,4 +160,50 @@ $('#txtRentEstRDate').change(function() {
     console.log(estReturnTime);
 });
 
+let slipFile=null;
 
+$(document).ready(function() {
+    slipFile=null;
+    $('#slipFile').change(function() {
+        slipFile=($(this).val());
+    });
+});
+
+
+function addRequest(rentOB) {
+    if (slipFile!=null){
+        let formData=new FormData();
+        formData.set('slip',slipFile)
+
+        $.ajax({
+            url: 'http://localhost:8080/CarRental/Request/paySlip',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+
+                $.ajax({
+                    url: 'http://localhost:8080/CarRental/Request/paySlip',
+                    method: 'POST',
+                    data: JSON.stringify(rentOB),
+                    contentType: 'application/json',
+                    success: function (res) {
+
+
+
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+
+            },
+            error: function (error) {
+                console.error('Error:', error);
+            }
+        });
+    }else {
+        //toast
+    }
+}
