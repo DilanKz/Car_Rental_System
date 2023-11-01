@@ -72,9 +72,14 @@ body::-webkit-scrollbar{
     border: 2px solid #DBE2EF;
 }
 
-#loginToast{
+#toastBLueFrame{
     background: #3F72AF;
     color: white;
+}
+
+#toastYellowFrame{
+    background-color: #ffc107;
+    color: #000000;
 }
 
 /*Home*/
