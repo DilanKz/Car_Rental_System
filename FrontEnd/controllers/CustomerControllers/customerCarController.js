@@ -118,7 +118,7 @@ function loadCarViewPopUp(car, index) {
 $(document).ready(function () {
     btnRentNow.click(function () {
         let listElement = carsList[$(this).attr('carIndex')];
-        console.log(listElement)
+        console.log(listElement);
     });
 });
 
@@ -126,7 +126,64 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(document).on('click', '.btnRentNow', function () {
         let listElement = carsList[$(this).attr('carIndex')];
-        console.log(listElement)
+        console.log(listElement);
+        drivers();
+        nextPayID();
+        nextRentID();
         addCarToTheCart(listElement);
     });
 });
+
+function drivers() {
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Request/drivers',
+        method: 'GET',
+        success: function (res) {
+            driverList= res.data;
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
+
+function nextPayID() {
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Request/payID',
+        method: 'GET',
+        success: function (res) {
+
+            if (res.data == null) {
+
+                payID = 'P00-001';
+            } else {
+                let number = parseInt(res.data.slice(4), 10);
+                number++;
+                payID = "P00-" + number.toString().padStart(3, "0");
+            }
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
+function nextRentID() {
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Request/rentID',
+        method: 'GET',
+        success: function (res) {
+
+            if (res.data == null) {
+
+                rentID = 'RQ0-001';
+            } else {
+                let number = parseInt(res.data.slice(4), 10);
+                number++;
+                rentID = "RQ0-" + number.toString().padStart(3, "0");
+            }
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
