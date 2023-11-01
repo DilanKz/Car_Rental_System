@@ -1,5 +1,7 @@
 package lk.ijse.spring.carRental.service;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 10:26 PM
@@ -7,4 +9,6 @@ package lk.ijse.spring.carRental.service;
  */
 public interface RentService {
     String lastID();
+
+    List<String> getAvailableDrivers();
 }
