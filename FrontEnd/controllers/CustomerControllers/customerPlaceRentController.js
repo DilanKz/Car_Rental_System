@@ -75,6 +75,10 @@ let detailList=[];
 let driverList=[];
 let payID;
 let rentID;
+let selectedFullDate=null;
+let selectedFullTime=null;
+let estReturnData=null;
+let estReturnTime=null;
 
 function makeRentDetailList() {
     detailList=[];
@@ -111,6 +115,46 @@ function makeRentDetailList() {
         paymentExtraMillage: "0"
     };
 
-    console.log(rent)
+    if (selectedFullDate && selectedFullTime && estReturnData && estReturnTime) {
+        console.log(rent);
+    } else {
+        console.log('One or more variables are null.');
+    }
 
 }
+
+
+$('#txtRentPickupDate').change(function() {
+    let selectedDateTime = new Date($(this).val());
+    let currentDateTime = new Date();
+    currentDateTime.setDate(currentDateTime.getDate() + 2);
+
+    if (selectedDateTime < currentDateTime) {
+
+        let selectedHours = selectedDateTime.getHours();
+        let selectedMinutes = selectedDateTime.getMinutes();
+
+        selectedFullDate=selectedDateTime.getFullYear()+'-'+(selectedDateTime.getMonth() + 1)+'-'+selectedDateTime.getDate();
+        selectedFullTime=selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
+
+        console.log(selectedFullDate);
+        console.log(selectedFullTime);
+    } else {
+        console.log('Selected date/time is more than two days from now.');
+    }
+});
+
+$('#txtRentEstRDate').change(function() {
+    let selectedDateTime = new Date($(this).val());
+
+    let selectedHours = selectedDateTime.getHours();
+    let selectedMinutes = selectedDateTime.getMinutes();
+
+    estReturnData=selectedDateTime.getFullYear()+'-'+(selectedDateTime.getMonth() + 1)+'-'+selectedDateTime.getDate();
+    estReturnTime=selectedHours + ':' + (selectedMinutes < 10 ? '0' : '') + selectedMinutes;
+
+    console.log(estReturnData);
+    console.log(estReturnTime);
+});
+
+
