@@ -26,5 +26,6 @@ public class RentDTO {
     private String state;
     private byte[] waiverPaymentSlip;
     private PaymentDTO payment;
+    private String customerID;
     private List<RentDetailsDTO> rentDetails;
 }
