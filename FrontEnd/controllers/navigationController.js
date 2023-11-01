@@ -148,6 +148,7 @@ customerReg.click(function () {
     customerData.set('type', userID);
     customerData.set('state', 'none');
     customerData.set('regDte', '2023-10-30');
+    customerData.set('password', $('#txtLogUserPass').val());
 
     /*let idFront = $('#btnIDFront')[0].files[0];
     let idBack = $('#btnIDBack')[0].files[0];
