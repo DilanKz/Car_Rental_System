@@ -73,13 +73,18 @@ body::-webkit-scrollbar{
 }
 
 #toastBLueFrame{
-    background: #3F72AF;
-    color: white;
+    background: #4d96f3;
+    color: #222831;
 }
 
 #toastYellowFrame{
-    background-color: #ffc107;
-    color: #000000;
+    background-color: #f6c639;
+    color: #222831;
+}
+
+#toastGreenFrame{
+    background-color: #3acf87;
+    color: #222831;
 }
 
 /*Home*/
