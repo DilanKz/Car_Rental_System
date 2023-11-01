@@ -47,6 +47,16 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println(customer.getState());
         customerRepo.save(customer);
     }
+    @Override
+    public CustomerDTO getCustomer(String id){
+
+        Customer customer = customerRepo.getCustomerData(id);
+
+        CustomerDTO map = mapper.map(customer, CustomerDTO.class);
+        map.setDto(mapper.map(customer.getUser(), UserDTO.class));
+
+        return map;
+    }
 
     @Override
     public void updateCustomer(CustomerDTO c) {
