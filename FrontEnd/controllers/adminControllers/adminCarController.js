@@ -3,7 +3,7 @@ let data;
 
 function loadAllCars() {
 
-    $('#carLoader').css('display','block')
+    $('#carLoader').css('display', 'block')
     $.ajax({
         url: 'http://localhost:8080/CarRental/Car/allCars',
         method: 'GET',
@@ -12,7 +12,7 @@ function loadAllCars() {
             let carsList = res.data;
             for (let i = 0; i < carsList.length; i++) {
                 addCarToView(carsList[i]);
-                $('#carLoader').css('display','none')
+                $('#carLoader').css('display', 'none')
             }
         },
         error: function (error) {
@@ -38,82 +38,72 @@ function addCarToView(car) {
 `;
 
 
-
     containerView.append(carElementHTML);
 
 }
 
 
-$(document).ready(function() {
-    $(document).on('click', '.customer', function() {
+$(document).ready(function () {
+    $(document).on('click', '.customer', function () {
         let attr = $(this).attr('carid');
         loadCarFrame(JSON.parse(attr));
     });
 });
 
+let carUpID;
+let carUpMaintenance;
+let imageFront;
+let imageBack;
+let imageSide;
+let imageInside;
 
 function loadCarFrame(car) {
-    carViewFrame.css('display','block');
-    $('#btnAddCarSave').css('display','none');
-    $('#btnAddCarUpdate').css('display','block');
+    carViewFrame.css('display', 'block');
+    $('#btnAddCarSave').css('display', 'none');
+    $('#btnAddCarUpdate').css('display', 'block');
 
 
-    let carID=car.carId;
-    let maintenance=car.maintained;
-    let imageFront=byteArrayToFile(car.carFront);
-    let imageBack=byteArrayToFile(car.carBack);
-    let imageSide=byteArrayToFile(car.carSide);
-    let imageInside=byteArrayToFile(car.carInside);
+    carUpID = car.carId;
+    carUpMaintenance = car.maintained;
+    imageFront = byteArrayToFile(car.carFront);
+    imageBack = byteArrayToFile(car.carBack);
+    imageSide = byteArrayToFile(car.carSide);
+    imageInside = byteArrayToFile(car.carInside);
 
     loadCarData(car);
 
-    $('#btnCarFront').on('change', function() {
-        const selectedFile = this.files[0];
-
-        if (selectedFile) {
-            imageFront = selectedFile;
-        }
+    $('#btnCarFront').on('change', function () {
+        //if (selectedFile) {
+        imageFront = this.files[0];
+        console.log(true)
+        //}
     });
 
-    $('#btnCarBack').on('change', function() {
-        const selectedFile = this.files[0];
-
-        if (selectedFile) {
-            imageBack = selectedFile;
-        }
+    $('#btnCarBack').on('change', function () {
+        //if (selectedFile) {
+        imageBack = this.files[0];
+        //}
     });
 
-    $('#btnCarSide').on('change', function() {
-        const selectedFile = this.files[0];
-
-        if (selectedFile) {
-            imageSide = selectedFile;
-        }
+    $('#btnCarSide').on('change', function () {
+        //if (selectedFile) {
+        imageSide = this.files[0];
+        //}
     });
 
-    $('#btnCarIn').on('change', function() {
-        const selectedFile = this.files[0];
-
-        if (selectedFile) {
-            imageInside = selectedFile;
-        }
+    $('#btnCarIn').on('change', function () {
+        //if (selectedFile) {
+        imageInside = this.files[0];
+        //}
     });
-
-    data = new FormData();
-    data.set('carFront',imageFront);
-    data.set('carBack',imageBack);
-    data.set('carSide',imageSide);
-    data.set('carInside',imageInside);
-    data.set('carId',carID);
-    data.set('maintained',maintenance);
 }
 
 
-function loadCarData(car){
-    $('#imgCarFront').attr('src',byteArrayToImage(car.carFront))
-    $('#imgCarBack').attr('src',byteArrayToImage(car.carBack))
-    $('#imgCarSide').attr('src',byteArrayToImage(car.carSide))
-    $('#imgCarIn').attr('src',byteArrayToImage(car.carInside))
+function loadCarData(car) {
+    $('#imgCarFront').attr('src', byteArrayToImage(car.carFront))
+    $('#imgCarBack').attr('src', byteArrayToImage(car.carBack))
+    $('#imgCarSide').attr('src', byteArrayToImage(car.carSide))
+    $('#imgCarIn').attr('src', byteArrayToImage(car.carInside))
 
     $('#txtRegNo').val(car.regNo);
     $('#txtBrand').val(car.name);
@@ -132,22 +122,29 @@ function loadCarData(car){
     $('#txtExtraKmPrice').val(car.extraPerKm);
 }
 
-function finalizeFormData(){
-    data.set('regNo',$('#txtRegNo').val());
-    data.set('name',$('#txtBrand').val());
-    data.set('waiverPay',$('#txtWeaverPay').val());
-    data.set('wholeKm',$('#txtWholeKm').val());
-    data.set('carState',$('#txtCarState').val());
-    data.set('color',$('#txtColour').val());
-    data.set('passengers',$('#txtPCount').val());
-    data.set('carType',$('#txtCarType').val());
-    data.set('carFuelType',$('#txtFuelType').val());
-    data.set('carTransmission',$('#txtTransmissionType').val());
-    data.set('dailyPayment',$('#txtDailyRate').val());
-    data.set('monthlyPayment',$('#txtMonthlyRate').val());
-    data.set('dailyKmLimit',$('#txtDailyLimit').val());
-    data.set('monthlyKmLimit',$('#txtMonthlyLimit').val());
-    data.set('extraPerKm',$('#txtExtraKmPrice').val());
+function finalizeFormData() {
+    data = new FormData();
+    data.set('carFront', imageFront);
+    data.set('carBack', imageBack);
+    data.set('carSide', imageSide);
+    data.set('carInside', imageInside);
+    data.set('carId', carUpID);
+    data.set('maintained', carUpMaintenance);
+    data.set('regNo', $('#txtRegNo').val());
+    data.set('name', $('#txtBrand').val());
+    data.set('waiverPay', $('#txtWeaverPay').val());
+    data.set('wholeKm', $('#txtWholeKm').val());
+    data.set('carState', $('#txtCarState').val());
+    data.set('color', $('#txtColour').val());
+    data.set('passengers', $('#txtPCount').val());
+    data.set('carType', $('#txtCarType').val());
+    data.set('carFuelType', $('#txtFuelType').val());
+    data.set('carTransmission', $('#txtTransmissionType').val());
+    data.set('dailyPayment', $('#txtDailyRate').val());
+    data.set('monthlyPayment', $('#txtMonthlyRate').val());
+    data.set('dailyKmLimit', $('#txtDailyLimit').val());
+    data.set('monthlyKmLimit', $('#txtMonthlyLimit').val());
+    data.set('extraPerKm', $('#txtExtraKmPrice').val());
 }
 
 $('#btnAddCarUpdate').click(function () {
@@ -157,9 +154,9 @@ $('#btnAddCarUpdate').click(function () {
 
 $('#btnAddCarSave').click(function () {
 
-    let formData=new FormData($('#carFormData')[0]);
-    formData.set('carId',carID)
-    formData.set('maintained',maintenance)
+    let formData = new FormData($('#carFormData')[0]);
+    formData.set('carId', carID)
+    formData.set('maintained', maintenance)
 
     $.ajax({
         url: 'http://localhost:8080/CarRental/Car/save',
@@ -182,8 +179,8 @@ function updateCar() {
     finalizeFormData();
 
     $.ajax({
-        url: 'http://localhost:8080/CarRental/Car/update',
-        method: 'PUT',
+        url: 'http://localhost:8080/CarRental/Car/save',
+        method: 'POST',
         data: data,
         processData: false,
         contentType: false,
