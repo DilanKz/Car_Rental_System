@@ -1,3 +1,6 @@
+let mainLoggedInCustomer=null;
+
+
 const home = $('#home');
 const logInFrame = $('#logInFrame');
 const registerFrame = $('#registerFrame');
@@ -94,24 +97,82 @@ bg.click(function () {
 
 carNameAnchor.click(function () {
     carViewForm.css('display','block');
-})
+});
+
+let loggedUser=null;
 
 btnLogInM.click(function () {
     let userName = $('#txtLogUserName').val();
     let loginPass = $('#txtLogUserPass').val();
 
-    if (userName==='admin'){
-        console.log('admin');
-        window.location.href='../pages/admin.html';
+    if (loggedUser!=null){
+        if (loggedUser.password === loginPass) {
+            checkUser(userName,loginPass);
+        }
+    }else {
+        getLoginDetails(userName,loginPass)
     }
-    if (userName==='customer'){
-        console.log('customer');
-        window.location.href='../index.html';
-    }
-    if (userName==='driver'){
-        console.log('driver');
-    }
+
 });
+
+function getLoginDetails(userName,password) {
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/login/account?userName='+userName,
+        method: 'GET',
+        async:false,
+        success: function (res) {
+            if (res.data!=null){
+                loggedUser=res.data;
+                if (res.data.userName===userName){
+                    checkUser(userName,password);
+                }
+            }
+            //toast red
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
+
+function checkUser(username,password) {
+    if (loggedUser.password===password){
+        console.log('check user true');
+
+        if (loggedUser.type==='admin'){
+            console.log('admin');
+            window.location.href='../pages/admin.html';
+        }
+        if (loggedUser.type==='user'){
+            console.log('customer');
+            $('#signIn').css('display','none');
+            $('#btnLogin').css('display','none');
+            getUser(loggedUser.id);
+            logInFrame.css('display','none');
+        }
+        if (loggedUser.type==='driver'){
+            console.log('driver');
+        }
+
+    }else {
+        console.log('wrong password')
+    }
+}
+
+function getUser(id) {
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Register/getUser?id='+id,
+        method: 'GET',
+        async:false,
+        success: function (res) {
+            console.log(res.data)
+            mainLoggedInCustomer=res.data;
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+}
 
 
 /*$('#registerFormData').submit(function (e) {
