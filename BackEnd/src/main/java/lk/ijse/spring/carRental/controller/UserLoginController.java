@@ -18,8 +18,9 @@ public class UserLoginController {
     @Autowired
     UserService service;
 
-    @GetMapping
+    @GetMapping("/account")
     public ResponseUtil getUserCredentials(@RequestParam String userName){
+        System.out.println(userName);
         return new ResponseUtil("Ok","Successfully fetched",service.getData(userName));
     }
 
