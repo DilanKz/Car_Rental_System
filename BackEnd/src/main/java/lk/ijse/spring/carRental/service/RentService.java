@@ -1,5 +1,7 @@
 package lk.ijse.spring.carRental.service;
 
+import lk.ijse.spring.carRental.dto.RentDTO;
+
 import java.util.List;
 
 /**
@@ -9,6 +11,8 @@ import java.util.List;
  */
 public interface RentService {
     String lastID();
+
+    void save(RentDTO dto);
 
     List<String> getAvailableDrivers();
 }

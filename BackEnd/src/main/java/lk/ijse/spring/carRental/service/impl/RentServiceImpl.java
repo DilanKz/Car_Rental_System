@@ -1,8 +1,14 @@
 package lk.ijse.spring.carRental.service.impl;
 
+import lk.ijse.spring.carRental.dto.RentDTO;
+import lk.ijse.spring.carRental.dto.RentDetailsDTO;
+import lk.ijse.spring.carRental.entity.Rent;
+import lk.ijse.spring.carRental.entity.RentDetails;
 import lk.ijse.spring.carRental.repo.DriverRepo;
 import lk.ijse.spring.carRental.repo.RentRepo;
 import lk.ijse.spring.carRental.service.RentService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +28,33 @@ public class RentServiceImpl implements RentService {
     @Autowired
     DriverRepo driverRepo;
 
+    @Autowired
+    ModelMapper mapper;
+
     @Override
-    public String lastID(){
+    public String lastID() {
         return rentRepo.getLastID();
     }
 
     @Override
-    public List<String> getAvailableDrivers(){
+    public void save(RentDTO dto) {
+
+        Rent rent = mapper.map(dto, Rent.class);
+
+        for (RentDetailsDTO details:dto.getRentDetails()) {
+            RentDetails rentDetails = new RentDetails();
+            rentDetails.setRentID(details.getRentID());
+            rentDetails.setRentID(details.getCarID());
+            rentDetails.setDriverID(details.getDriverID());
+        }
+
+        System.out.println(rent);
+        //Rent rent = new Rent();
+        rentRepo.save(rent);
+    }
+
+    @Override
+    public List<String> getAvailableDrivers() {
         return driverRepo.getAllDID();
     }
 }
