@@ -125,6 +125,7 @@ function makeRentDetailList() {
     rent.pickupTime = selectedFullTime;
     rent.estReturnDate = estReturnData;
     rent.estReturnTime = estReturnTime;
+    rent.customerID = mainLoggedInCustomer.cid;
 
     if (selectedFullDate && selectedFullTime && estReturnData && estReturnTime) {
         console.log(rent);
