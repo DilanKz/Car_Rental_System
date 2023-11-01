@@ -1,8 +1,9 @@
 let btnRent = $('#rentIt');
 
 btnRent.click(function () {
-    blueToastShow('Please sign in to Place a rent');
-    yellowToastShow('Please sign in to Place a rent');
+    if (mainLoggedInCustomer==null){
+        yellowToastShow('Please sign in to Place a rent');
+    }
 });
 
 function blueToastShow(message) {
