@@ -42,4 +42,9 @@ public class PlaceRequestController {
     public ResponseUtil lastRentID(){
         return new ResponseUtil("OK","Fetched PaymentID",rentService.lastID());
     }
+
+    @GetMapping("/drivers")
+    public ResponseUtil allDriverIds(){
+        return new ResponseUtil("OK","Fetched PaymentID",rentService.getAvailableDrivers());
+    }
 }
