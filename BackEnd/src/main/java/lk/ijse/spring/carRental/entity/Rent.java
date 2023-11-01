@@ -21,6 +21,7 @@ import java.util.List;
 public class Rent {
     @Id
     private String RentID;
+    private String customerID;
     private String pickupDate;
     private String pickupTime;
     private String estReturnDate;
@@ -33,8 +34,9 @@ public class Rent {
     private Payment payment;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customerID",referencedColumnName = "cid",nullable = false)
-    private Customer customerID;
+    @JoinColumn(name = "customerID",referencedColumnName = "cid",insertable = false,updatable = false,nullable = false)
+    private Customer customer;
+
     @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
     private List<RentDetails> rentDetails;
 
