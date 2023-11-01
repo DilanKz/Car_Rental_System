@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 10:48 PM
@@ -13,6 +15,8 @@ import org.springframework.data.repository.query.Param;
 public interface DriverRepo extends JpaRepository<Driver,String> {
     @Query(value = "SELECT dID FROM driver ORDER BY dID DESC LIMIT 1",nativeQuery = true)
     String getLastID();
+    @Query(value = "SELECT dID FROM driver WHERE status='available'",nativeQuery = true)
+    List<String> getAllDID();
 
     @Query(value = "SELECT * FROM driver WHERE dID=:id",nativeQuery = true)
     Driver getDriverData(@Param("id") String id);
