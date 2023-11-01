@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+
 /**
  * `@authority Tharindu Dilan`
  * 9:14 PM
@@ -18,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin
 public class PlaceRequestController {
 
+    private byte[] multipartFile;
     @Autowired
     PaymentService paymentService;
 
@@ -25,12 +29,14 @@ public class PlaceRequestController {
     RentService rentService;
 
     @PostMapping
-    public ResponseUtil placeRequest(@RequestBody RentDTO dto){
+    public ResponseUtil placeRequest(@RequestBody RentDTO dto ) throws IOException {
+        dto.setWaiverPaymentSlip(multipartFile);
         System.out.println(dto);
-        return new ResponseUtil("","",dto);
+        return new ResponseUtil("Ok","Rent requested",dto);
     }
     @PostMapping("/paySlip")
-    public ResponseUtil getImages(@RequestPart MultipartFile slip){
+    public ResponseUtil getImages(@RequestPart MultipartFile slip ) throws IOException {
+        multipartFile= slip.getBytes();
         return  new ResponseUtil("OK","Added Image",slip.getName());
     }
 
