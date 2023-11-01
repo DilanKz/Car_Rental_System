@@ -51,7 +51,7 @@ public class CarController {
 
         carService.saveCar(carDTO);
 
-        return new ResponseUtil("ok","Car saved",carDTO);
+        return new ResponseUtil("ok","Added",carDTO);
     }
 
     @GetMapping("/carID")
@@ -93,7 +93,7 @@ public class CarController {
                 req.getCarInside().getBytes()
         );
 
-        carService.updateCar(carDTO);
+        carService.saveCar(carDTO);
         return new ResponseUtil("ok","Car updated",carDTO);
     }
 }
