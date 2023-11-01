@@ -1,6 +1,7 @@
 let selectedCarList=[]
 
 function addCarToTheCart(listElement) {
+
     selectedCarList.push(listElement);
 
     console.log(selectedCarList.length);
@@ -14,7 +15,7 @@ function addCarToTheCart(listElement) {
                                                             <img src="${image}" alt="" style="height: 100px;width: 100px">
                                                         </div>
 
-                                                        <div class="col-6 ms-4" style="height: 100px">
+                                                        <div class="col-7 ms-4" style="height: 100px">
                                                             <div class="row pt-3">
                                                                 <div class="col-6">
                                                                     <p style="font-family: sans-serif" class="fw-medium"><span class="fs-5 fw-bold">Waiver :</span> ${listElement.waiverPay}</p>
@@ -22,16 +23,15 @@ function addCarToTheCart(listElement) {
                                                                 </div>
 
                                                                 <div class="col-6">
-                                                                    <p style="font-family: sans-serif" class="fw-medium"><span class="fs-5 fw-bold">Waiver :</span> ${listElement.monthlyPayment}</p>
-                                                                    <p style="font-family: sans-serif" class="fw-medium"><span class="fs-5 fw-bold">Price  :</span> ${listElement.extraPerKm}</p>
+                                                                    <p style="font-family: sans-serif" class="fw-medium"><span class="fs-5 fw-bold">Rs-Month :</span> ${listElement.monthlyPayment}</p>
+                                                                    <p style="font-family: sans-serif" class="fw-medium"><span class="fs-5 fw-bold">Rs-Extra  :</span> ${listElement.extraPerKm}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-2 ms-2 d-flex justify-content-center align-items-center" style="height: 100px">
+                                                        <div class="col-1 ms-2 d-flex justify-content-center align-items-center" style="height: 100px">
                                                             <div class="form-check">
-                                                                <input class="driveCheck form-check-input text-success checked" type="checkbox" value="" carindex="${selectedCarList.length-1}" id="flexCheckDefault"/>
-                                                                <label class="form-check-label"
-                                                                       for="flexCheckDefault">Driver</label>
+                                                                <input class="driveCheck form-check-input text-success checked" type="checkbox" value="" carindex="${selectedCarList.length-1}"/>
+                                                                <label class="form-check-label">Driver</label>
                                                             </div>
                                                         </div>
 
@@ -71,10 +71,13 @@ function getRentOB() {
     return rent;
 }
 
-let detailList=[]
+let detailList=[];
+let driverList=[];
+let payID;
+let rentID;
 
 function makeRentDetailList() {
-    detailList=[]
+    detailList=[];
 
 
     $(document).ready(function() {
@@ -88,18 +91,26 @@ function makeRentDetailList() {
             let carID = $(card[i]).attr('carindex');
             let driverID=null;
             if ($(drivers[i]).is(':checked')) {
-                driverID='D001';
+                driverID=driverList[i];
             }
 
             detailList.push({
-                rentID:'R001',
+                rentID:rentID,
                 carID:carID,
                 driverID:driverID
             });
         }
-
-        console.log(detailList);
     });
 
+    let rent = getRentOB();
+    rent.rentID=rentID;
+    rent.rentDetails=detailList;
+    rent.payment= {
+        paymentID: payID,
+        payment: "0",
+        paymentExtraMillage: "0"
+    };
+
+    console.log(rent)
 
 }
