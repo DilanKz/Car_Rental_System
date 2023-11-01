@@ -76,9 +76,13 @@ $('#homeIt').click(function () {
 });
 
 $('#rentIt').click(function () {
-    home.css('display','none');
-    manageCarsFrame.css('display','none');
-    rentACarFrame.css('display','block');
+    if (mainLoggedInCustomer!=null){
+        home.css('display','none');
+        manageCarsFrame.css('display','none');
+        rentACarFrame.css('display','block');
+    }else {
+        yellowToastShow('Please sign in to Place a rent');
+    }
 });
 
 $('#addNewCar').click(function () {
