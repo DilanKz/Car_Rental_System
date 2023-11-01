@@ -8,7 +8,7 @@ function addCarToTheCart(listElement) {
     let image = byteArrayToImage(listElement.carFront);
 
 
-    let cartItem=`<div class=" col-11 my-3 rounded-4 box-shadow" style="height: 120px">
+    let cartItem=`<div class="cartItemCarCard col-11 my-3 rounded-4 box-shadow" carindex="${listElement.carId}" style="height: 120px">
                                                     <div class="p-2 row">
                                                         <div class="ms-3 p-0 rounded-4 overflow-hidden" style="height: 100px;width: 100px">
                                                             <img src="${image}" alt="" style="height: 100px;width: 100px">
@@ -29,10 +29,7 @@ function addCarToTheCart(listElement) {
                                                         </div>
                                                         <div class="col-2 ms-2 d-flex justify-content-center align-items-center" style="height: 100px">
                                                             <div class="form-check">
-                                                                <input class="form-check-input text-success checked"
-                                                                       type="checkbox"
-                                                                       value=""
-                                                                       id="flexCheckDefault"/>
+                                                                <input class="driveCheck form-check-input text-success checked" type="checkbox" value="" carindex="${selectedCarList.length-1}" id="flexCheckDefault"/>
                                                                 <label class="form-check-label"
                                                                        for="flexCheckDefault">Driver</label>
                                                             </div>
@@ -72,4 +69,37 @@ function getRentOB() {
     }
 
     return rent;
+}
+
+let detailList=[]
+
+function makeRentDetailList() {
+    detailList=[]
+
+
+    $(document).ready(function() {
+        let card = $('.cartItemCarCard');
+        let drivers = $('.driveCheck');
+
+        console.log(card.first().attr('carindex'));
+
+        for (let i = 0; i < card.length; i++) {
+
+            let carID = $(card[i]).attr('carindex');
+            let driverID=null;
+            if ($(drivers[i]).is(':checked')) {
+                driverID='D001';
+            }
+
+            detailList.push({
+                rentID:'R001',
+                carID:carID,
+                driverID:driverID
+            });
+        }
+
+        console.log(detailList);
+    });
+
+
 }
