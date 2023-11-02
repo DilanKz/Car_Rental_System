@@ -56,7 +56,8 @@ btnCars.click(function () {
 btnRequests.click(function () {
     hide();
     requestsFrame.css('display','block');
-    $(this).addClass('bottomLine')
+    $(this).addClass('bottomLine');
+    loadAllRequests();
 });
 
 btnAccount.click(function () {
