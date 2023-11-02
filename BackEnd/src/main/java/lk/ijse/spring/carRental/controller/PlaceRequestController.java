@@ -5,6 +5,7 @@ import lk.ijse.spring.carRental.service.PaymentService;
 import lk.ijse.spring.carRental.service.RentService;
 import lk.ijse.spring.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -57,5 +58,11 @@ public class PlaceRequestController {
     @GetMapping("/allRents")
     public ResponseUtil allRents(){
         return new ResponseUtil("OK","Fetched all data",rentService.getAllRents());
+    }
+
+    @PostMapping
+    public ResponseUtil acceptRent(@Param("id") String id){
+        rentService.acceptRent(id);
+        return new ResponseUtil("OK","Successfully updated",id);
     }
 }
