@@ -1,5 +1,6 @@
 let containerView = $('#carContainerView');
 let data;
+let carsList;
 
 function loadAllCars() {
 
@@ -9,7 +10,7 @@ function loadAllCars() {
         method: 'GET',
         success: function (res) {
             containerView.empty();
-            let carsList = res.data;
+            carsList = res.data;
             for (let i = 0; i < carsList.length; i++) {
                 addCarToView(carsList[i]);
                 $('#carLoader').css('display', 'none')
