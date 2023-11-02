@@ -60,7 +60,7 @@ public class PlaceRequestController {
         return new ResponseUtil("OK","Fetched all data",rentService.getAllRents());
     }
 
-    @PostMapping
+    @PostMapping("/accept")
     public ResponseUtil acceptRent(@Param("id") String id){
         rentService.acceptRent(id);
         return new ResponseUtil("OK","Successfully updated",id);
