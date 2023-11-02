@@ -84,4 +84,8 @@ public class RentServiceImpl implements RentService {
         return allRentDTOS;
 
     }
+    @Override
+    public void acceptRent(String id){
+        rentRepo.updateStatus(id);
+    }
 }
