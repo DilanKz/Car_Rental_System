@@ -20,6 +20,7 @@ public class RentDTO {
     private String RentID;
     private String pickupDate;
     private String pickupTime;
+    private String addDate;
     private String estReturnDate;
     private String estReturnTime;
     private String FullPaymentStatus;
