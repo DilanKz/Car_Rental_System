@@ -52,6 +52,13 @@
                 </a>
             </li>
             <li>
+                <a id="btnPayment" href="#" class="bottomLine nav-link py-3 rounded-0"
+                   data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders"
+                   data-bs-original-title="Payment">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </a>
+            </li>
+            <li>
                 <a id="btnCars" href="#" class="bottomLine nav-link py-3 rounded-0"
                    data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products"
                    data-bs-original-title="Manage Cars">
@@ -453,6 +460,24 @@
 
 </main>
 
+<main id="paymentFrame" class="vh-100">
+
+
+    <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
+
+        <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
+            <div class="w-auto ps-3 pe-3 py-2">
+                <h4 style="border-bottom: 2px solid blue">Manage Payements</h4>
+            </div>
+        </div>
+
+        <div class="row pt-1 mt-3 rounded-4 w-100 box-shadow" style="background-color: #ffffff; min-height: 89%;display: block">
+
+        </div>
+
+    </section>
+</main>
+
 <main id="carViewFrame" class="vh-100 position-fixed p-0 container-fluid top-0 z-index: 100" style="z-index: 100;">
     <div class="vw-100 vh-100 d-flex position-absolute top-0 bg-blur-8" style="z-index: 100;">
     </div>
@@ -769,9 +794,9 @@
 
                         <div class="row d-flex mb-3">
                             <div class="col-8 ms-5"></div>
-                            <button id="btnReject" type="button" class="ms-5 me-5 col-1 btn btn-danger btn-sm">Reject
+                            <button carindex="" id="btnReject" type="button" class="ms-5 me-5 col-1 btn btn-danger btn-sm">Reject
                             </button>
-                            <button id="btnApproveRent" type="button" class="col-1 btn btn-success btn-sm">Approve
+                            <button carindex="" id="btnApproveRent" type="button" class="col-1 btn btn-success btn-sm">Approve
                             </button>
 
                         </div>
