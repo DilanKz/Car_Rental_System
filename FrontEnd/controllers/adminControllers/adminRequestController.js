@@ -5,7 +5,7 @@ rentPopUp.css('display','none');
 loadAllCars();
 
 let btnReject = $('#btnReject');
-let approveRent = $('#btnApproveRent');
+let btnApproveRent = $('#btnApproveRent');
 
 
 function loadAllRequests() {
@@ -33,13 +33,19 @@ function addTable(rent) {
 
     let rentReadOB = createRentReadOB(rent);
 
+    let bg='#dbffd6'
+
+    if (rent.state==='pending'){
+        bg='#fff9dc'
+    }
+
     let tr = `<tr class="rentTr" carindex='${JSON.stringify(rentReadOB)}'>
-                  <th>${rent.customerID}</th>
-                  <th>${rent.rentID}</th>
-                  <th>${rent.addDate}</th>
-                  <th>${rent.fullPaymentStatus}</th>
-                  <th>${rent.pickupDate}</th>
-                  <th>${rent.estReturnDate}</th>
+                  <th style="background-color: ${bg}">${rent.customerID}</th>
+                  <th style="background-color: ${bg}">${rent.rentID}</th>
+                  <th style="background-color: ${bg}">${rent.addDate}</th>
+                  <th style="background-color: ${bg}">${rent.fullPaymentStatus}</th>
+                  <th style="background-color: ${bg}">${rent.pickupDate}</th>
+                  <th style="background-color: ${bg}">${rent.estReturnDate}</th>
               </tr>`
 
     tblRequest.append(tr);
@@ -100,6 +106,9 @@ $(document).ready(function() {
         $('#tblRequestDetails').empty();
         loadRentDetails(parseOB.details);
 
+        btnReject.attr('carindex',parseOB.rentID);
+        btnApproveRent.attr('carindex',parseOB.rentID);
+
     });
 });
 
@@ -122,3 +131,41 @@ function loadRentDetails(detail) {
     }
 
 }
+
+btnReject.click(function () {
+
+    console.log($(this).attr('carindex'));
+    /*$.ajax({
+        url: 'http://localhost:8080/CarRental/Request/update?id='+this.attr('carindex'),
+        method: 'POST',
+        success: function (res) {
+            console.log(res.data);
+            tblRequest.empty();
+            console.log(carsList);
+            let dataList = res.data;
+
+            for (let i = 0; i < dataList.length; i++) {
+                addTable(dataList[i]);
+            }
+
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });*/
+});
+
+btnApproveRent.click(function () {
+
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Request/accept?id='+$(this).attr('carindex'),
+        method: 'POST',
+        success: function (res) {
+            rentPopUp.css('display','none');
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
+    });
+});
