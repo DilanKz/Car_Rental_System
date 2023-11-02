@@ -12,12 +12,14 @@ let carsFrame = $('#carsFrame');
 let accountFrame = $('#accountFrame');
 let profileFrame = $('#profileFrame');
 let carViewFrame = $('#carViewFrame');
+let paymentFrame = $('#paymentFrame');
 
 
 let btnDashboard = $('#btnDashboard');
 let btnCars = $('#btnCars');
 let btnAccount = $('#btnAccount');
 let btnRequests = $('#btnRequests');
+let btnPayment = $('#btnPayment');
 
 function hide() {
     dashboardFrame.css('display','none');
@@ -26,11 +28,13 @@ function hide() {
     accountFrame.css('display','none');
     profileFrame.css('display','none');
     carViewFrame.css('display','none');
+    paymentFrame.css('display','none');
 
-    btnDashboard.removeClass('bottomLine')
-    btnCars.removeClass('bottomLine')
-    btnAccount.removeClass('bottomLine')
-    btnRequests.removeClass('bottomLine')
+    btnDashboard.removeClass('bottomLine');
+    btnCars.removeClass('bottomLine');
+    btnAccount.removeClass('bottomLine');
+    btnRequests.removeClass('bottomLine');
+    btnPayment.removeClass('bottomLine');
 }
 
 hide();
@@ -49,6 +53,13 @@ btnDashboard.click(function () {
 btnCars.click(function () {
     hide();
     carsFrame.css('display','block');
+    $(this).addClass('bottomLine');
+    loadAllCars();
+});
+
+btnPayment.click(function () {
+    hide();
+    paymentFrame.css('display','block');
     $(this).addClass('bottomLine');
     loadAllCars();
 });
