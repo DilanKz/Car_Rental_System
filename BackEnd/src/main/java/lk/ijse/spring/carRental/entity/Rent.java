@@ -24,6 +24,7 @@ public class Rent {
     private String customerID;
     private String pickupDate;
     private String pickupTime;
+    private String addDate;
     private String estReturnDate;
     private String estReturnTime;
     private String FullPaymentStatus;
