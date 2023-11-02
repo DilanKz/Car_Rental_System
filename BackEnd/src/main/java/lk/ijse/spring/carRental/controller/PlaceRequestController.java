@@ -53,4 +53,9 @@ public class PlaceRequestController {
     public ResponseUtil allDriverIds(){
         return new ResponseUtil("OK","Fetched PaymentID",rentService.getAvailableDrivers());
     }
+
+    @GetMapping("/allRents")
+    public ResponseUtil allRents(){
+        return new ResponseUtil("OK","Fetched all data",rentService.getAllRents());
+    }
 }
