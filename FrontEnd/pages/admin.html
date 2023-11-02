@@ -20,8 +20,8 @@
 
 <main class=" position-fixed" style="top: 10px; z-index: 50">
 
-    <div class="ms-2 rounded-4 d-flex flex-column flex-shrink-0 "
-         style="margin-top: 8px; width: 60px; height: 97vh; background-color: #DBE2EF">
+    <div class="ms-2 rounded-4 d-flex flex-column flex-shrink-0 box-shadow"
+         style="margin-top: 8px; width: 60px; height: 97vh; background-color: #ffffff">
         <a href="#" class=" d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip"
            data-bs-placement="right" data-bs-original-title="Easy Car Rentals">
             <i class=" fa-solid fa-house"></i>
@@ -29,7 +29,7 @@
         </a>
         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
-                <a id="btnDashboard" href="#" class="nav-link bottomLine py-3 border-bottom rounded-0"
+                <a id="btnDashboard" href="#" class="nav-link bottomLine py-3 rounded-0"
                    aria-current="page"
                    data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home"
                    data-bs-original-title="Dashboard">
@@ -37,21 +37,21 @@
                 </a>
             </li>
             <li>
-                <a id="btnAccount" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                <a id="btnAccount" href="#" class="bottomLine nav-link py-3 rounded-0"
                    data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard"
                    data-bs-original-title="Account hub">
                     <i class="fa-solid fa-user-group"></i>
                 </a>
             </li>
             <li>
-                <a id="btnRequests" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                <a id="btnRequests" href="#" class="bottomLine nav-link py-3 rounded-0"
                    data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders"
                    data-bs-original-title="Requests">
                     <i class="fa-solid fa-square-poll-horizontal"></i>
                 </a>
             </li>
             <li>
-                <a id="btnCars" href="#" class="bottomLine nav-link py-3 border-bottom rounded-0"
+                <a id="btnCars" href="#" class="bottomLine nav-link py-3 rounded-0"
                    data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products"
                    data-bs-original-title="Manage Cars">
                     <i class="fa-solid fa-car-on"></i>
@@ -82,13 +82,13 @@
 
     <section class="pt-3 mb-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
-        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+        <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
             <div class="w-auto ps-3 pe-3 py-2">
                 <h4 style="border-bottom: 2px solid blue">Dashboard</h4>
             </div>
         </div>
 
-        <div class="row mt-3 w-100 pb-3 rounded-4" style="background-color: #DBE2EF; height: 89%">
+        <div class="row mt-3 w-100 pb-3 rounded-4 box-shadow" style="background-color: #ffffff; height: 89%">
 
             <div class="row ms-2 mt-5">
 
@@ -165,13 +165,13 @@
 
     <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
-        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+        <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
             <div class="w-auto ps-3 pe-3 py-2">
                 <h4 style="border-bottom: 2px solid blue">Manage Cars</h4>
             </div>
         </div>
 
-        <div class="row pt-1 mt-3 rounded-4 w-100" style="background-color: #DBE2EF; min-height: 89%;display: block">
+        <div class="row pt-1 mt-3 rounded-4 w-100 box-shadow" style="background-color: #ffffff; min-height: 89%;display: block">
 
             <div class="ms-2 col-2 mt-3 " style="height: max-content">
                 <ul class="ms-2 mt-2 nav  nav-fill" style="width: 200px;">
@@ -378,14 +378,36 @@
 
     <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
-        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+        <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
             <div class="w-auto ps-3 pe-3 py-2">
                 <h4 style="border-bottom: 2px solid blue">Requests</h4>
             </div>
         </div>
 
-        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 90%">
-
+        <div class="row mt-3 w-100 justify-content-center rounded-4 box-shadow" style="background-color: #ffffff; height: 89%">
+            <div class="col-lg-11 mt-5">
+                <div  style="height: 70vh" class="card ">
+                    <div class="card-body">
+                        <h4 class="card-title">Request Detail Table</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Rent ID</th>
+                                    <th>Date</th>
+                                    <th>Waiver payment</th>
+                                    <th>Pickup Date</th>
+                                    <th>Return Date</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblRequest">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -396,16 +418,15 @@
 
     <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
-        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
+        <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
             <div class="w-auto ps-3 pe-3 py-2">
                 <h4 style="border-bottom: 2px solid blue">Manage Cars</h4>
             </div>
         </div>
 
-        <div class="row pt-1 mt-3 rounded-4 w-100 position-relative overflow-hidden"
-             style="background-color: #DBE2EF; min-height: 89%;display: block">
+        <div class="row pt-1 mt-3 rounded-4 w-100 position-relative overflow-hidden box-shadow" style="background-color: #ffffff; height: 89%">
 
-            <div class="h-100 position-absolute" style="background-color: #DBE2EF;" id="carLoader">
+            <div class="h-100 position-absolute" style="background-color: #ffffff;" id="carLoader">
                 <div class="position-absolute" style="top: 45%;left: 45%">
                     <div class="lds-ring">
                         <div></div>
@@ -672,7 +693,7 @@
     </div>
 </main>
 
-<main id="carViewFrame1" class="vh-100 position-fixed p-0 container-fluid top-0 z-index: 100" style="z-index: 100;">
+<!--<main id="carViewFrame1" class="vh-100 position-fixed p-0 container-fluid top-0 z-index: 100" style="z-index: 100;">
     <div class="vw-100 vh-100 d-flex position-absolute top-0 bg-blur-8" style="z-index: 100;">
     </div>
     <div class="vw-100 vh-100 d-flex justify-content-center align-items-center" style="z-index: 101;">
@@ -703,7 +724,7 @@
                                                     <th>Driver</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody id="tblRequest">
+                                                <tbody id="tblRequestDetails">
                                                 </tbody>
                                             </table>
                                         </div>
@@ -760,7 +781,7 @@
             </section>
         </div>
     </div>
-</main>
+</main>-->
 
 <main id="profileFrame" class="vh-100">
 
