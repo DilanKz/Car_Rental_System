@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 root{
-    --primary-color: #222831;
-    --secondary-color: #DBE2EF;
+    --primary-color: #f8f9fa;
+    --secondary-color: #189cf4;
+    --secondary-color-1: #DBE2EF;
+
+
 
     --premium-shade: rgba(201, 126, 245, 0.32);
     --Luxury-shade:rgba(253, 209, 103, 0.24);
@@ -22,28 +25,28 @@ body::-webkit-scrollbar{
 }
 
 .navbar{
-    background-color: #222831;
+    background-color: #f8f9fa;
 }
 
 #toggler{
-    color: white;
+    color: #189cf4;
     background: white;
 }
 
 .navbar-brand,.nav-link{
-    color: white;
+    color: #595959;
 }
 
 .navbar-brand:hover,.nav-link:hover{
-    color: white;
+    color: #189cf4;
 }
 
-.navbar-brand:visited,.nav-link:visited{
-    color: white;
-}
+/*.navbar-brand:visited,.nav-link:visited{
+    color: #595959;
+}*/
 
 #navItem{
-    color: white;
+    color: #189cf4;
 }
 
 .nav-link{
@@ -54,7 +57,7 @@ body::-webkit-scrollbar{
 
 #navBar{
     color: white;
-    background-color: #222831;
+    background-color: #f8f9fa;
 }
 
 #navbarSupportedContent{
@@ -68,7 +71,7 @@ body::-webkit-scrollbar{
 
 #btnLogin:hover{
     color: #DBE2EF;
-    background: #222831;
+    background: #189cf4;
     border: 2px solid #DBE2EF;
 }
 
@@ -93,16 +96,32 @@ body::-webkit-scrollbar{
 }
 
 #home{
-    background: #DBE2EF;
+    background: #f8f9fa;
     position: relative;
     height: 100vh;
 }
 
-#bgImg{
-    height: 100vh;
+#bgImg {
+    height: 90vh;
+    width: 90vw;
     position: absolute;
+    margin: auto;
+    left: 0;
     right: 0;
-    top: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    filter: blur(1px);
+}
+
+#cardBox{
+    position: absolute;
+    height: 30vh;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 6vh;
 }
 
 #homeDt{
@@ -115,36 +134,36 @@ body::-webkit-scrollbar{
     margin: auto;
 }
 
-#mainTitle{
-    color: #222831;
-    font-size: 75px;
+.mainText{
+    position: absolute;
+    width: max-content;
+    top: 140px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #f8f9fa;
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size: 80px;
+    z-index: 10;
     font-family: sans-serif;
-    font-weight: 600;
-}
-
-#mainText{
-    color: #3F72AF;
-    font-size: 28px;
-    font-family: sans-serif;
-    letter-spacing: 2px;
 }
 
 .buttons{
     background: #DBE2EF;
     color: #222831;
-    border: 2px solid #222831;
 }
 
 #signIn{
-    background: #222831;
+    background: #189cf4;
     color: #DBE2EF;
-    border: 2px solid #222831;
+    /*border: 2px solid #222831;*/
 }
 
 .buttons:hover{
     color: #DBE2EF;
-    background: #222831;
-    border: 2px solid #DBE2EF;
+    background: #189cf4;
+    /*border: 2px solid #DBE2EF;*/
 }
 
 /*Login and Register*/
