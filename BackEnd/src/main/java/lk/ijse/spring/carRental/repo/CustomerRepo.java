@@ -22,5 +22,5 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     List<Customer> getNewCustomer();
     @Modifying
     @Query(value = "UPDATE customer SET state ='approved' WHERE cid=:id",nativeQuery = true)
-    int approveCustomer(@Param("id") String id);
+    void approveCustomer(@Param("id") String id);
 }
