@@ -117,7 +117,7 @@ body::-webkit-scrollbar{
 
 #cardBox{
     position: absolute;
-    height: 30vh;
+    height: 220px;
     background-color: #f8f9fa;
     border-radius: 20px;
     margin: auto;
@@ -362,6 +362,10 @@ small.justify-content-center{
     cursor: pointer;
 }
 
+.para{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5rem;
+}
 
 
 /**/
