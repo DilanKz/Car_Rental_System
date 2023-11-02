@@ -28,7 +28,7 @@ function addCarToView(car) {
     let imageFront = byteArrayToImage(car.carFront);
 
     let carElementHTML = `
-    <div class="col-2 ms-2 me-2 mb-3 p-3 bg-light rounded-4 customer clickable" carid='${JSON.stringify(car)}'>
+    <div class="box-shadow col-2 ms-2 me-2 mb-3 p-3 rounded-4 customer clickable" carid='${JSON.stringify(car)}'>
         <div class="row rounded-4 overflow-hidden">
             <img src="${imageFront}" alt="" class="rounded-4 card-link" style="height: 150px;width: 240px">
         </div>
