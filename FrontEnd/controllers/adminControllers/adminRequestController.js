@@ -33,10 +33,10 @@ function addTable(rent) {
 
     let rentReadOB = createRentReadOB(rent);
 
-    let bg='#dbffd6'
+    let bg='rgba(159,255,183,1)'
 
     if (rent.state==='pending'){
-        bg='#fff9dc'
+        bg='rgb(255,240,159)'
     }
 
     let tr = `<tr class="rentTr" carindex='${JSON.stringify(rentReadOB)}'>
