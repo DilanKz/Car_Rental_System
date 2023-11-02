@@ -17,4 +17,6 @@ public interface RentService {
     List<String> getAvailableDrivers();
 
     List<RentDTO> getAllRents();
+
+    void acceptRent(String id);
 }
