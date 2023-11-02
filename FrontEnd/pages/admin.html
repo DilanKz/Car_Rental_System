@@ -176,7 +176,8 @@
             <div class="ms-2 col-2 mt-3 " style="height: max-content">
                 <ul class="ms-2 mt-2 nav  nav-fill" style="width: 200px;">
                     <li class="nav-item topLeftRadius">
-                        <a class="nav-link navItem active bg-white text-primary" tab="driver" aria-current="page" href="#">Driver</a>
+                        <a class="nav-link navItem active bg-white text-primary" tab="driver" aria-current="page"
+                           href="#">Driver</a>
                     </li>
                     <li class="nav-item topRightRadius">
                         <a class="nav-link bg-gray navItem text-primary" tab="customer" href="#">Customer</a>
@@ -184,9 +185,11 @@
                 </ul>
             </div>
 
-            <div id="driverTab" class="row d-flex justify-content-start flex-wrap align-items-start bg-white" style="height: 70vh; width: 96%;margin-left: 28px;">
+            <div id="driverTab" class="row d-flex justify-content-start flex-wrap align-items-start bg-white"
+                 style="height: 70vh; width: 96%;margin-left: 28px;">
                 <section id="addDriverFrame">
-                    <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0" style="z-index: 52;">
+                    <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0"
+                         style="z-index: 52;">
 
                         <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
                         <div style="background-color: #DBE2EF;border: 2px solid #86b7fe" class="col-7 rounded-5 z-3">
@@ -198,17 +201,21 @@
                                         <fieldset>
                                             <p class="text-uppercase pull-center">General Information</p>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="username" id="txtDriverName" class="form-control input-lg" placeholder="Name">
+                                                <input type="text" name="username" id="txtDriverName"
+                                                       class="form-control input-lg" placeholder="Name">
                                             </div>
 
                                             <div class="form-group pb-5">
-                                                <input type="text" name="address" id="txtDriverAddress" class="form-control input-lg" placeholder="Address">
+                                                <input type="text" name="address" id="txtDriverAddress"
+                                                       class="form-control input-lg" placeholder="Address">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="txtDriverContact" class="form-control input-lg" placeholder="contact">
+                                                <input type="text" name="password" id="txtDriverContact"
+                                                       class="form-control input-lg" placeholder="contact">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password2" id="txtDriverLicNo" class="form-control input-lg" placeholder="License NO">
+                                                <input type="text" name="password2" id="txtDriverLicNo"
+                                                       class="form-control input-lg" placeholder="License NO">
                                             </div>
                                         </fieldset>
                                     </form>
@@ -220,17 +227,21 @@
                                             <p class="text-uppercase"> Account information </p>
 
                                             <div class="form-group pb-5">
-                                                <input type="email" name="username" id="txtDriverEmail" class="form-control input-lg" placeholder="Email">
+                                                <input type="email" name="username" id="txtDriverEmail"
+                                                       class="form-control input-lg" placeholder="Email">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="txtDriverUsername" class="form-control input-lg" placeholder="Username">
+                                                <input type="text" name="password" id="txtDriverUsername"
+                                                       class="form-control input-lg" placeholder="Username">
                                             </div>
                                             <div class="form-group pb-5">
-                                                <input type="text" name="password" id="txtDriverPassword" class="form-control input-lg" placeholder="Password">
+                                                <input type="text" name="password" id="txtDriverPassword"
+                                                       class="form-control input-lg" placeholder="Password">
                                             </div>
 
                                             <div class="form-group pb-5" id="driverStateGroup" style="display: none;">
-                                                <select name="carState" id="txtDriverState" class="form-select" data-live-search="true">
+                                                <select name="carState" id="txtDriverState" class="form-select"
+                                                        data-live-search="true">
                                                     <option selected>Driver State</option>
                                                     <option>available</option>
                                                     <option>occupied</option>
@@ -238,8 +249,10 @@
                                             </div>
 
                                             <div class="pb-5">
-                                                <input id="btnDriverRegister" type="button" class="btn btn-sm btn-primary"   value="Register">
-                                                <input id="btnDriverUpdate" type="button" class="btn btn-sm btn-warning"   value="Update">
+                                                <input id="btnDriverRegister" type="button"
+                                                       class="btn btn-sm btn-primary" value="Register">
+                                                <input id="btnDriverUpdate" type="button" class="btn btn-sm btn-warning"
+                                                       value="Update">
                                             </div>
 
                                         </fieldset>
@@ -249,7 +262,8 @@
                         </div>
                     </div>
                 </section>
-                <h3 class="h3 mt-3 col-2">Manage Driver</h3> <button type="button" class="btn btn-sm btn-success mt-4 col-1" id="btnAddDriver"> Add Driver + </button>
+                <h3 class="h3 mt-3 col-2">Manage Driver</h3>
+                <button type="button" class="btn btn-sm btn-success mt-4 col-1" id="btnAddDriver"> Add Driver +</button>
 
                 <div class="page-content page-container" id="page-content">
                     <div>
@@ -287,14 +301,16 @@
                 </div>
             </div>
 
-            <div id="customerTab" class="row justify-content-start flex-wrap align-items-start bg-white" style="height: 70vh; width: 96%;margin-left: 28px;display: none">
+            <div id="customerTab" class="row justify-content-start flex-wrap align-items-start bg-white"
+                 style="height: 70vh; width: 96%;margin-left: 28px;display: none">
                 <h3 class="h3 mt-3">Manage Customer</h3>
                 <section id="approveCustomer">
-                    <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0" style="z-index: 52;">
+                    <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0"
+                         style="z-index: 52;">
 
                         <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
                         <div class="col-7 rounded-5 z-3" style="background-color: #DBE2EF;border: 2px solid #86b7fe">
-                            <h2 class="text-center pt-3 mb-5" >Approve Customer</h2>
+                            <h2 class="text-center pt-3 mb-5">Approve Customer</h2>
                             <div class="row">
 
                                 <div class="col-5 me-2" style="margin-left: 100px">
@@ -310,8 +326,9 @@
                             <div class="row">
 
                                 <div class="col-4 mt-5 mb-5" style="margin-left: 80px">
-                                    <button class="btn btn-sm btn-success" type="button" id="submitUser"> Approve </button>
-                                    <button class="btn btn-sm btn-danger" type="button" id="cancelUser"> Reject </button>
+                                    <button class="btn btn-sm btn-success" type="button" id="submitUser"> Approve
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" type="button" id="cancelUser"> Reject</button>
                                 </div>
 
                             </div>
@@ -385,16 +402,23 @@
             </div>
         </div>
 
-        <div class="row pt-1 mt-3 rounded-4 w-100 position-relative overflow-hidden" style="background-color: #DBE2EF; min-height: 89%;display: block">
+        <div class="row pt-1 mt-3 rounded-4 w-100 position-relative overflow-hidden"
+             style="background-color: #DBE2EF; min-height: 89%;display: block">
 
             <div class="h-100 position-absolute" style="background-color: #DBE2EF;" id="carLoader">
                 <div class="position-absolute" style="top: 45%;left: 45%">
-                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    <div class="lds-ring">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
 
             <div class="ms-2 col-2 mt-3 " style="height: max-content">
-                <button id="btnAddNewCar" class="btn btn-success"><i class="fa-solid fa-plus me-1"></i> Add new car</button>
+                <button id="btnAddNewCar" class="btn btn-success"><i class="fa-solid fa-plus me-1"></i> Add new car
+                </button>
             </div>
 
             <div class="row p-4 d-flex justify-content-start flex-wrap align-items-start w-100" id="carContainerView">
@@ -432,17 +456,21 @@
                             </div>
                         </div>
 
-                        <div class="row mt-1 mb-1">
+                        <hr class="my-3">
+
+                        <div class="row">
                             <div class="col-3">
-                                <div  class="mb-2 d-flex justify-content-center">
-                                    <img id="imgCarFront" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                <div class="mb-2 d-flex justify-content-center">
+                                    <img id="imgCarFront"
+                                         src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                          alt="example placeholder" style="height: 120px; max-width: 200px "/>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div id="carFront" class="btn btn-sm btn-rounded bg-dark">
                                         <label class="form-label text-white m-1" for="btnCarFront">Choose
                                             file</label>
-                                        <input name="carFront" type="file" class="form-control d-none" id="btnCarFront"/>
+                                        <input name="carFront" type="file" class="form-control d-none"
+                                               id="btnCarFront"/>
                                     </div>
                                 </div>
                             </div>
@@ -487,7 +515,9 @@
                             </div>
                         </div>
 
-                        <div class="row mt-2">
+                        <hr class="my-3">
+
+                        <div class="row">
 
                             <div class="col-4 me-3 ms-5 pb-2">
                                 <div class="form-outline form-white">
@@ -523,6 +553,8 @@
                             </div>
 
                         </div>
+
+                        <hr class="my-3">
 
                         <div class="row ">
 
@@ -560,7 +592,8 @@
                             </div>
 
                             <div class="col-3">
-                                <select name="carTransmission" id="txtTransmissionType" class="form-select" data-live-search="true">
+                                <select name="carTransmission" id="txtTransmissionType" class="form-select"
+                                        data-live-search="true">
                                     <option selected data-tokens="ketchup mustard">Select car transmission
                                         type
                                     </option>
@@ -570,6 +603,8 @@
                             </div>
 
                         </div>
+
+                        <hr class="my-3">
 
                         <div class="row">
 
@@ -637,6 +672,96 @@
     </div>
 </main>
 
+<main id="carViewFrame1" class="vh-100 position-fixed p-0 container-fluid top-0 z-index: 100" style="z-index: 100;">
+    <div class="vw-100 vh-100 d-flex position-absolute top-0 bg-blur-8" style="z-index: 100;">
+    </div>
+    <div class="vw-100 vh-100 d-flex justify-content-center align-items-center" style="z-index: 101;">
+
+        <div class="container ">
+            <section class="position-relative bg-light pb-3 overflow-hidden row  rounded-5" style="z-index: 102;">
+
+
+                <div class="d-flex justify-content-center col-12" style="background-color: #222831">
+                    <h2 class="h2 text-light">Request Approve Form</h2>
+                </div>
+
+                <div class="row mt-5">
+
+                    <div class="col-7 ms-5">
+                        <div class="row mt-5">
+                            <div class="col-lg-11">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Request Detail Table</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Car ID</th>
+                                                    <th>Car brand</th>
+                                                    <th>Waiver payment</th>
+                                                    <th>Driver</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tblRequest">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="row ms-1">
+
+                            <div class="col-10 ms-5">
+                                <img style="max-height: 270px" class="w-100" src="../assets/images/gt3.jpg" alt="">
+                            </div>
+
+                            <div class="col-7 p-2">
+                                <div class="ms-4 me-1 col-4 mb-3 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input name="waiverPay" type="text" id="txtEstReturnData"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtWeaverPay">Pickup Date</label>
+                                    </div>
+                                </div>
+
+                                <div class="ms-4 col-4 mb-3 pb-2">
+                                    <div class="form-outline form-white">
+                                        <input name="wholeKm" type="text" id="txtPickupDate"
+                                               class="form-control form-control-sm"/>
+                                        <label class="form-label" for="txtWholeKm">Return Date</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row mt-4">
+
+                        <div class="row d-flex mb-3">
+
+                            <div class="col-8 ms-5"></div>
+                            <button id="btnReject" type="button" class="ms-5 me-5 col-1 btn btn-danger btn-sm">Reject
+                            </button>
+                            <button id="btnApproveRent" type="button" class="col-1 btn btn-success btn-sm">Approve
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </div>
+</main>
+
 <main id="profileFrame" class="vh-100">
 
     <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
@@ -657,30 +782,30 @@
 
 
 <script !src="">
-    $('#addDriverFrame').css('display','none');
-    $('#approveCustomer').css('display','none');
-    $(document).ready(function(){
-        $(".navItem").click(function(){
+    $('#addDriverFrame').css('display', 'none');
+    $('#approveCustomer').css('display', 'none');
+    $(document).ready(function () {
+        $(".navItem").click(function () {
             $(".navItem").removeClass("active bg-white");
             $(".navItem").addClass("bg-gray");
             $(this).addClass("active bg-white");
 
-            if ($(this).attr('tab')==='customer'){
+            if ($(this).attr('tab') === 'customer') {
                 $('#driverTab').removeClass("d-flex");
-                $('#driverTab').css('display','none');
-                $('#customerTab').css('display','flex');
+                $('#driverTab').css('display', 'none');
+                $('#customerTab').css('display', 'flex');
                 console.log('hi')
-            }else {
-                $('#customerTab').css('display','none');
-                $('#driverTab').css('display','flex');
+            } else {
+                $('#customerTab').css('display', 'none');
+                $('#driverTab').css('display', 'flex');
             }
 
         });
     });
 
     $('.bgs').click(function () {
-        $('#addDriverFrame').css('display','none');
-        $('#approveCustomer').css('display','none');
+        $('#addDriverFrame').css('display', 'none');
+        $('#approveCustomer').css('display', 'none');
     });
 
 </script>
