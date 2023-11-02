@@ -59,6 +59,7 @@ function getRentOB() {
         rentID: null,
         pickupDate: "12",
         pickupTime: "23",
+        addDate:new Date().toLocaleDateString(),
         estReturnDate: "4334",
         estReturnTime: "3434",
         fullPaymentStatus: "23423",
