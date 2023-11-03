@@ -189,7 +189,7 @@ function loadAllPayments(list) {
 
     for (let i = 0; i < paymentList.length; i++) {
 
-        let tr=`<tr class="paymentRow" rentID="${paymentList[i].rentID}" payID="${paymentList[i].payment}">
+        let tr=`<tr class="paymentRow" rentID="${paymentList[i].rentID}" payID='${JSON.stringify(paymentList[i].payment)}'>
                     <td>${paymentList[i].payment.paymentID}</td>
                     <td>${paymentList[i].rentID}</td>
                     <td>${paymentList[i].payment.payment}</td>
@@ -222,17 +222,17 @@ $('#finalPayment').click(function () {
         url: 'http://localhost:8080/CarRental/payment/update',
         method: 'PUT',
         data:JSON.stringify(payment),
+        contentType:'application/json',
         success: function (res) {
             $('#fullPrice').val("");
             $('#damageCost').val("");
 
             $.ajax({
-                url: 'http://localhost:8080/CarRental/request/finish?id='+rentID,
+                url: 'http://localhost:8080/CarRental/Request/finish?id='+rentID,
                 method: 'POST',
                 data:JSON.stringify(payment),
                 success: function (res) {
-
-
+                    loadAllRequests();
                 },
                 error: function (error) {
                     console.error('Error:', error);
@@ -244,4 +244,7 @@ $('#finalPayment').click(function () {
             console.error('Error:', error);
         }
     });
+
+    $('#finalizePaymentForm').css('display', 'none');
+
 });
