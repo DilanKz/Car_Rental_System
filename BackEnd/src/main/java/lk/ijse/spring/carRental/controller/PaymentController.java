@@ -26,6 +26,6 @@ public class PaymentController {
     @PutMapping("/update")
     public ResponseUtil updatePayment(@RequestBody PaymentDTO payment){
         service.updatePayment(payment);
-        return new ResponseUtil("","",payment);
+        return new ResponseUtil("OK","OK",payment);
     }
 }
