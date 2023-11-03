@@ -19,4 +19,6 @@ public interface RentService {
     List<RentDTO> getAllRents();
 
     void acceptRent(String id);
+
+    void finishStatus(String id);
 }
