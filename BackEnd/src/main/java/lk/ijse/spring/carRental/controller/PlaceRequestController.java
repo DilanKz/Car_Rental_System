@@ -65,4 +65,9 @@ public class PlaceRequestController {
         rentService.acceptRent(id);
         return new ResponseUtil("OK","Successfully updated",id);
     }
+    @PostMapping("/finish")
+    public ResponseUtil finishRent(@Param("id") String id){
+        rentService.finishStatus(id);
+        return new ResponseUtil("OK","Successfully updated",id);
+    }
 }
