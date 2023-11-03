@@ -1,7 +1,8 @@
-let mainLoggedInCustomer=null;
+let mainLoggedInCustomer = null;
 
 
 const home = $('#home');
+const about = $('#about');
 const logInFrame = $('#logInFrame');
 const registerFrame = $('#registerFrame');
 const manageCarsFrame = $('#manageCarsFrame');
@@ -21,32 +22,37 @@ const registerBtn = $('#btnRegister');
 const customerReg = $('#btnCustomerReg');
 const carNameAnchor = $('.carNameAnchor');
 
-logInFrame.css('display','none')
-registerFrame.css('display','none')
-manageCarsFrame.css('display','none');
-addCarsFrame.css('display','none');
-rentACarFrame.css('display','none');
-carViewForm.css('display','none');
+logInFrame.css('display', 'none')
+registerFrame.css('display', 'none')
+manageCarsFrame.css('display', 'none');
+addCarsFrame.css('display', 'none');
+rentACarFrame.css('display', 'none');
+carViewForm.css('display', 'none');
+
+let carsList;
+
+loadAllCustomerCars();
+
 
 function hideAll() {
-    logInFrame.css('display','none')
-    registerFrame.css('display','none')
-    manageCarsFrame.css('display','none');
-    addCarsFrame.css('display','none');
+    logInFrame.css('display', 'none')
+    registerFrame.css('display', 'none')
+    manageCarsFrame.css('display', 'none');
+    addCarsFrame.css('display', 'none');
 }
 
 function showLogin() {
     /*nav.css('display','none')
     home.css('display','none')*/
 
-    logInFrame.css('display','none')
-    registerFrame.css('display','block')
+    logInFrame.css('display', 'none')
+    registerFrame.css('display', 'block')
 }
 
 loginBtn.click(function () {
     /*nav.css('display','none')
     home.css('display','none')*/
-    logInFrame.css('display','block')
+    logInFrame.css('display', 'block')
 });
 
 signInBtn.click(function () {
@@ -56,79 +62,87 @@ signInBtn.click(function () {
 });
 
 registerBtn.click(function () {
-    logInFrame.css('display','none')
-    registerFrame.css('display','block');
+    logInFrame.css('display', 'none')
+    registerFrame.css('display', 'block');
     cusIdGenerator();
     userIdGenerator();
 });
 
 $('#carsIt').click(function () {
-    home.css('display','none')
-    manageCarsFrame.css('display','block');
-    loadAllCustomerCars()
+    home.css('display', 'none')
+    about.css('display', 'none')
+    manageCarsFrame.css('display', 'block');
+});
+
+$('#carsSeeMore').click(function () {
+    home.css('display', 'none')
+    about.css('display', 'none')
+    manageCarsFrame.css('display', 'block');
 });
 
 $('#homeIt').click(function () {
-    home.css('display','block')
-    manageCarsFrame.css('display','none');
-    logInFrame.css('display','none')
-    registerFrame.css('display','none');
+    home.css('display', 'block')
+    about.css('display', 'block')
+    manageCarsFrame.css('display', 'none');
+    logInFrame.css('display', 'none')
+    registerFrame.css('display', 'none');
 });
 
 $('#rentIt').click(function () {
-    if (mainLoggedInCustomer!=null){
-        home.css('display','none');
-        manageCarsFrame.css('display','none');
-        rentACarFrame.css('display','block');
-    }else {
+    if (mainLoggedInCustomer != null) {
+        home.css('display', 'none');
+        about.css('display', 'none');
+        manageCarsFrame.css('display', 'none');
+        rentACarFrame.css('display', 'block');
+    } else {
         yellowToastShow('Please sign in to Place a rent');
     }
 });
 
 $('#addNewCar').click(function () {
 
-    addCarsFrame.css('display','block');
+    addCarsFrame.css('display', 'block');
 });
 
 bg.click(function () {
-    logInFrame.css('display','none')
-    registerFrame.css('display','none')
-    carViewForm.css('display','none')
+    logInFrame.css('display', 'none')
+    registerFrame.css('display', 'none')
+    carViewForm.css('display', 'none')
 
     $('#regIDFrontLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
     $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
 })
 
 carNameAnchor.click(function () {
-    carViewForm.css('display','block');
+    carViewForm.css('display', 'block');
 });
 
-let loggedUser=null;
+let loggedUser = null;
 
 btnLogInM.click(function () {
     let userName = $('#txtLogUserName').val();
     let loginPass = $('#txtLogUserPass').val();
 
-    if (loggedUser!=null){
+    if (loggedUser != null) {
         if (loggedUser.password === loginPass) {
-            checkUser(userName,loginPass);
+            checkUser(userName, loginPass);
         }
-    }else {
-        getLoginDetails(userName,loginPass)
+    } else {
+        getLoginDetails(userName, loginPass)
     }
 
 });
 
-function getLoginDetails(userName,password) {
+function getLoginDetails(userName, password) {
     $.ajax({
-        url: 'http://localhost:8080/CarRental/login/account?userName='+userName,
+        url: 'http://localhost:8080/CarRental/login/account?userName=' + userName,
         method: 'GET',
-        async:false,
+        async: false,
         success: function (res) {
-            if (res.data!=null){
-                loggedUser=res.data;
-                if (res.data.userName===userName){
-                    checkUser(userName,password);
+            if (res.data != null) {
+                loggedUser = res.data;
+                if (res.data.userName === userName) {
+                    checkUser(userName, password);
                 }
             }
             //toast red
@@ -139,38 +153,38 @@ function getLoginDetails(userName,password) {
     });
 }
 
-function checkUser(username,password) {
-    if (loggedUser.password===password){
+function checkUser(username, password) {
+    if (loggedUser.password === password) {
         console.log('check user true');
 
-        if (loggedUser.type==='admin'){
+        if (loggedUser.type === 'admin') {
             console.log('admin');
-            window.location.href='../pages/admin.html';
+            window.location.href = '../pages/admin.html';
         }
-        if (loggedUser.type==='user'){
+        if (loggedUser.type === 'user') {
             console.log('customer');
-            $('#signIn').css('display','none');
-            $('#btnLogin').css('display','none');
+            $('#signIn').css('display', 'none');
+            $('#btnLogin').css('display', 'none');
             getUser(loggedUser.id);
-            logInFrame.css('display','none');
+            logInFrame.css('display', 'none');
         }
-        if (loggedUser.type==='driver'){
+        if (loggedUser.type === 'driver') {
             console.log('driver');
         }
 
-    }else {
+    } else {
         console.log('wrong password')
     }
 }
 
 function getUser(id) {
     $.ajax({
-        url: 'http://localhost:8080/CarRental/Register/getUser?id='+id,
+        url: 'http://localhost:8080/CarRental/Register/getUser?id=' + id,
         method: 'GET',
-        async:false,
+        async: false,
         success: function (res) {
             console.log(res.data)
-            mainLoggedInCustomer=res.data;
+            mainLoggedInCustomer = res.data;
         },
         error: function (error) {
             console.error('Error:', error);
@@ -206,7 +220,7 @@ function getUser(id) {
 
 customerReg.click(function () {
 
-    let customerData=new FormData($('#registerFormData')[0]);
+    let customerData = new FormData($('#registerFormData')[0]);
     customerData.set('cid', cusID);
     customerData.set('id', cusID);
     customerData.set('uid', userID);
@@ -243,3 +257,49 @@ customerReg.click(function () {
     });
 
 });
+
+
+function iterateThreeCars(list) {
+    for (let i = 0; i < 3; i++) {
+        loadFrontCar(list[i]);
+    }
+
+}
+
+function loadFrontCar(car) {
+
+    let imageFront = byteArrayToImage(car.carFront);
+
+    let carHtml = `<div class="col-10 col-md-6 col-xl-3 m-5 mt-2">
+            <div class="car-2 box-shadow-3" style="background: #f8f9fa">
+                <img src="${imageFront}" class="d-block w-100 rounded-4" alt="..." style="height: 210px">
+                            <div class="car__title">
+                                 <h3 class="car__name"> ${car.name} </h3>
+                            </div>
+                            <ul class="car__list">
+                                <li>
+                                    <i class="fa-solid fa-user-group text-primary me-2 ms-1"></i>
+                                    <span>${car.passengers}</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-charging-station text-primary me-2 ms-1"></i>
+                                    <span>${car.carFuelType}</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-gauge-high text-primary me-2 pe-1 ms-1"></i>
+                                    <span>${car.wholeKm}</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-car-battery text-primary me-2 pe-1 ms-1"></i>
+                                    <span>${car.carTransmission}</span>
+                                </li>
+                            </ul>
+                            <div class="car__footer">
+                                <span class="car__price">${car.dailyPayment} <sub>/ day</sub></span>
+       
+                            </div>
+            </div>
+        </div>`;
+
+    $('#loadingCars').append(carHtml)
+}
