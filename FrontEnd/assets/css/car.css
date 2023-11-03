@@ -13,6 +13,21 @@
     border: 1px solid #fff;
 }
 
+.car-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(1turn, #f1f6fd 30%, #edf1f7);
+    /*box-shadow: 3px 3px 9px rgba(164, 164, 186, 0.2);*/
+    border: 1px solid #fff;
+}
+
 .car__slider img {
     width: 100%;
     border-radius: 16px;
