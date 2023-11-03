@@ -171,7 +171,7 @@ btnApproveRent.click(function () {
 });
 
 
-/*================================================================================================*/
+/*==========================================================================================*/
 
 function loadAllPayments(list) {
 
@@ -189,13 +189,20 @@ function loadAllPayments(list) {
 
     for (let i = 0; i < paymentList.length; i++) {
 
-        let tr=`<tr><td>${paymentList[i].payment.paymentID}</td><td>${paymentList[i].rentID}</td>
-                <td>${paymentList[i].payment.payment}</td>
-                <td>${paymentList[i].payment.paymentExtraMillage}</td></tr>>`
+        let tr=`<tr class="paymentRow" payID="${paymentList[i].payment}">
+                    <td>${paymentList[i].payment.paymentID}</td>
+                    <td>${paymentList[i].rentID}</td>
+                    <td>${paymentList[i].payment.payment}</td>
+                    <td>${paymentList[i].payment.paymentExtraMillage}</td>
+                </tr>`
 
         $('#tblPayment').append(tr);
     }
 }
 
 
-
+$(document).ready(function() {
+    $(document).on('click', '.paymentRow', function() {
+        let attr = $(this).attr('payID');
+    });
+});
