@@ -1,6 +1,5 @@
 let viewCarFrame = $('#viewCarFrame');
 let btnRentNow = $('#btnRentNow');
-let carsList;
 
 function loadAllCustomerCars() {
 
@@ -11,6 +10,7 @@ function loadAllCustomerCars() {
             viewCarFrame.empty();
             $('#carLoaderScreen').css('display', 'flex')
             carsList = res.data;
+            iterateThreeCars(carsList);
             for (let i = 0; i < carsList.length; i++) {
                 addCustomerCars(carsList[i], i)
             }
