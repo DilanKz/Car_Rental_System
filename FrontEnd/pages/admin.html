@@ -141,35 +141,6 @@
 
 <main id="accountFrame" class="vh-100">
 
-    <!--<section class="pt-3 h-100 col ps-3" style="width: 94vw;margin-left: 6vw">
-
-        <div class="row rounded-4 w-100" style="background-color: #DBE2EF;">
-            <div class="w-auto ps-3 pe-3 py-2">
-                <h4 style="border-bottom: 2px solid blue">Account hub</h4>
-            </div>
-        </div>
-
-        <div class="row mt-3 w-100 rounded-4" style="background-color: #DBE2EF; height: 89%">
-
-            <div class="w-100" style="height: 50px">
-                <ul class="ms-2 mt-2 nav nav-pills nav-fill" style="width: 200px;height: 50px">
-                    <li class="nav-item">
-                        <a class="nav-link navItem active bg-info" aria-current="page" href="#">Driver</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navItem" href="#">Customer</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="col w-100 h-100">
-
-                </div>
-            </div>
-
-        </div>
-
-    </section>-->
 
     <section class="pt-3 col vh-100 ps-3" style="width: 94vw;margin-left: 6vw">
 
@@ -468,34 +439,47 @@
 
         <div class="row rounded-4 w-100 box-shadow" style="background-color: #ffffff;">
             <div class="w-auto ps-3 pe-3 py-2">
-                <h4 style="border-bottom: 2px solid blue">Manage Payements</h4>
-            </div>
-        </div>
-
-        <div class="col-7 rounded-5 z-3" style="background-color: #DBE2EF;border: 2px solid #86b7fe">
-            <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
-            <div class="col-7 rounded-5 z-3" style="background-color: #DBE2EF;border: 2px solid #86b7fe">
-                <h2 class="text-center pt-3 mb-5">Approve Customer</h2>
-                <div class="row">
-
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="rentID" placeholder="Full Payment" style="width: 13vw">
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-4 mt-5 mb-5" style="margin-left: 80px">
-                        <button class="btn btn-sm btn-success" type="button" id="btnCheckOut"> Approve</button>
-                    </div>
-
-                </div>
+                <h4 style="border-bottom: 2px solid blue">Manage Payments</h4>
             </div>
         </div>
 
         <div class="row mt-3 w-100 justify-content-center rounded-4 box-shadow" style="background-color: #ffffff; height: 89%">
-            <div class="col-lg-11 mt-5">
+
+            <section id="finalizePaymentForm">
+                <div class="container-fluid vh-100 vw-100 p-0 d-flex justify-content-center align-items-center position-absolute top-0 start-0"
+                     style="z-index: 52;">
+
+                    <div class="bgs w-100 h-100 bg-blur-8 position-absolute z-1"></div>
+                    <div class="col-4 rounded-5 z-3" style="background-color: #f8f9fa;">
+                        <h2 class="text-center pt-3 mb-5">Approve Customer</h2>
+                        <div class="row">
+
+                            <div class="col-5 me-2" style="margin-left: 100px">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="Full Price" placeholder="Full Payment">
+                                </div>
+                            </div>
+
+                            <div class="col-5 ms-3 me-2">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="Damage Cost" placeholder="Full Payment">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-4 mt-5 mb-5" style="margin-left: 80px">
+                                <button class="btn btn-sm btn-success" type="button" id="finalPayment"> Check out</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="col-lg-11 mt-3">
                 <div  style="height: 35vh" class="card ">
                     <div class="card-body">
                         <h4 class="card-title">Request Detail Table</h4>
@@ -871,9 +855,11 @@
 </main>
 
 
-<script !src="">
+<script>
     $('#addDriverFrame').css('display', 'none');
     $('#approveCustomer').css('display', 'none');
+    $('#finalizePaymentForm').css('display', 'none');
+
     $(document).ready(function () {
         $(".navItem").click(function () {
             $(".navItem").removeClass("active bg-white");
@@ -896,6 +882,7 @@
     $('.bgs').click(function () {
         $('#addDriverFrame').css('display', 'none');
         $('#approveCustomer').css('display', 'none');
+        $('#finalizePaymentForm').css('display', 'none');
     });
 
 </script>
