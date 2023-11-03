@@ -88,4 +88,8 @@ public class RentServiceImpl implements RentService {
     public void acceptRent(String id){
         rentRepo.updateStatus(id);
     }
+    @Override
+    public void finishStatus(String id){
+        rentRepo.finishStatus(id);
+    }
 }
