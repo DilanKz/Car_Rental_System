@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,7 +34,13 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public List<PaymentDTO> loadAllPayments(){
-        return mapper.map(repo.findAll(),new TypeToken<PaymentDTO>(){}.getType());
+
+        List<PaymentDTO> dtoList=new ArrayList<>();
+        for (Payment payment : repo.findAll()) {
+            dtoList.add(new PaymentDTO(payment.getPaymentID(), payment.getPayment(), payment.getPaymentExtraMillage()));
+        }
+
+        return dtoList;
     }
 
     @Override
