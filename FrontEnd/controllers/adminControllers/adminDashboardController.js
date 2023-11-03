@@ -62,12 +62,14 @@ btnPayment.click(function () {
     paymentFrame.css('display','block');
     $(this).addClass('bottomLine');
     loadAllCars();
+    loadAllRequests();
 });
 
 btnRequests.click(function () {
     hide();
     requestsFrame.css('display','block');
     $(this).addClass('bottomLine');
+    loadAllCars();
     loadAllRequests();
 });
 
