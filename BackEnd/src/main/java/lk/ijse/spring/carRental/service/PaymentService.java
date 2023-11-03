@@ -1,5 +1,9 @@
 package lk.ijse.spring.carRental.service;
 
+import lk.ijse.spring.carRental.dto.PaymentDTO;
+
+import java.util.List;
+
 /**
  * `@authority Tharindu Dilan`
  * 10:17 PM
@@ -7,4 +11,6 @@ package lk.ijse.spring.carRental.service;
  */
 public interface PaymentService {
     String lastID();
+
+    List<PaymentDTO> loadAllPayments();
 }
