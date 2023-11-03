@@ -204,5 +204,27 @@ function loadAllPayments(list) {
 $(document).ready(function() {
     $(document).on('click', '.paymentRow', function() {
         let attr = $(this).attr('payID');
+        $('#finalizePaymentForm').css('display', 'block');
+        $('#finalPayment').attr('payID',attr);
+    });
+});
+
+$('#finalPayment').click(function () {
+
+    let payment = JSON.parse($(this).attr('payID'));
+    payment.payment=$('#fullPrice').val();
+    payment.paymentExtraMillage=$('#damageCost').val();
+
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/payment/update',
+        method: 'PUT',
+        data:JSON.stringify(payment),
+        success: function (res) {
+            $('#fullPrice').val("");
+            $('#damageCost').val("");
+        },
+        error: function (error) {
+            console.error('Error:', error);
+        }
     });
 });
