@@ -17,7 +17,7 @@ function loadAllRequests() {
             tblRequest.empty();
             console.log(carsList);
             let dataList = res.data;
-
+            loadAllPayments(dataList);
             for (let i = 0; i < dataList.length; i++) {
                 addTable(dataList[i]);
             }
@@ -169,3 +169,33 @@ btnApproveRent.click(function () {
         }
     });
 });
+
+
+/*================================================================================================*/
+
+function loadAllPayments(list) {
+
+    let paymentList=[];
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].state==='approved'){
+            paymentList.push(list[i]);
+        }
+    }
+
+    console.log(paymentList);
+    $('#tblPayment').empty();
+
+
+
+    for (let i = 0; i < paymentList.length; i++) {
+
+        let tr=`<tr><td>${paymentList[i].payment.paymentID}</td><td>${paymentList[i].rentID}</td>
+                <td>${paymentList[i].payment.payment}</td>
+                <td>${paymentList[i].payment.paymentExtraMillage}</td></tr>>`
+
+        $('#tblPayment').append(tr);
+    }
+}
+
+
+
