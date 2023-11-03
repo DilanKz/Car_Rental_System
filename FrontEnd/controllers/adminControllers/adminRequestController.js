@@ -189,7 +189,7 @@ function loadAllPayments(list) {
 
     for (let i = 0; i < paymentList.length; i++) {
 
-        let tr=`<tr class="paymentRow" payID="${paymentList[i].payment}">
+        let tr=`<tr class="paymentRow" rentID="${paymentList[i].rentID}" payID="${paymentList[i].payment}">
                     <td>${paymentList[i].payment.paymentID}</td>
                     <td>${paymentList[i].rentID}</td>
                     <td>${paymentList[i].payment.payment}</td>
@@ -204,8 +204,10 @@ function loadAllPayments(list) {
 $(document).ready(function() {
     $(document).on('click', '.paymentRow', function() {
         let attr = $(this).attr('payID');
+        let rentID = $(this).attr('rentID');
         $('#finalizePaymentForm').css('display', 'block');
         $('#finalPayment').attr('payID',attr);
+        $('#finalPayment').attr('rentID',rentID);
     });
 });
 
@@ -214,6 +216,7 @@ $('#finalPayment').click(function () {
     let payment = JSON.parse($(this).attr('payID'));
     payment.payment=$('#fullPrice').val();
     payment.paymentExtraMillage=$('#damageCost').val();
+    let rentID = $(this).attr('rentID');
 
     $.ajax({
         url: 'http://localhost:8080/CarRental/payment/update',
@@ -222,6 +225,20 @@ $('#finalPayment').click(function () {
         success: function (res) {
             $('#fullPrice').val("");
             $('#damageCost').val("");
+
+            $.ajax({
+                url: 'http://localhost:8080/CarRental/request/finish?id='+rentID,
+                method: 'POST',
+                data:JSON.stringify(payment),
+                success: function (res) {
+
+
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+
         },
         error: function (error) {
             console.error('Error:', error);
