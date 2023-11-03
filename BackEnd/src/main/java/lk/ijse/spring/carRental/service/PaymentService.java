@@ -13,4 +13,6 @@ public interface PaymentService {
     String lastID();
 
     List<PaymentDTO> loadAllPayments();
+
+    void updatePayment(PaymentDTO dto);
 }

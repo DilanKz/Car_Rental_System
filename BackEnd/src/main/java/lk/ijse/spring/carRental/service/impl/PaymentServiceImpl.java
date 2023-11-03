@@ -1,6 +1,7 @@
 package lk.ijse.spring.carRental.service.impl;
 
 import lk.ijse.spring.carRental.dto.PaymentDTO;
+import lk.ijse.spring.carRental.entity.Payment;
 import lk.ijse.spring.carRental.repo.PaymentRepo;
 import lk.ijse.spring.carRental.service.PaymentService;
 import org.modelmapper.ModelMapper;
@@ -33,5 +34,10 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public List<PaymentDTO> loadAllPayments(){
         return mapper.map(repo.findAll(),new TypeToken<PaymentDTO>(){}.getType());
+    }
+
+    @Override
+    public void updatePayment(PaymentDTO dto){
+        repo.save(mapper.map(dto, Payment.class));
     }
 }
