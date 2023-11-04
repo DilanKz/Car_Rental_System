@@ -94,3 +94,9 @@ function yellowToastShow(message) {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
     toastBootstrap.show();
 }
+function RedToastShow(message) {
+    $('#toastRedText').text(message);
+    const toastBLueFrame = $('#toastRedFrame');
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
+    toastBootstrap.show();
+}
