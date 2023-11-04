@@ -115,19 +115,35 @@ function loadCarViewPopUp(car, index) {
     $('#carViewFrame').css('display', 'block');
 }
 
+let selectedCarList = []
+
+
+function checkAvailability(value) {
+    for (let i = 0; i < selectedCarList.length; i++) {
+        if (value===selectedCarList[i].carId){
+            return false;
+        }
+    }
+    return true;
+}
+
 $(document).ready(function () {
     btnRentNow.click(function () {
         let listElement = carsList[$(this).attr('carIndex')];
         console.log(listElement);
-
         if (mainLoggedInCustomer!=null){
-            drivers();
-            nextPayID();
-            nextRentID();
-            addCarToTheCart(listElement);
+            if (checkAvailability(listElement.carId)){
+                drivers();
+                nextPayID();
+                nextRentID();
+                addCarToTheCart(listElement);
+            }else {
+                greenToastShow('Already in cart');
+            }
         }else {
             RedToastShow('Please sign in to use cart');
         }
+
     });
 });
 
@@ -137,10 +153,14 @@ $(document).ready(function () {
         let listElement = carsList[$(this).attr('carIndex')];
         console.log(listElement);
         if (mainLoggedInCustomer!=null){
-            drivers();
-            nextPayID();
-            nextRentID();
-            addCarToTheCart(listElement);
+            if (checkAvailability(listElement.carId)){
+                drivers();
+                nextPayID();
+                nextRentID();
+                addCarToTheCart(listElement);
+            }else {
+                greenToastShow('Already in cart');
+            }
         }else {
             RedToastShow('Please sign in to use cart');
         }
