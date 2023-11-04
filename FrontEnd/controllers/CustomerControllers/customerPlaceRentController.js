@@ -204,6 +204,7 @@ function addRequest(rentOB) {
                         success: function (res) {
                             greenToastShow("Request added wait for confirmation");
                             $('#cartList').empty();
+                            loadAllCustomerCars();
                         },
                         error: function (error) {
                             console.error('Error:', error);
