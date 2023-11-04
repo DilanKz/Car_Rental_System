@@ -62,7 +62,7 @@ function getRentOB() {
         addDate:new Date().toLocaleDateString(),
         estReturnDate: "4334",
         estReturnTime: "3434",
-        fullPaymentStatus: "23423",
+        fullPaymentStatus: "15000",
         state: "pending",
         waiverPaymentSlip: null,
         payment: null,

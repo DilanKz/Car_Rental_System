@@ -39,6 +39,10 @@ function addTable(rent) {
         bg='rgb(255,240,159)'
     }
 
+    if (rent.state==='rejected'){
+        bg='rgb(255,202,196)'
+    }
+
     let tr = `<tr class="rentTr" carindex='${JSON.stringify(rentReadOB)}'>
                   <th style="background-color: ${bg}">${rent.customerID}</th>
                   <th style="background-color: ${bg}">${rent.rentID}</th>
@@ -57,6 +61,7 @@ function createRentReadOB(rent) {
 
     let rentOB={
         rentID:rent.rentID,
+        state:rent.state,
         details:[],
         waiver: imagePath,
         pickupDate:rent.estReturnDate,
@@ -95,19 +100,22 @@ function carSearch(id) {
 
 $(document).ready(function() {
     $(document).on('click', '.rentTr', function() {
-        rentPopUp.css('display','block');
 
         let parseOB = JSON.parse($(this).attr('carindex'));
-        console.log(parseOB)
+        console.log(parseOB);
 
-        $('#txtEstReturnData').val(parseOB.returnDate);
-        $('#txtPickupDate').val(parseOB.pickupDate);
-        $('#imgPaySlip').attr('src',parseOB.waiver);
-        $('#tblRequestDetails').empty();
-        loadRentDetails(parseOB.details);
+        if (parseOB.state==='pending'){
+            console.log('hi')
+            rentPopUp.css('display','block');
+            $('#txtEstReturnData').val(parseOB.returnDate);
+            $('#txtPickupDate').val(parseOB.pickupDate);
+            $('#imgPaySlip').attr('src',parseOB.waiver);
+            $('#tblRequestDetails').empty();
+            loadRentDetails(parseOB.details);
 
-        btnReject.attr('carindex',parseOB.rentID);
-        btnApproveRent.attr('carindex',parseOB.rentID);
+            btnReject.attr('carindex',parseOB.rentID);
+            btnApproveRent.attr('carindex',parseOB.rentID);
+        }
 
     });
 });
@@ -135,24 +143,17 @@ function loadRentDetails(detail) {
 btnReject.click(function () {
 
     console.log($(this).attr('carindex'));
-    /*$.ajax({
-        url: 'http://localhost:8080/CarRental/Request/update?id='+this.attr('carindex'),
+    $.ajax({
+        url: 'http://localhost:8080/CarRental/Request/delete?id='+$(this).attr('carindex'),
         method: 'POST',
         success: function (res) {
-            console.log(res.data);
-            tblRequest.empty();
-            console.log(carsList);
-            let dataList = res.data;
-
-            for (let i = 0; i < dataList.length; i++) {
-                addTable(dataList[i]);
-            }
-
+            loadAllRequests();
+            rentPopUp.css('display','none');
         },
         error: function (error) {
             console.error('Error:', error);
         }
-    });*/
+    });
 });
 
 btnApproveRent.click(function () {

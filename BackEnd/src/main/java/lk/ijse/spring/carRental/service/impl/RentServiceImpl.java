@@ -67,6 +67,7 @@ public class RentServiceImpl implements RentService {
     public void update(String dto) {
 
         Rent rent = rentRepo.findById(dto).get();
+        rent.setState("rejected");
 
         for (RentDetails rentDetail : rent.getRentDetails()) {
             Car car = carRepo.findById(rentDetail.getCarID()).get();
@@ -74,7 +75,7 @@ public class RentServiceImpl implements RentService {
             carRepo.save(car);
         }
 
-        rentRepo.delete(rent);
+        rentRepo.save(rent);
     }
 
     @Override
