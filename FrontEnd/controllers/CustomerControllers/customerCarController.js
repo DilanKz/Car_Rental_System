@@ -119,6 +119,15 @@ $(document).ready(function () {
     btnRentNow.click(function () {
         let listElement = carsList[$(this).attr('carIndex')];
         console.log(listElement);
+
+        if (mainLoggedInCustomer!=null){
+            drivers();
+            nextPayID();
+            nextRentID();
+            addCarToTheCart(listElement);
+        }else {
+            RedToastShow('Please sign in to use cart');
+        }
     });
 });
 
@@ -127,10 +136,14 @@ $(document).ready(function () {
     $(document).on('click', '.btnRentNow', function () {
         let listElement = carsList[$(this).attr('carIndex')];
         console.log(listElement);
-        drivers();
-        nextPayID();
-        nextRentID();
-        addCarToTheCart(listElement);
+        if (mainLoggedInCustomer!=null){
+            drivers();
+            nextPayID();
+            nextRentID();
+            addCarToTheCart(listElement);
+        }else {
+            RedToastShow('Please sign in to use cart');
+        }
     });
 });
 
