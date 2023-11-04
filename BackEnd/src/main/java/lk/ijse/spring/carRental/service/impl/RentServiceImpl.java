@@ -3,8 +3,10 @@ package lk.ijse.spring.carRental.service.impl;
 import lk.ijse.spring.carRental.dto.PaymentDTO;
 import lk.ijse.spring.carRental.dto.RentDTO;
 import lk.ijse.spring.carRental.dto.RentDetailsDTO;
+import lk.ijse.spring.carRental.entity.Car;
 import lk.ijse.spring.carRental.entity.Rent;
 import lk.ijse.spring.carRental.entity.RentDetails;
+import lk.ijse.spring.carRental.repo.CarRepo;
 import lk.ijse.spring.carRental.repo.DriverRepo;
 import lk.ijse.spring.carRental.repo.RentRepo;
 import lk.ijse.spring.carRental.service.RentService;
@@ -30,6 +32,9 @@ public class RentServiceImpl implements RentService {
     DriverRepo driverRepo;
 
     @Autowired
+    CarRepo carRepo;
+
+    @Autowired
     ModelMapper mapper;
 
     @Override
@@ -47,11 +52,29 @@ public class RentServiceImpl implements RentService {
             rentDetails.setRentID(details.getRentID());
             rentDetails.setRentID(details.getCarID());
             rentDetails.setDriverID(details.getDriverID());
+
+            Car car = carRepo.findById(details.getCarID()).get();
+            car.setCarState("Unavailable");
+            carRepo.save(car);
+
         }
 
         System.out.println(rent);
         //Rent rent = new Rent();
         rentRepo.save(rent);
+    }
+    @Override
+    public void update(String dto) {
+
+        Rent rent = rentRepo.findById(dto).get();
+
+        for (RentDetails rentDetail : rent.getRentDetails()) {
+            Car car = carRepo.findById(rentDetail.getCarID()).get();
+            car.setCarState("Available");
+            carRepo.save(car);
+        }
+
+        rentRepo.delete(rent);
     }
 
     @Override
