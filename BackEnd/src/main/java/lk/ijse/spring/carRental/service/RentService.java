@@ -14,6 +14,8 @@ public interface RentService {
 
     void save(RentDTO dto);
 
+    void update(String dto);
+
     List<String> getAvailableDrivers();
 
     List<RentDTO> getAllRents();
