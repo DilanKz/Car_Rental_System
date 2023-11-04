@@ -100,3 +100,17 @@ function RedToastShow(message) {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastBLueFrame);
     toastBootstrap.show();
 }
+
+function sendEmail(subject,body,to) {
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "d24hostals@gmail.com",
+        Password : "108857AED98C6492D0031A28C7FE2C64ED27",
+        To : to,
+        From : "d24hostals@gmail.com",
+        Subject : subject,
+        Body : body
+    }).then(
+        message => alert(message)
+    );
+}
