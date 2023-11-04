@@ -92,6 +92,10 @@ body::-webkit-scrollbar{
     background-color: #3acf87;
     color: #222831;
 }
+#toastRedFrame{
+    background-color: #ff7663;
+    color: #222831;
+}
 
 /*Home*/
 .form-outline{
