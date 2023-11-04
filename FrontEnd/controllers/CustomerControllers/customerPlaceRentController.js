@@ -1,4 +1,4 @@
-let selectedCarList = []
+
 
 function addCarToTheCart(listElement) {
 
@@ -202,7 +202,8 @@ function addRequest(rentOB) {
                         data: JSON.stringify(rentOB),
                         contentType: 'application/json',
                         success: function (res) {
-
+                            greenToastShow("Request added wait for confirmation");
+                            $('#cartList').empty();
                         },
                         error: function (error) {
                             console.error('Error:', error);
@@ -217,6 +218,6 @@ function addRequest(rentOB) {
         });
 
     } else {
-        //toast
+        RedToastShow("Oops Look like a server error contact a admin")
     }
 }
