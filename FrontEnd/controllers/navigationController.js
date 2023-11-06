@@ -170,6 +170,7 @@ function checkUser(username, password) {
         }
         if (loggedUser.type === 'driver') {
             console.log('driver');
+            window.location.href = '../pages/index.html';
         }
 
     } else {
