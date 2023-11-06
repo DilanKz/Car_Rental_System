@@ -194,3 +194,23 @@ body::-webkit-scrollbar{
 .box-shadow-2{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
+
+#toastBLueFrame{
+    background: #4d96f3;
+    color: #222831;
+}
+
+#toastYellowFrame{
+    background-color: #f6c639;
+    color: #222831;
+}
+
+#toastGreenFrame{
+    background-color: #3acf87;
+    color: #222831;
+}
+#toastRedFrame{
+    background-color: #ff7663;
+    color: #222831;
+}
