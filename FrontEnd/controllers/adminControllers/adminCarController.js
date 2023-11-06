@@ -167,7 +167,9 @@ $('#btnAddCarSave').click(function () {
         contentType: false,
         success: function (res) {
             //toast here
+            greenToastShow("Car added")
             loadAllCars();
+            carViewFrame.css('display', 'none');
         },
         error: function (error) {
             console.error('Error:', error);
@@ -187,7 +189,9 @@ function updateCar() {
         contentType: false,
         success: function (res) {
             //toast here
+            greenToastShow("Car Updated");
             loadAllCars();
+            carViewFrame.css('display', 'none');
         },
         error: function (error) {
             console.error('Error:', error);
