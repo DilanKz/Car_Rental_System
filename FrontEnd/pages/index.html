@@ -18,12 +18,12 @@
 
     <style>
       .fc-unthemed td.fc-today {
-        background: #8391ff;
+        background: #e5e8ff;
       }
 
       .content{
         width: 850px;
-        height: 500px;
+        height: 520px;
         transform: scale(0.5);
       }
 
@@ -37,9 +37,13 @@
   <body>
   
 
-  <div class="content box-shadow-2">
-    <div id='calendar'></div>
-  </div>
+  <main class="vh-100 position-relative">
+
+    <div class="content box-shadow position-absolute p-5">
+      <div id='calendar'></div>
+    </div>
+
+  </main>
 
     <script src='fullcalendar/packages/core/main.min.js'></script>
     <script src='fullcalendar/packages/interaction/main.min.js'></script>
