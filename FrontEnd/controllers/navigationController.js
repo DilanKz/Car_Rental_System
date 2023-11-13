@@ -5,6 +5,7 @@ const home = $('#home');
 const about = $('#about');
 const logInFrame = $('#logInFrame');
 const registerFrame = $('#registerFrame');
+const passwordFrame = $('#passwordFrame');
 const manageCarsFrame = $('#manageCarsFrame');
 const addCarsFrame = $('#addCarsFrame');
 const rentACarFrame = $('#rentACarFrame');
@@ -21,9 +22,11 @@ const signInBtn = $('#signIn');
 const registerBtn = $('#btnRegister');
 const customerReg = $('#btnCustomerReg');
 const carNameAnchor = $('.carNameAnchor');
+const btnForgotPass = $('#btnForgotPass');
 
 logInFrame.css('display', 'none')
 registerFrame.css('display', 'none')
+passwordFrame.css('display', 'none');
 manageCarsFrame.css('display', 'none');
 addCarsFrame.css('display', 'none');
 rentACarFrame.css('display', 'none');
@@ -59,6 +62,10 @@ signInBtn.click(function () {
     showLogin();
     cusIdGenerator();
     userIdGenerator();
+});
+
+btnForgotPass.click(function () {
+    passwordFrame.css('display', 'block');
 });
 
 registerBtn.click(function () {
@@ -108,9 +115,14 @@ bg.click(function () {
     logInFrame.css('display', 'none')
     registerFrame.css('display', 'none')
     carViewForm.css('display', 'none')
+    passwordFrame.css('display', 'none')
 
     $('#regIDFrontLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
     $('#regIDBackLoader').attr('src', 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg');
+})
+
+$('.bg-blur-none-hide').click(function () {
+    passwordFrame.css('display', 'none');
 })
 
 carNameAnchor.click(function () {
