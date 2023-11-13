@@ -202,6 +202,10 @@ body::-webkit-scrollbar{
 .bg-blur-8{
     backdrop-filter: blur(8px);
 }
+
+.bg-blur-none-hide{
+    backdrop-filter: blur(8px);
+}
 .bg-blur-0{
     filter: blur(0);
     -webkit-filter: blur(0);
