@@ -240,7 +240,7 @@
                                         </button>
                                     </div>
 
-                                    <a class="small text-muted" href="#">Forgot password?</a>
+                                    <a id="btnForgotPass" class="small text-muted" href="#">Forgot password?</a>
                                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
                                         <a id="btnRegister" href="#" style="color: #393f81;">Register here</a></p>
                                 </form>
@@ -322,7 +322,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-6 bg-darkBlue text-white">
+                            <div class="col-lg-6 bg-primary text-white">
 
                                 <div class="p-5">
                                     <h3 class="fw-normal mb-5">Account Information</h3>
@@ -387,6 +387,25 @@
             </div>
         </div>
     </section>
+</main>
+
+<main id="passwordFrame" class="p-0 container-fluid vh-100 position-fixed top-0" style="z-index: 100;display: none">
+    <div class="vh-100 vw-100 position-absolute p-0 m-0 bg-blur-none-hide"></div>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div id="sa" class="col col-xl-5" style="z-index: 101;">
+                <div class=" card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <main class="main mt-5 position-relative vh-100 bg-light" id="manageCarsFrame">
